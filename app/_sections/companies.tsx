@@ -52,7 +52,7 @@ export default function CompaniesSection() {
                 width={100}
                 height={20}
                 alt={company.title}
-                className="lg:w-32 object-scale-down grayscale h-25 opacity-50"
+                className="lg:w-32 object-scale-down invert grayscale dark:invert-0 h-25 opacity-50"
               />
             </figure>
           ))}

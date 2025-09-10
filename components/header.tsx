@@ -1,4 +1,4 @@
-import ButtonBase from "./common/button";
+import ButtonBase, { ButtonStyled } from "./common/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -37,39 +37,41 @@ export const DesktopMenu = () => {
   };
 
   return (
-    <NavigationMenu className={"z-1 relative flex-col justify-center lg:flex hidden"} viewport={false} delayDuration={50}>
-      <NavigationMenuList className="flex flex-1 gap-0.5 px-4">
-        {desktopMenu.links.map((link) => {
-          if (link.subLinks && link.subLinks.length > 0) {
+    <div className="flex w-full justify-center">
+      <NavigationMenu className={"z-1 relative flex-col justify-center lg:flex hidden"} viewport={false} delayDuration={50}>
+        <NavigationMenuList className="flex flex-1 gap-0.5 px-4">
+          {desktopMenu.links.map((link) => {
+            if (link.subLinks && link.subLinks.length > 0) {
+              return (
+                <NavigationMenuItem key={link._id}>
+                  <NavigationMenuTrigger className="text-md bg-transparent">{link.title}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NavigationMenuList className="flex-col">
+                      {link.subLinks.map((subLink) => (
+                        <NavigationMenuItem key={subLink._id} className="w-full">
+                          <NavigationMenuLink href={subLink.href ?? "#"}>
+                            <h3>{subLink.title}</h3>
+                            {subLink?.description && <p className="text-xs text-muted-foreground w-max max-w-72">{subLink.description}</p>}
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                      ))}
+                    </NavigationMenuList>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              );
+            }
+
             return (
               <NavigationMenuItem key={link._id}>
-                <NavigationMenuTrigger className="text-md bg-transparent">{link.title}</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <NavigationMenuList className="flex-col">
-                    {link.subLinks.map((subLink) => (
-                      <NavigationMenuItem key={subLink._id} className="w-full">
-                        <NavigationMenuLink href={subLink.href ?? "#"}>
-                          <h3>{subLink.title}</h3>
-                          {subLink?.description && <p className="text-xs text-muted-foreground w-max max-w-72">{subLink.description}</p>}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenuContent>
+                <NavigationMenuLink href={link.href ?? "#"} className="text-md">
+                  {link.title}
+                </NavigationMenuLink>
               </NavigationMenuItem>
             );
-          }
-
-          return (
-            <NavigationMenuItem key={link._id}>
-              <NavigationMenuLink href={link.href ?? "#"} className="text-md">
-                {link.title}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          );
-        })}
-      </NavigationMenuList>
-    </NavigationMenu>
+          })}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
 };
 
@@ -77,7 +79,7 @@ export const Header = () => {
   return (
     <header className="sticky left-0 top-0 z-[110] flex w-full flex-col border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="flex h-[var(--header-height)]">
-        <div className="container mx-auto grid w-full grid-cols-[1fr_max-content_1fr] place-items-center content-center items-center px-6 *:first:justify-self-start">
+        <div className="container mx-auto grid w-full grid-cols-[min-content_1fr_min-content] place-items-center content-center items-center px-6 *:first:justify-self-start">
           <ButtonBase href="/">
             <h1 className="text-2xl font-semibold">
               Dev<span className="text-green-500">X</span>tra
@@ -85,6 +87,7 @@ export const Header = () => {
           </ButtonBase>
           <DesktopMenu />
           {/* <MobileMenu {...header} /> */}
+          <ButtonStyled href="/signup">Get started</ButtonStyled>
         </div>
       </div>
     </header>

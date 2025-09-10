@@ -31,7 +31,7 @@ export const ButtonStyled: FC<ButtonProps> = ({ children, ...props }) => {
     <ButtonBase
       {...props}
       className={cn(
-        "inline-block bg-primary px-5 py-4 font-bold text-accent transition-colors disabled:cursor-not-allowed disabled:opacity-50",
+        "inline-block bg-primary px-4 py-2 font-bold text-accent transition-colors disabled:cursor-not-allowed disabled:opacity-50 rounded-xl whitespace-nowrap",
         props.className
       )}
     >

@@ -1,5 +1,6 @@
 import { ButtonStyled } from "@/components/common/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { cn } from "@/lib/utils";
 
 const hero = {
   title: "Learn smart, Build fast, Thrive always",
@@ -63,11 +64,12 @@ export default function HeroSection() {
                   href={action.href}
                   key={action._id}
                   classnamefora="w-full"
-                  className={
+                  className={cn(
+                    "rounded-none py-4",
                     action.type == "primary"
                       ? "flex w-full justify-center"
                       : "justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-border !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary"
-                  }
+                  )}
                 >
                   {action.label}
                 </ButtonStyled>

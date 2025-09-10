@@ -1,4 +1,6 @@
+import CalloutSection from "./_sections/callout";
 import CompaniesSection from "./_sections/companies";
+import FeaturesGigImageSection from "./_sections/features-big-image";
 import FeaturesGridSection from "./_sections/features-grid";
 import FeaturesListSection from "./_sections/features-list";
 import HeroSection from "./_sections/hero";
@@ -10,6 +12,8 @@ export default function Home() {
       <CompaniesSection />
       <FeaturesListSection />
       <FeaturesGridSection />
+      <CalloutSection />
+      <FeaturesGigImageSection />
       <div className="h-[100vh]" />
     </main>
   );
