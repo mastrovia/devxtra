@@ -22,10 +22,10 @@ const hero = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10">
-      <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-[var(--border)] dark:border-[var(--border)]">
+      <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-muted">
         {/* Decorations */}
         <div className="col-span-1 flex h-full items-center justify-center" />
-        <div className="col-span-1 flex h-full items-center justify-center border-x border-[var(--border)] dark:border-[var(--border)]" />
+        <div className="col-span-1 flex h-full items-center justify-center border-x border-muted" />
         <div className="col-span-1 flex h-full items-center justify-center" />
       </div>
       {/* --- */}
@@ -33,9 +33,9 @@ export default function HeroSection() {
       <figure className="pointer-events-none absolute left-[4vw] top-[64px] z-20 hidden aspect-square w-[32vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
       <figure className="pointer-events-none absolute bottom-[-50px] right-[7vw] z-20 hidden aspect-square w-[30vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
 
-      <div className="relative z-10 flex flex-col divide-y divide-[--border] pt-[35px] dark:divide-[var(--border)]">
+      <div className="relative z-10 flex flex-col divide-y divide-[--border] pt-[35px] dark:divide-muted">
         <div className="flex flex-col items-center justify-end">
-          <div className="flex items-center gap-2 !border !border-b-0 border-[var(--border)] px-4 py-2 dark:border-[var(--border)]">
+          <div className="flex items-center gap-2 !border !border-b-0 border-muted px-4 py-2">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
               {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
                 <Avatar key={name}>

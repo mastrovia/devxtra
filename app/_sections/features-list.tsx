@@ -66,7 +66,7 @@ export default function FeaturesListSection() {
         {features.map(({ image, ...item }) => (
           <article
             key={item.title}
-            className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-[var(--border)] bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
+            className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-muted bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
           >
             <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">
               <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded" />
