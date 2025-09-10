@@ -64,7 +64,7 @@ export default function HeroSection() {
                   className={
                     action.type == "primary"
                       ? "flex w-full justify-center"
-                      : "justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-[var(--border)] !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:border-[var(--border)] dark:hover:!bg-white/5 text-primary"
+                      : "justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-muted !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary"
                   }
                 >
                   {action.label}
