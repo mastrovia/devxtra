@@ -168,3 +168,7 @@
     background-color: var(--surface-tertiary);
   }
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}

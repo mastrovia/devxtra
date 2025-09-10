@@ -20,7 +20,6 @@ export const DesktopMenu = () => {
   const desktopMenu: { links: NavigationMenuListItem[] } = {
     links: [
       { _id: "1", title: "Home", href: "/" },
-      { _id: "2", title: "About", href: "/about" },
       {
         _id: "3",
         title: "Services",
@@ -31,6 +30,7 @@ export const DesktopMenu = () => {
           { _id: "33", title: "Design", href: "/services/design" },
         ],
       },
+      { _id: "2", title: "About", href: "/about" },
       { _id: "4", title: "Blog", href: "/blog" },
       { _id: "5", title: "Contact", href: "/contact" },
     ],
@@ -43,7 +43,7 @@ export const DesktopMenu = () => {
           if (link.subLinks && link.subLinks.length > 0) {
             return (
               <NavigationMenuItem key={link._id}>
-                <NavigationMenuTrigger className="text-md">{link.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-md bg-transparent">{link.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <NavigationMenuList className="flex-col">
                     {link.subLinks.map((subLink) => (
@@ -75,7 +75,7 @@ export const DesktopMenu = () => {
 
 export const Header = () => {
   return (
-    <header className="sticky left-0 top-0 z-[110] flex w-full flex-col border-b border-[--border] dark:border-[--dark-border]">
+    <header className="sticky left-0 top-0 z-[110] flex w-full flex-col border-b border-[--border] dark:border-[--dark-border] bg-background/80 backdrop-blur-sm">
       <div className="flex h-[var(--header-height)]">
         <div className="container mx-auto grid w-full grid-cols-[1fr_max-content_1fr] place-items-center content-center items-center px-6 *:first:justify-self-start">
           <ButtonBase href="/">Logo</ButtonBase>

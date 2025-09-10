@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function CompaniesSection() {
   const companiesSection = {
     subtitle: "Join 4,000+ companies already growing",
-    scrollbar: "",
     companies: [
       {
         _id: "company1",
