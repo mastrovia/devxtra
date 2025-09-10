@@ -70,9 +70,9 @@ export default function FeaturesGridSection() {
         {featuresGridList.map(({ _id, title, description, icon }) => (
           <article
             key={_id}
-            className="flex flex-col gap-4 rounded-lg border border-muted p-4 [box-shadow:_70px_-20px_130px_0px_rgba(255,255,255,0.05)_inset] dark:[box-shadow:_70px_-20px_130px_0px_rgba(255,255,255,0.05)_inset]"
+            className="flex flex-col gap-4 rounded-lg border border-border p-4 [box-shadow:_70px_-20px_130px_0px_rgba(255,255,255,0.05)_inset] dark:[box-shadow:_70px_-20px_130px_0px_rgba(255,255,255,0.05)_inset]"
           >
-            <figure className="flex size-9 items-center justify-center rounded-full border border-muted p-2">
+            <figure className="flex size-9 items-center justify-center rounded-full border border-border p-2">
               <Image width={18} height={18} src={icon.url} alt="" className="dark:invert" />
             </figure>
             <div className="flex flex-col items-start gap-1">

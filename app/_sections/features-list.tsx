@@ -11,7 +11,8 @@ export default function FeaturesListSection() {
         items: [{ title: "Coding skills" }, { title: "Communication skills" }, { title: "Management skills" }],
       },
       image: {
-        dark: "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100",
+        dark: "https://assets.basehub.com/fa068a12/qZeFxPJWNB7UQdwUzjX3e/features-streamlined-team-communication-real-time-messaging-(light-mode)3x.jpg?format=auto&quality=100",
+        // "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100"
         alt: "Real-time Messaging Feature",
       },
     },
@@ -61,20 +62,20 @@ export default function FeaturesListSection() {
         {features.map(({ image, ...item }) => (
           <article
             key={item.title}
-            className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-muted bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
+            className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-border bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
           >
             <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">
-              <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded object-cover" />
+              <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded-lg object-cover border" />
             </figure>
             <div className="flex flex-col gap-8 p-5 pt-6 md:flex-1 md:p-10">
               <div className="flex flex-col items-start gap-2">
                 <h5 className="text-2xl font-medium md:text-3xl">{item.title}</h5>
-                <p className="font-normal text-tertiary md:text-lg">{item.description}</p>
+                <p className="font-normal text-muted-foreground md:text-lg">{item.description}</p>
               </div>
               <ul className="flex flex-col items-start gap-3 pl-2 md:text-lg">
                 {item.characteristics.items.map(({ title }) => (
-                  <li key={title} className="flex items-center gap-4 font-normal text-tertiary">
-                    <span className="flex size-6 p-1.5 items-center justify-center rounded-full bg-primary/20">
+                  <li key={title} className="flex items-center gap-4 font-normal text-muted-foreground">
+                    <span className="flex size-6 p-1.5 items-center justify-center rounded-full bg-primary/30">
                       <CheckIcon className="text-foreground" />
                     </span>
                     {title}
