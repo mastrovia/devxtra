@@ -2,7 +2,7 @@ import { Heading } from "@/components/common/heading";
 import { CheckIcon } from "lucide-react";
 import Image from "next/image";
 
-export default function FeaturesSection() {
+export default function FeaturesListSection() {
   const features = [
     {
       title: "Real-time Messaging",
