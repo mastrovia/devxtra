@@ -5,15 +5,10 @@ import Image from "next/image";
 export default function FeaturesListSection() {
   const features = [
     {
-      title: "Real-time Messaging",
-      description:
-        "Engage in instant conversations with team members through our real-time messaging platform, ensuring seamless communication and quick responses.",
+      title: "Earn while you earn",
+      description: "Earn by doing real-world projects for clients. Gain practical experience and build your portfolio while getting paid.",
       characteristics: {
-        items: [
-          { title: "Instant message delivery" },
-          { title: "Read receipts and typing indicators" },
-          { title: "Group chats and direct messages" },
-        ],
+        items: [{ title: "Coding skills" }, { title: "Communication skills" }, { title: "Management skills" }],
       },
       image: {
         dark: "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100",
@@ -21,14 +16,14 @@ export default function FeaturesListSection() {
       },
     },
     {
-      title: "Real-time Messaging 3",
+      title: "Team work, better work",
       description:
-        "Engage in instant conversations with team members through our real-time messaging platform, ensuring seamless communication and quick responses.",
+        "DevXtra give you the opportunity to collaborate with other learners on projects, simulating real-world team environments and enhancing your teamwork skills.",
       characteristics: {
         items: [
-          { title: "Instant message delivery" },
-          { title: "Read receipts and typing indicators" },
-          { title: "Group chats and direct messages" },
+          { title: "Team with like minded peers" },
+          { title: "Collaborate and accelerate faster" },
+          { title: "Learn to be a team player" },
         ],
       },
       image: {
@@ -38,7 +33,7 @@ export default function FeaturesListSection() {
     },
 
     {
-      title: "Real-time Messaging 2",
+      title: "StartUp ready skills",
       description:
         "Engage in instant conversations with team members through our real-time messaging platform, ensuring seamless communication and quick responses.",
       characteristics: {
@@ -58,9 +53,9 @@ export default function FeaturesListSection() {
   return (
     <section className="container mx-auto px-6 flex flex-col gap-10">
       <Heading
-        tag="Communication"
+        tag="Introducing DevXtra"
         title="Enhanced Team Communication"
-        subtitle="Simplify team discussions and collaboration with our efficient messaging features, enabling swift decision-making and project progress tracking."
+        subtitle="We get it. You want to become a skilled developer, but generic courses and outdated methods just don't cut it anymore. You need a modern approach. That's where DevXtra steps in."
       />
       <div className="flex flex-col gap-6 items-center">
         {features.map(({ image, ...item }) => (
@@ -69,7 +64,7 @@ export default function FeaturesListSection() {
             className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-muted bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
           >
             <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">
-              <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded" />
+              <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded object-cover" />
             </figure>
             <div className="flex flex-col gap-8 p-5 pt-6 md:flex-1 md:p-10">
               <div className="flex flex-col items-start gap-2">

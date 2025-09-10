@@ -78,7 +78,11 @@ export const Header = () => {
     <header className="sticky left-0 top-0 z-[110] flex w-full flex-col border-b border-muted bg-background/80 backdrop-blur-sm">
       <div className="flex h-[var(--header-height)]">
         <div className="container mx-auto grid w-full grid-cols-[1fr_max-content_1fr] place-items-center content-center items-center px-6 *:first:justify-self-start">
-          <ButtonBase href="/">Logo</ButtonBase>
+          <ButtonBase href="/">
+            <h1 className="text-2xl font-semibold">
+              Dev<span className="text-green-500">X</span>tra
+            </h1>
+          </ButtonBase>
           <DesktopMenu />
           {/* <MobileMenu {...header} /> */}
         </div>

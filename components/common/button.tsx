@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { FC, ButtonHTMLAttributes } from "react";
+import { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   href?: string;
+  classnamefora?: AnchorHTMLAttributes<HTMLAnchorElement>["className"];
 };
 
 const ButtonBase: FC<ButtonProps> = ({ children, href, ...props }) => {
@@ -14,7 +15,13 @@ const ButtonBase: FC<ButtonProps> = ({ children, href, ...props }) => {
     </button>
   );
 
-  return href ? <Link href={href}>{ButtonComp}</Link> : ButtonComp;
+  return href ? (
+    <Link href={href} className={cn(props.classnamefora)}>
+      {ButtonComp}
+    </Link>
+  ) : (
+    ButtonComp
+  );
 };
 
 export default ButtonBase;

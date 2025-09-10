@@ -2,11 +2,11 @@ import { ButtonStyled } from "@/components/common/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const hero = {
-  title: "Streamlined Communication for Iterating Fast",
+  title: "Learn smart, Build fast, Thrive always",
   subtitle:
-    "Acme is an installable, self-hosted team chat system. You can have several paragraphs in here and the thing will wrap gracefully.",
+    "A New Way to Learn and Grow in Tech. Join DevXtra to Access Expert-Led Courses, Hands-On Projects, and a Thriving Community. Elevate Your Skills and Accelerate Your Career Today!",
   customerSatisfaction: {
-    text: "1,254 happy customers",
+    text: "200+ students are already achieving their goals with DevXtra",
     avatars: [
       { link: "https://github.com/shadcn.png", name: "shadcn", fallback: "CN" },
       { link: "https://github.com/leerob.png", name: "leerob", fallback: "LR" },
@@ -15,7 +15,7 @@ const hero = {
   },
   actions: [
     { _id: "2", label: "Learn More", href: "/about", type: "secondary" },
-    { _id: "1", label: "Get Started for free", href: "/signup", type: "primary" },
+    { _id: "1", label: "Transform your career today", href: "/signup", type: "primary" },
   ],
 };
 
@@ -60,7 +60,9 @@ export default function HeroSection() {
             {hero.actions?.map((action) => {
               return (
                 <ButtonStyled
+                  href={action.href}
                   key={action._id}
+                  classnamefora="w-full"
                   className={
                     action.type == "primary"
                       ? "flex w-full justify-center"
