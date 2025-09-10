@@ -8,6 +8,8 @@ type HeadingProps = {
   subtitle?: React.ReactNode;
   className?: string;
   title?: string;
+  align?: "start" | "end" | "center";
+  classnamea?: string;
 };
 
 export function Tag({ className, children, asChild, ...props }: React.AllHTMLAttributes<HTMLDivElement> & { asChild?: boolean }) {
@@ -26,9 +28,9 @@ export function Tag({ className, children, asChild, ...props }: React.AllHTMLAtt
   );
 }
 
-export function Heading({ tag, subtitle, ...props }: HeadingProps) {
+export function Heading({ tag, subtitle, align = "center", ...props }: HeadingProps) {
   return (
-    <div className={"flex items-center flex-col gap-3"}>
+    <div className={cn("flex items-center flex-col gap-3", `items-${align} text-${align}`, props.classnamea)}>
       {tag ? <Tag>{tag}</Tag> : null}
       <div
         className={cn(
@@ -36,11 +38,9 @@ export function Heading({ tag, subtitle, ...props }: HeadingProps) {
           "[&>*]:text-pretty [&>*]:text-3xl [&>*]:font-medium md:[&>*]:text-4xl"
         )}
       >
-        <h1 {...props} className={cn("text-center")}>
-          {props?.title}
-        </h1>
+        <h1 {...props}>{props?.title}</h1>
       </div>
-      {subtitle ? <p className="max-w-screen-md text-pretty font-light text-tertiary text-center text-lg">{subtitle}</p> : null}
+      {subtitle ? <p className="max-w-screen-md text-pretty font-light text-tertiary text-lg">{subtitle}</p> : null}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import CompaniesSection from "./_sections/companies";
 import FeaturesBigImageSection from "./_sections/features-big-image";
 import FeaturesGridSection from "./_sections/features-grid";
 import FeaturesListSection from "./_sections/features-list";
+import FeaturesSideBySideSection from "./_sections/features-sidebyside";
 import HeroSection from "./_sections/hero";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturesGridSection />
       <CalloutSection />
       <FeaturesBigImageSection />
+      <FeaturesSideBySideSection />
       <div className="h-[100vh]" />
     </main>
   );
