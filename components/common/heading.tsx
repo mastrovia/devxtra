@@ -26,7 +26,7 @@ export function Tag({ className, children, asChild, ...props }: React.AllHTMLAtt
   );
 }
 
-export function Heading({ tag, subtitle, className, ...props }: HeadingProps) {
+export function Heading({ tag, subtitle, ...props }: HeadingProps) {
   return (
     <div className={"flex items-center flex-col gap-3"}>
       {tag ? <Tag>{tag}</Tag> : null}
