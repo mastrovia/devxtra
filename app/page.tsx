@@ -1,11 +1,13 @@
 import CalloutSection from "./_sections/callout";
 import CalloutAnimatedSection from "./_sections/callout-animated";
 import CompaniesSection from "./_sections/companies";
+import FaqsSection from "./_sections/faq";
 import FeaturesBigImageSection from "./_sections/features-big-image";
 import FeaturesGridSection from "./_sections/features-grid";
 import FeaturesListSection from "./_sections/features-list";
 import FeaturesSideBySideSection from "./_sections/features-sidebyside";
 import HeroSection from "./_sections/hero";
+import Testimonials from "./_sections/testimonials";
 
 export default function Home() {
   return (
@@ -18,7 +20,8 @@ export default function Home() {
       <FeaturesBigImageSection />
       <FeaturesSideBySideSection />
       <CalloutAnimatedSection />
-      <div className="h-[100vh]" />
+      <Testimonials />
+      <FaqsSection />
     </main>
   );
 }

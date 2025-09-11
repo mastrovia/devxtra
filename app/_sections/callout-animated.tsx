@@ -14,9 +14,9 @@ export default function CalloutAnimatedSection() {
     <section className="container mx-auto px-4">
       <article className="relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border p-6 dark:border-[--dark-border] dark:bg-[--dark-surface-secondary]">
         {/* Lines and bg  */}
-        <div className="bg-linear-to-l absolute left-0 top-10 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />
+        {/* <div className="bg-linear-to-l absolute left-0 top-10 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />
         <div className="bg-linear-to-l absolute bottom-[72px] left-0 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />
-        <div className="bg-linear-to-l absolute bottom-7 left-0 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />
+        <div className="bg-linear-to-l absolute bottom-7 left-0 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" /> */}
         <div className="absolute left-0 top-0 z-10 h-full w-full bg-primary/10 dark:bg-primary/10 blur-3xl filter" />
         {/* -------- */}
         <div className="relative z-20 flex flex-col items-center gap-2 text-center">
