@@ -1,42 +1,44 @@
-import { Heading } from "@/components/common/heading";
-import Image from "next/image";
+import { Heading } from '@/components/common/heading';
+import Image from 'next/image';
 
 export default function FeaturesBigImageSection() {
   const featuresBigImage = {
     heading: {
-      tag: "Collaboration",
-      title: "Seamless Collaboration, Enhanced Productivity",
+      tag: 'Learn. Build. Succeed',
+      title: 'Why Choose DevXtra?',
       subtitle:
-        "Empower your team with integrated tools for file sharing, task management, and real-time collaboration, ensuring smooth project workflows from start to finish.",
+        'DevXtra helps you gain hands-on experience, build a professional portfolio, and grow as a developer or entrepreneur. Our structured course combines mentorship, real-world projects, and practical skills to ensure you’re fully prepared for freelancing, top tech jobs, or launching your own startup.',
     },
     image: {
-      url: "https://assets.basehub.com/fa068a12/0wXkzA13r5ef3JtyGvTgy/features-seamless-collaboration-enhanced-productivity2x.png?format=auto&quality=100",
-      alt: "",
+      url: 'https://assets.basehub.com/fa068a12/0wXkzA13r5ef3JtyGvTgy/features-seamless-collaboration-enhanced-productivity2x.png?format=auto&quality=100',
+      alt: '',
     },
     items: [
       {
-        title: "Real-time Messaging",
-        description: "Instantly communicate and collaborate with team members, keeping everyone aligned and informed.",
-        icon: {
-          alt: null,
-          url: "https://assets.basehub.com/fa068a12/P4yggRHkqB8uRH587STUr/frameicon.svg",
-        },
-      },
-      {
-        title: "File Sharing",
-        description: "Share documents, images, and files effortlessly within your team, ensuring easy access to important resources.",
-        icon: {
-          alt: null,
-          url: "https://assets.basehub.com/fa068a12/SCkaU2WEu53qSBWsNVQO4/frameicon-1.svg",
-        },
-      },
-      {
-        title: "Task Management",
+        title: 'Mentorship',
         description:
-          "Organize tasks, assign responsibilities, and track progress in one centralized platform, promoting accountability and efficiency.",
+          'Learn from industry experts who guide you at every step. Gain insights, feedback, and support to accelerate your coding journey.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/WIADTrhMDDCGZUakwbctI/frameicon-2.svg",
+          url: 'https://assets.basehub.com/fa068a12/P4yggRHkqB8uRH587STUr/frameicon.svg',
+        },
+      },
+      {
+        title: 'Hands-On Projects',
+        description:
+          'Work on real client projects and startup-inspired projects. Apply your skills to solve practical problems and build a strong, job-ready portfolio.',
+        icon: {
+          alt: null,
+          url: 'https://assets.basehub.com/fa068a12/SCkaU2WEu53qSBWsNVQO4/frameicon-1.svg',
+        },
+      },
+      {
+        title: 'Career Growth',
+        description:
+          'Develop the skills and confidence to freelance, land top tech roles, or create your own startup. DevXtra equips you with the tools for long-term career success.',
+        icon: {
+          alt: null,
+          url: 'https://assets.basehub.com/fa068a12/WIADTrhMDDCGZUakwbctI/frameicon-2.svg',
         },
       },
     ],
@@ -44,7 +46,11 @@ export default function FeaturesBigImageSection() {
 
   return (
     <section className="flex flex-col gap-10 relative container mx-auto px-5">
-      <Heading tag={featuresBigImage.heading.tag} title={featuresBigImage.heading.title} subtitle={featuresBigImage.heading.subtitle} />
+      <Heading
+        tag={featuresBigImage.heading.tag}
+        title={featuresBigImage.heading.title}
+        subtitle={featuresBigImage.heading.subtitle}
+      />
       <div className="flex w-full flex-col items-start gap-4 md:order-2 md:grid md:grid-cols-3 md:gap-16">
         {featuresBigImage.items.map(({ title, description, icon }) => (
           <article key={title} className="flex flex-col gap-4">
