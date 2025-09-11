@@ -1,69 +1,75 @@
-import { ButtonStyled } from "@/components/common/button";
-import { Heading } from "@/components/common/heading";
-import Image from "next/image";
+import { ButtonStyled } from '@/components/common/button';
+import { Heading } from '@/components/common/heading';
+import Image from 'next/image';
 
 export default function FeaturesGridSection() {
   const featuresGridData = {
     actions: [
       {
-        _id: "1",
-        label: "Transform your career today",
-        href: "/signup",
+        _id: '1',
+        label: 'Transform your career today',
+        href: '/signup',
       },
     ],
     list: [
       {
-        _id: "1",
-        title: "Sprint Planning",
-        description: "Plan and execute project tasks efficiently within iterative sprint cycles.",
+        _id: '1',
+        title: 'Personal Branding',
+        description:
+          'Learn how to showcase your coding skills online with projects, portfolios, and LinkedIn visibility. Stand out to employers, clients, and startup teams by building a strong digital identity.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/P4yggRHkqB8uRH587STUr/frameicon.svg",
+          url: 'https://assets.basehub.com/fa068a12/P4yggRHkqB8uRH587STUr/frameicon.svg',
         },
       },
       {
-        _id: "2",
-        title: "Kanban Boards",
-        description: "Visualize project workflow and track task progress with customizable Kanban boards.",
+        _id: '2',
+        title: 'Freelancing',
+        description:
+          'Discover how to find freelance projects, pitch to clients, and deliver quality work while you’re still learning. Gain income, confidence, and a strong portfolio.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/SCkaU2WEu53qSBWsNVQO4/frameicon-1.svg",
+          url: 'https://assets.basehub.com/fa068a12/SCkaU2WEu53qSBWsNVQO4/frameicon-1.svg',
         },
       },
       {
-        _id: "3",
-        title: "Task Prioritization",
-        description: "Prioritize tasks based on urgency and importance to ensure efficient use of resources.",
+        _id: '3',
+        title: 'AI Leveraged Coding',
+        description:
+          'Master the art of using AI tools to speed up coding, debugging, and project building. Stay ahead in the tech industry by combining your skills with the power of AI.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/WIADTrhMDDCGZUakwbctI/frameicon-2.svg",
+          url: 'https://assets.basehub.com/fa068a12/WIADTrhMDDCGZUakwbctI/frameicon-2.svg',
         },
       },
       {
-        _id: "4",
-        title: "Collaborative Task Boards",
-        description: "Collaboratively manage tasks and assignments in real-time, fostering teamwork and accountability.",
+        _id: '4',
+        title: 'Startup Level Project',
+        description:
+          'Go beyond basic practice projects to build at the scale and quality of real startups. Learn how to think like a founder and create solutions that solve real-world problems.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/eRZEKnuCUPMOThfCOtVMw/frameicon-3.svg",
+          url: 'https://assets.basehub.com/fa068a12/eRZEKnuCUPMOThfCOtVMw/frameicon-3.svg',
         },
       },
       {
-        _id: "5",
-        title: "Backlog Management",
-        description: "Maintain a backlog of tasks and user stories, ensuring a steady flow of work for your team.",
+        _id: '5',
+        title: 'Real World Exposure',
+        description:
+          'Get direct exposure to client projects, deadlines, and professional workflows. Experience how real companies operate and be job-ready from day one.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/12XqbjYT6n4Nn-G24Wllb/frameicon-4.svg",
+          url: 'https://assets.basehub.com/fa068a12/12XqbjYT6n4Nn-G24Wllb/frameicon-4.svg',
         },
       },
       {
-        _id: "6",
-        title: "Burndown Charts",
-        description: "Monitor project progress and identify potential bottlenecks with easy-to-read burndown charts.",
+        _id: '6',
+        title: 'Network & Entrepreneurial Mindset',
+        description:
+          'Connect with like-minded peers, mentors, and industry experts. Learn how to think like an entrepreneur, pitch your ideas, and grow valuable career relationships.',
         icon: {
           alt: null,
-          url: "https://assets.basehub.com/fa068a12/yxVz9gspGHr_vDrQM-mC2/frameicon-5.svg",
+          url: 'https://assets.basehub.com/fa068a12/yxVz9gspGHr_vDrQM-mC2/frameicon-5.svg',
         },
       },
     ],
@@ -72,9 +78,9 @@ export default function FeaturesGridSection() {
   return (
     <section className="container mx-auto px-6 flex flex-col gap-10">
       <Heading
-        tag="Management"
-        title="Agile Project Planning"
-        subtitle="Drive project success with agile project management capabilities tailored for small teams focused on rapid product development."
+        tag="What You’ll Learn"
+        title="Level up your coding journey with devxtra"
+        subtitle="At DevXtra, you’ll gain more than coding skills. From personal branding and freelancing to AI-powered coding, real-world projects, and networking, we prepare you to succeed as a developer and future entrepreneur."
       />
       <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
         {featuresGridData.list.map(({ _id, title, description, icon }) => (
@@ -87,7 +93,9 @@ export default function FeaturesGridSection() {
             </figure>
             <div className="flex flex-col items-start gap-1">
               <h5 className="text-lg font-medium">{title}</h5>
-              <p className="text-pretty text-[--text-secondary] dark:text-[--dark-text-secondary]">{description}</p>
+              <p className="text-pretty text-[--text-secondary] dark:text-[--dark-text-secondary]">
+                {description}
+              </p>
             </div>
           </article>
         ))}
