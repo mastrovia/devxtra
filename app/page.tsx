@@ -1,4 +1,5 @@
 import CalloutSection from "./_sections/callout";
+import CalloutAnimatedSection from "./_sections/callout-animated";
 import CompaniesSection from "./_sections/companies";
 import FeaturesBigImageSection from "./_sections/features-big-image";
 import FeaturesGridSection from "./_sections/features-grid";
@@ -16,6 +17,7 @@ export default function Home() {
       <CalloutSection />
       <FeaturesBigImageSection />
       <FeaturesSideBySideSection />
+      <CalloutAnimatedSection />
       <div className="h-[100vh]" />
     </main>
   );

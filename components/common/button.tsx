@@ -26,12 +26,13 @@ const ButtonBase: FC<ButtonProps> = ({ children, href, ...props }) => {
 
 export default ButtonBase;
 
-export const ButtonStyled: FC<ButtonProps> = ({ children, ...props }) => {
+export const ButtonStyled: FC<ButtonProps & { variant?: "default" | "glass" }> = ({ children, variant = "default", ...props }) => {
   return (
     <ButtonBase
       {...props}
       className={cn(
         "inline-block bg-primary px-4 py-2 font-bold text-accent transition-colors disabled:cursor-not-allowed disabled:opacity-50 rounded-xl whitespace-nowrap",
+        variant == "glass" ? "bg-primary/10 text-primary border backdrop-blur-2xl" : "",
         props.className
       )}
     >

@@ -58,13 +58,25 @@ export default function FeaturesBigImageSection() {
           </article>
         ))}
       </div>
-      <Image
+      {/* <Image
         src={featuresBigImage.image.url}
         height={600}
         width={1216}
         className="block rounded-xl border md:order-3 md:w-full"
         alt={featuresBigImage.image.alt}
-      />
+      /> */}
+      <iframe
+        height={600}
+        // width={1216}
+        src="https://www.youtube.com/embed/idEAABFzpfg?si=3Hk0pvBSWT6ByU_x&amp;controls=0"
+        // src="https://www.youtube.com/embed/71-Mo83mHQw?si=COGHRfk3TMfak3Xk&amp;controls=0"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        className="block rounded-xl border md:order-3 md:w-full"
+        // referrerpolicy="strict-origin-when-cross-origin"
+        // allowfullscreen
+      ></iframe>
     </section>
   );
 }
