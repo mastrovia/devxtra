@@ -87,8 +87,6 @@
   --surface-primary: theme(colors.gray.50);
   --surface-secondary: theme(colors.gray.100);
   --surface-tertiary: theme(colors.gray.200);
-
-  --border: var(--primary);
 }
 
 .dark {
@@ -132,8 +130,6 @@
   --surface-primary: theme(colors.gray.950);
   --surface-secondary: theme(colors.gray.900);
   --surface-tertiary: theme(colors.gray.800);
-
-  --border: var(--primary);
 }
 
 @layer base {
