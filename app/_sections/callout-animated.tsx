@@ -2,11 +2,11 @@ import { ButtonStyled } from "@/components/common/button";
 
 export default function CalloutAnimatedSection() {
   const data = {
-    title: "Enhance your team's productivity with Acme",
-    subtitle: "Write in threads, focus, and collaborate without video calls.",
+    title: "Advance Your Coding Career",
+    subtitle: "Gain real-world experience, work on client projects, and build skills that employers value.",
     actions: [
-      { _id: "1", label: "Get Started", href: "/signup", type: "primary" },
-      { _id: "2", label: "Learn More", href: "/about", type: "secondary" },
+      { _id: "1", label: "Join Now", href: "/signup", type: "primary" },
+      { _id: "2", label: "Know More", href: "/about", type: "secondary" },
     ],
   };
 
