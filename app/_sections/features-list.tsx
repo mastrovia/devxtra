@@ -1,52 +1,57 @@
-import { Heading } from "@/components/common/heading";
-import { CheckIcon } from "lucide-react";
-import Image from "next/image";
+import { Heading } from '@/components/common/heading';
+import { CheckIcon } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FeaturesListSection() {
   const features = [
     {
-      title: "Earn while you earn",
-      description: "Earn by doing real-world projects for clients. Gain practical experience and build your portfolio while getting paid.",
-      characteristics: {
-        items: [{ title: "Coding skills" }, { title: "Communication skills" }, { title: "Management skills" }],
-      },
-      image: {
-        dark: "https://assets.basehub.com/fa068a12/qZeFxPJWNB7UQdwUzjX3e/features-streamlined-team-communication-real-time-messaging-(light-mode)3x.jpg?format=auto&quality=100",
-        // "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100"
-        alt: "Real-time Messaging Feature",
-      },
-    },
-    {
-      title: "Team work, better work",
+      title: 'Earn While You Learn with DevXtra',
       description:
-        "DevXtra give you the opportunity to collaborate with other learners on projects, simulating real-world team environments and enhancing your teamwork skills.",
+        "At DevXtra, students don't just study—they earn by working on real-world client projects. Build a strong portfolio, gain hands-on experience, and get paid while you learn.",
       characteristics: {
         items: [
-          { title: "Team with like minded peers" },
-          { title: "Collaborate and accelerate faster" },
-          { title: "Learn to be a team player" },
+          { title: 'Develop in-demand coding skills through practical projects' },
+          { title: 'Improve professional communication skills with real clients' },
+          { title: 'Strengthen your project management skills to handle real deadlines' },
         ],
       },
       image: {
-        dark: "https://assets.basehub.com/fa068a12/LjqmKEgcHqPTWDXCrY33M/features-streamlined-team-communication-integrated-task-management-(dark-mode)3x.jpg?format=auto&quality=100",
-        alt: "Real-time Messaging Feature",
+        dark: 'https://assets.basehub.com/fa068a12/qZeFxPJWNB7UQdwUzjX3e/features-streamlined-team-communication-real-time-messaging-(light-mode)3x.jpg?format=auto&quality=100',
+        // "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100"
+        alt: 'Real-time Messaging Feature',
+      },
+    },
+    {
+      title: 'Teamwork That Builds Careers',
+      description:
+        "Learning at DevXtra is not a solo journey. We help you collaborate with like-minded peers on real coding projects, preparing you for today's team-driven tech industry.",
+      characteristics: {
+        items: [
+          { title: 'Work in dynamic teams that mirror real-world companies' },
+          { title: 'Collaborate and accelerate your learning process' },
+          { title: 'Become a team player employers value' },
+        ],
+      },
+      image: {
+        dark: 'https://assets.basehub.com/fa068a12/LjqmKEgcHqPTWDXCrY33M/features-streamlined-team-communication-integrated-task-management-(dark-mode)3x.jpg?format=auto&quality=100',
+        alt: 'Real-time Messaging Feature',
       },
     },
 
     {
-      title: "StartUp ready skills",
+      title: 'Startup-Ready Skills for Future Leaders',
       description:
-        "Engage in instant conversations with team members through our real-time messaging platform, ensuring seamless communication and quick responses.",
+        'At DevXtra, we don’t just prepare you for jobs—we also help you bring your startup ideas to life. From your first concept to a working project, we guide you step by step and support you in reaching real users.',
       characteristics: {
         items: [
-          { title: "Instant message delivery" },
-          { title: "Read receipts and typing indicators" },
-          { title: "Group chats and direct messages" },
+          { title: 'Turn your idea into a working project with the help of mentors' },
+          { title: 'Test your project with real people to see what works best' },
+          { title: 'Learn how to grow your idea and take it to the next level' },
         ],
       },
       image: {
-        dark: "https://assets.basehub.com/fa068a12/rAkAivkkRD3eW9FOF9wmN/features-streamlined-team-communication-secure-communication-channels-(dark-mode)3x.jpg?format=auto&quality=100",
-        alt: "Real-time Messaging Feature",
+        dark: 'https://assets.basehub.com/fa068a12/rAkAivkkRD3eW9FOF9wmN/features-streamlined-team-communication-secure-communication-channels-(dark-mode)3x.jpg?format=auto&quality=100',
+        alt: 'Real-time Messaging Feature',
       },
     },
   ];
@@ -54,9 +59,9 @@ export default function FeaturesListSection() {
   return (
     <section className="container mx-auto px-6 flex flex-col gap-10">
       <Heading
-        tag="Introducing DevXtra"
-        title="Enhanced Team Communication"
-        subtitle="We get it. You want to become a skilled developer, but generic courses and outdated methods just don't cut it anymore. You need a modern approach. That's where DevXtra steps in."
+        tag="Our Promise"
+        title="Learn, Build, and Grow with DevXtra"
+        subtitle="At DevXtra, learning goes beyond theory. You'll earn while working on real client projects, collaborate with peers in team settings, and even turn your own ideas into working projects with mentor support. From coding skills to startup readiness, we prepare you for the real world of technology"
       />
       <div className="flex flex-col gap-6 items-center">
         {features.map(({ image, ...item }) => (
@@ -65,7 +70,13 @@ export default function FeaturesListSection() {
             className="flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-border bg-muted p-px sm:max-w-full md:w-full md:flex-row md:odd:flex-row-reverse xl:gap-16"
           >
             <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">
-              <Image src={image.dark} alt={image.alt} width={560} height={374} className="rounded-lg object-cover border" />
+              <Image
+                src={image.dark}
+                alt={image.alt}
+                width={560}
+                height={374}
+                className="rounded-lg object-cover border"
+              />
             </figure>
             <div className="flex flex-col gap-8 p-5 pt-6 md:flex-1 md:p-10">
               <div className="flex flex-col items-start gap-2">
