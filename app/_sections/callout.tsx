@@ -5,8 +5,8 @@ export default function CalloutSection() {
     title: "Join DevXtra Today!",
     subtitle: "Unlock your potential with expert-led courses and a thriving community.",
     actions: [
-      { _id: "1", label: "Get Started", href: "/signup" },
-      { _id: "2", label: "Learn More", href: "/about" },
+      { _id: "1", label: "Get Started", href: "/signup", type: "primary" },
+      { _id: "2", label: "Learn More", href: "/about", type: "secondary" },
     ],
   };
 
@@ -19,7 +19,7 @@ export default function CalloutSection() {
         </div>
         <div className="flex md:items-center gap-2 ">
           {calloutData.actions?.map((action) => (
-            <ButtonStyled key={action._id} href={action.href}>
+            <ButtonStyled key={action._id} href={action.href} variant={action?.type == "secondary" ? "glass" : "default"}>
               {action.label}
             </ButtonStyled>
           ))}
