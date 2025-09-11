@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-import clsx from "clsx";
-import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
-import ButtonBase from "./common/button";
+import * as React from 'react';
+import { useTheme } from 'next-themes';
+import clsx from 'clsx';
+import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react';
+import ButtonBase from './common/button';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -44,9 +44,9 @@ function SwitchButton({
     <ButtonBase
       aria-label={`${theme} theme`}
       className={clsx(
-        "!flex !size-6 items-center justify-center rounded-full !p-[3px] text-[--text-secondary] dark:text-[--dark-text-secondary]",
-        "data-[selected='true']:bg-[--surface-tertiary] data-[selected='true']:text-[--text-primary] dark:data-[selected='true']:bg-[--dark-surface-tertiary] dark:data-[selected='true']:text-[--dark-text-primary]",
-        "hover:bg-[--surface-secondary] hover:text-[--text-primary] dark:hover:bg-[--dark-surface-secondary] dark:hover:text-[--dark-text-primary]"
+        '!flex !size-6 items-center justify-center rounded-full !p-[3px] text-[--text-secondary] dark:text-[--dark-text-secondary]',
+        "data-[selected='true']:bg-muted data-[selected='true']:text-[--text-primary] dark:data-[selected='true']:bg-muted dark:data-[selected='true']:text-inherit",
+        'hover:bg-inherit text-muted-foreground dark:hover:text-inherit'
       )}
       data-selected={selectedTheme === theme}
       onClick={() => setTheme(theme)}
