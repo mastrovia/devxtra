@@ -6,7 +6,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ButtonStyled } from './common/button';
-import React, { cloneElement, MouseEvent, MouseEventHandler, ReactElement, ReactNode } from 'react';
+import React, { cloneElement, MouseEventHandler, ReactElement } from 'react';
 
 export default function JoinForm() {
   const formHook = useJoinForm();
@@ -83,7 +83,7 @@ export default function JoinForm() {
 }
 
 interface JoinFormTriggerProps {
-  children: ReactElement<{ onClick?: MouseEventHandler<any> }>;
+  children: ReactElement<{ onClick?: MouseEventHandler }>;
   disabled?: boolean;
 }
 
