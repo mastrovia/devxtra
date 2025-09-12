@@ -2,7 +2,7 @@ import CalloutSection from "./_sections/callout";
 import CalloutAnimatedSection from "./_sections/callout-animated";
 import CompaniesSection from "./_sections/companies";
 import FaqsSection from "./_sections/faq";
-import FeaturesBigImageSection from "./_sections/features-big-image";
+// import FeaturesBigImageSection from "./_sections/features-big-image";
 import FeaturesGridSection from "./_sections/features-grid";
 import FeaturesListSection from "./_sections/features-list";
 import FeaturesSideBySideSection from "./_sections/features-sidebyside";
@@ -17,7 +17,7 @@ export default function Home() {
       <FeaturesListSection />
       <FeaturesGridSection />
       <CalloutSection />
-      <FeaturesBigImageSection />
+      {/* <FeaturesBigImageSection /> */}
       <FeaturesSideBySideSection />
       <CalloutAnimatedSection />
       <Testimonials />
