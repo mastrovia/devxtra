@@ -49,7 +49,7 @@ export default function JoinForm() {
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl p-7 bg-accent flex flex-col gap-5 max-w-[400px]"
+        className="border rounded-2xl bg-accent flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         <h1 className="text-xl font-bold">
