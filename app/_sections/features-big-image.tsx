@@ -45,7 +45,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="flex flex-col gap-10 relative container mx-auto px-5" id={id}>
+    <section className="flex-col gap-10 relative container mx-auto px-5 hidden md:flex" id={id}>
       <Heading
         tag={featuresBigImage.heading.tag}
         title={featuresBigImage.heading.title}
@@ -64,14 +64,14 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
           </article>
         ))}
       </div>
-      {/* <Image
-        src={featuresBigImage.image.url}
+      <Image
+        src={'/images/poster.jpg'}
         height={600}
         width={1216}
         className="block rounded-xl border md:order-3 md:w-full"
         alt={featuresBigImage.image.alt}
-      /> */}
-      <iframe
+      />
+      {/* <iframe
         height={600}
         // width={1216}
         src="https://www.youtube.com/embed/idEAABFzpfg?si=3Hk0pvBSWT6ByU_x&amp;controls=0"
@@ -82,7 +82,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
         className="block rounded-xl border md:order-3 md:w-full"
         // referrerpolicy="strict-origin-when-cross-origin"
         // allowfullscreen
-      ></iframe>
+      ></iframe> */}
     </section>
   );
 }

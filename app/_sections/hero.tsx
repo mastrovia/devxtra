@@ -24,20 +24,20 @@ const hero = {
 export default function HeroSection({ id }: { id?: string }) {
   return (
     <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10" id={id}>
-      <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-border">
+      <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)]">
         {/* Decorations */}
-        <div className="col-span-1 flex h-full items-center justify-center" />
+        {/* <div className="col-span-1 flex h-full items-center justify-center" />
         <div className="col-span-1 flex h-full items-center justify-center border-x border-border" />
-        <div className="col-span-1 flex h-full items-center justify-center" />
+        <div className="col-span-1 flex h-full items-center justify-center" /> */}
       </div>
       {/* --- */}
       <figure className="pointer-events-none absolute -bottom-[70%] left-1/2 z-0 block aspect-square w-[520px] -translate-x-1/2 rounded-full bg-primary/50 blur-[200px]" />
       <figure className="pointer-events-none absolute left-[4vw] top-[64px] z-20 hidden aspect-square w-[32vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
       <figure className="pointer-events-none absolute bottom-[-50px] right-[7vw] z-20 hidden aspect-square w-[30vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
 
-      <div className="relative z-10 flex flex-col divide-y divide-[--border] pt-[35px] dark:divide-border">
+      <div className="relative z-10 flex flex-col divide-y pt-[35px]">
         <div className="flex flex-col items-center justify-end">
-          <div className="flex items-center gap-2 !border !border-b-0 border-border px-4 py-2">
+          <div className="flex items-center gap-2 px-4 py-2">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
               {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
                 <Avatar key={name}>
@@ -68,10 +68,10 @@ export default function HeroSection({ id }: { id?: string }) {
                     href={action.href}
                     classnamefora="w-full"
                     className={cn(
-                      'rounded-none py-4',
+                      'py-4',
                       action.type == 'primary'
                         ? 'flex w-full justify-center'
-                        : 'justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-border !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
+                        : 'justify-center max-w-sm:!border-x-0 flex w-full !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
                     )}
                   >
                     {action.label}
