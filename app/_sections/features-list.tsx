@@ -21,39 +21,39 @@ export default function FeaturesListSection({ id }: { id?: string }) {
         alt: 'Real-time Messaging Feature',
       },
     },
-    {
-      title: 'Teamwork That Builds Careers',
-      description:
-        "Learning at DevXtra is not a solo journey. We help you collaborate with like-minded peers on real coding projects, preparing you for today's team-driven tech industry.",
-      characteristics: {
-        items: [
-          { title: 'Work in dynamic teams that mirror real-world companies' },
-          { title: 'Collaborate and accelerate your learning process' },
-          { title: 'Become a team player employers value' },
-        ],
-      },
-      image: {
-        dark: 'https://assets.basehub.com/fa068a12/LjqmKEgcHqPTWDXCrY33M/features-streamlined-team-communication-integrated-task-management-(dark-mode)3x.jpg?format=auto&quality=100',
-        alt: 'Real-time Messaging Feature',
-      },
-    },
+    // {
+    //   title: 'Teamwork That Builds Careers',
+    //   description:
+    //     "Learning at DevXtra is not a solo journey. We help you collaborate with like-minded peers on real coding projects, preparing you for today's team-driven tech industry.",
+    //   characteristics: {
+    //     items: [
+    //       { title: 'Work in dynamic teams that mirror real-world companies' },
+    //       { title: 'Collaborate and accelerate your learning process' },
+    //       { title: 'Become a team player employers value' },
+    //     ],
+    //   },
+    //   image: {
+    //     dark: 'https://assets.basehub.com/fa068a12/LjqmKEgcHqPTWDXCrY33M/features-streamlined-team-communication-integrated-task-management-(dark-mode)3x.jpg?format=auto&quality=100',
+    //     alt: 'Real-time Messaging Feature',
+    //   },
+    // },
 
-    {
-      title: 'Startup-Ready Skills for Future Leaders',
-      description:
-        'At DevXtra, we don’t just prepare you for jobs—we also help you bring your startup ideas to life. From your first concept to a working project, we guide you step by step and support you in reaching real users.',
-      characteristics: {
-        items: [
-          { title: 'Turn your idea into a working project with the help of mentors' },
-          { title: 'Test your project with real people to see what works best' },
-          { title: 'Learn how to grow your idea and take it to the next level' },
-        ],
-      },
-      image: {
-        dark: 'https://assets.basehub.com/fa068a12/rAkAivkkRD3eW9FOF9wmN/features-streamlined-team-communication-secure-communication-channels-(dark-mode)3x.jpg?format=auto&quality=100',
-        alt: 'Real-time Messaging Feature',
-      },
-    },
+    // {
+    //   title: 'Startup-Ready Skills for Future Leaders',
+    //   description:
+    //     'At DevXtra, we don’t just prepare you for jobs—we also help you bring your startup ideas to life. From your first concept to a working project, we guide you step by step and support you in reaching real users.',
+    //   characteristics: {
+    //     items: [
+    //       { title: 'Turn your idea into a working project with the help of mentors' },
+    //       { title: 'Test your project with real people to see what works best' },
+    //       { title: 'Learn how to grow your idea and take it to the next level' },
+    //     ],
+    //   },
+    //   image: {
+    //     dark: 'https://assets.basehub.com/fa068a12/rAkAivkkRD3eW9FOF9wmN/features-streamlined-team-communication-secure-communication-channels-(dark-mode)3x.jpg?format=auto&quality=100',
+    //     alt: 'Real-time Messaging Feature',
+    //   },
+    // },
   ];
 
   return (
