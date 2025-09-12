@@ -62,7 +62,7 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-2 grid-rows-[auto_auto_auto] place-items-start items-center gap-y-7 px-6 sm:grid-cols-[1fr_auto_1fr] sm:grid-rows-2 sm:gap-x-3 sm:gap-y-16">
         <ButtonBase href="/">
           <h1 className="text-4xl font-semibold">
-            Dev<span className="text-green-500">X</span>tra
+            Dev<span className="text-primary">X</span>tra
           </h1>
         </ButtonBase>
         <nav className="col-start-1 row-start-2 flex flex-col gap-x-2 gap-y-3 self-center sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:flex-row sm:items-center sm:place-self-center md:gap-x-4 lg:gap-x-8">

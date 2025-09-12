@@ -109,7 +109,7 @@ export default function FeaturesSideBySideSection() {
                 <h5 className="text-lg font-medium">{title}</h5>
                 <ul className="list-disc pl-5 text-[--text-tertiary] dark:text-[--dark-text-tertiary]">
                   {subtitle.map((point: string, index: number) => (
-                    <li key={index} className='list-none'> - {point}</li>
+                    <li key={index} className='text-muted-foreground'> {point}</li>
                   ))}
                 </ul>
               </div>

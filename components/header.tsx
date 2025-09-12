@@ -82,7 +82,7 @@ export const Header = () => {
         <div className="container mx-auto grid w-full grid-cols-[min-content_1fr_min-content] place-items-center content-center items-center px-6 *:first:justify-self-start">
           <ButtonBase href="/">
             <h1 className="text-2xl font-semibold">
-              Dev<span className="text-green-500">X</span>tra
+              Dev<span className="text-primary">X</span>tra
             </h1>
           </ButtonBase>
           <DesktopMenu />

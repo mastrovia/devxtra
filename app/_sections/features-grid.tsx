@@ -93,7 +93,7 @@ export default function FeaturesGridSection() {
             </figure>
             <div className="flex flex-col items-start gap-1">
               <h5 className="text-lg font-medium">{title}</h5>
-              <p className="text-pretty text-[--text-secondary] dark:text-[--dark-text-secondary]">
+              <p className="text-pretty text-muted-foreground dark:text-[--dark-text-secondary]">
                 {description}
               </p>
             </div>

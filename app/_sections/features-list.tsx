@@ -63,7 +63,7 @@ export default function FeaturesListSection() {
         title="Learn, Build, and Grow with DevXtra"
         subtitle="At DevXtra, learning goes beyond theory. You'll earn while working on real client projects, collaborate with peers in team settings, and even turn your own ideas into working projects with mentor support. From coding skills to startup readiness, we prepare you for the real world of technology"
       />
-      <div className="flex flex-col gap-6 items-center">
+      <div className="flex flex-col gap-6 items-center md:mt-6">
         {features.map(({ image, ...item }) => (
           <article
             key={item.title}
