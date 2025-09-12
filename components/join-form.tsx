@@ -67,17 +67,6 @@ export default function JoinForm() {
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="name-input" className="font-medium">
-              Email
-            </Label>
-            <Input
-              value={data.email}
-              onChange={(e) => setData((pre) => ({ ...pre, email: e.target.value }))}
-              id="name-input"
-              placeholder="abc@example.com"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-medium">
               Phone number
             </Label>
             <Input
@@ -127,7 +116,7 @@ export default function JoinForm() {
             onClick={() => submitFrom()}
             type="button"
             className="flex items-center justify-center h-12"
-            disabled={loading}
+            disabled={loading || !data.phone}
           >
             {loading ? <div className="loader" /> : 'Submit'}
           </ButtonStyled>
