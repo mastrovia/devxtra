@@ -1,11 +1,13 @@
-"use client";
+'use client';
 
-import { ButtonStyled } from "@/components/common/button";
-import { Heading } from "@/components/common/heading";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import Image from "next/image";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { ButtonStyled } from '@/components/common/button';
+import { Heading } from '@/components/common/heading';
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
+import Image from 'next/image';
+
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 interface Author {
   _id: string;
@@ -58,7 +60,7 @@ export const TestimonialCard = ({ quote, author }: TestimonialData) => {
           <div className="pr-5">
             {author.company.image ? (
               <Image
-                alt={author.company.image.alt ?? (author.company.title || "Image")}
+                alt={author.company.image.alt ?? (author.company.title || 'Image')}
                 className="w-12 md:w-16"
                 height={48}
                 src={author.company.image.url}
@@ -76,84 +78,84 @@ export default function Testimonials() {
   const data = {
     quotes: [
       {
-        _id: "24jShk8-3pDG4uhSWpYnt",
+        _id: '24jShk8-3pDG4uhSWpYnt',
         quote:
           "Our team's productivity soared with this messaging tool. Its simplicity fosters quick decision-making and seamless collaboration, essential for our fast-paced product development.",
         author: {
-          _id: "PKVDi1WImva5U5EgqIAHw",
-          title: "Emily Rodriguez",
+          _id: 'PKVDi1WImva5U5EgqIAHw',
+          title: 'Emily Rodriguez',
           image: {
-            url: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png",
+            url: 'https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png',
             alt: null,
           },
-          role: "Product Developer",
+          role: 'Product Developer',
           company: {
-            title: "PinPoint",
+            title: 'PinPoint',
             image: {
-              url: "https://assets.basehub.com/fa068a12/skqkUDVY7YAfOIaQqRUDK/logocompany-4.svg",
+              url: 'https://assets.basehub.com/fa068a12/skqkUDVY7YAfOIaQqRUDK/logocompany-4.svg',
               alt: null,
             },
           },
         },
       },
       {
-        _id: "jHfupEXXcjHgDGeUllSet",
+        _id: 'jHfupEXXcjHgDGeUllSet',
         quote:
           "With this tool, our team's workflow has become more efficient and organized. We spend less time navigating complex interfaces and more time focusing on what matters: delivering quality products to our customers.",
         author: {
-          _id: "5ceoRSGg0b2HjWet7iAm2",
-          title: "David Patel",
+          _id: '5ceoRSGg0b2HjWet7iAm2',
+          title: 'David Patel',
           image: {
-            url: "https://assets.basehub.com/fa068a12/QK36F1HicnSJMvil7B8xv/13.png",
+            url: 'https://assets.basehub.com/fa068a12/QK36F1HicnSJMvil7B8xv/13.png',
             alt: null,
           },
-          role: "Marketing Director",
+          role: 'Marketing Director',
           company: {
-            title: "Hues",
+            title: 'Hues',
             image: {
-              url: "https://assets.basehub.com/fa068a12/znAQM6z290JP21p-qyZXG/logocompany.svg",
+              url: 'https://assets.basehub.com/fa068a12/znAQM6z290JP21p-qyZXG/logocompany.svg',
               alt: null,
             },
           },
         },
       },
       {
-        _id: "0sTF5bVO0N0nZEZd7pzow",
+        _id: '0sTF5bVO0N0nZEZd7pzow',
         quote:
           "We've seen remarkable results since integrating AI solutions from this company into our workflows.Their computer vision technology has enabled us to automate tasks and extract valuable insights from visual data.",
         author: {
-          _id: "Vxo_NPdrUf0Yzob_Im3_d",
-          title: "Rachel Kim",
+          _id: 'Vxo_NPdrUf0Yzob_Im3_d',
+          title: 'Rachel Kim',
           image: {
-            url: "https://assets.basehub.com/fa068a12/szrnRJ0e3RBi5wHKzydlI/04.png",
+            url: 'https://assets.basehub.com/fa068a12/szrnRJ0e3RBi5wHKzydlI/04.png',
             alt: null,
           },
-          role: "HR Manager",
+          role: 'HR Manager',
           company: {
-            title: "Greenish",
+            title: 'Greenish',
             image: {
-              url: "https://assets.basehub.com/fa068a12/l59ewb-4QkOUj6-Wjiqsa/logocompany-1.svg",
+              url: 'https://assets.basehub.com/fa068a12/l59ewb-4QkOUj6-Wjiqsa/logocompany-1.svg',
               alt: null,
             },
           },
         },
       },
       {
-        _id: "ygwvQuSQo021xp0gcr4ia",
+        _id: 'ygwvQuSQo021xp0gcr4ia',
         quote:
           "We've seen remarkable results since integrating AI solutions from this company into our workflows.Their computer vision technology has enabled us to automate tasks and extract valuable insights from visual data.",
         author: {
-          _id: "5ceoRSGg0b2HjWet7iAm2",
-          _title: "David Patel",
+          _id: '5ceoRSGg0b2HjWet7iAm2',
+          _title: 'David Patel',
           image: {
-            url: "https://assets.basehub.com/fa068a12/QK36F1HicnSJMvil7B8xv/13.png",
+            url: 'https://assets.basehub.com/fa068a12/QK36F1HicnSJMvil7B8xv/13.png',
             alt: null,
           },
-          role: "Marketing Director",
+          role: 'Marketing Director',
           company: {
-            _title: "Hues",
+            _title: 'Hues',
             image: {
-              url: "https://assets.basehub.com/fa068a12/znAQM6z290JP21p-qyZXG/logocompany.svg",
+              url: 'https://assets.basehub.com/fa068a12/znAQM6z290JP21p-qyZXG/logocompany.svg',
               alt: null,
             },
           },
@@ -162,7 +164,25 @@ export default function Testimonials() {
     ],
   };
 
-  let swiperInstance: SwiperClass;
+  const [api, setApi] = useState<CarouselApi>();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    // Initial set
+    setSelectedIndex(api.selectedScrollSnap());
+
+    const onSelect = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+    };
+
+    api.on('select', onSelect);
+
+    return () => {
+      api.off('select', onSelect);
+    };
+  }, [api]);
 
   return (
     <section className="relative overflow-clip flex gap-1 container mx-auto px-5">
@@ -172,14 +192,14 @@ export default function Testimonials() {
           {/* Heading */}
           <div className="hidden gap-4 sm:flex">
             <ButtonStyled
-              onClick={() => swiperInstance?.slidePrev()}
+              onClick={() => api?.scrollPrev()}
               aria-label="Previous testimonial"
               className="!h-auto rounded-full px-4 py-2"
             >
               <ArrowLeftIcon className="size-6" />
             </ButtonStyled>
             <ButtonStyled
-              onClick={() => swiperInstance?.slideNext()}
+              onClick={() => api?.scrollNext()}
               aria-label="Next testimonial"
               className="!h-auto rounded-full !px-4 !py-2"
             >
@@ -188,42 +208,43 @@ export default function Testimonials() {
           </div>
         </div>
         <div className="relative">
-          <div className="relative flex h-full w-full gap-10 md:gap-0">
-            <Swiper
-              loop
-              slidesPerView={1}
-              scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => (swiperInstance = swiper)}
-              resistance={true}
-            >
-              {data.quotes.map((data) => {
-                return (
-                  <SwiperSlide key={data._id} className="max-w-[700px]">
-                    <TestimonialCard {...data} />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+          <div className="relative flex w-full gap-10 md:gap-0">
+            <Carousel setApi={setApi}>
+              <CarouselContent>
+                {data.quotes.map((data) => {
+                  return (
+                    <CarouselItem
+                      key={data._id}
+                      className="max-w-[calc(100vw-1.25rem)] sm:max-w-[500px] md:max-w-[700px]"
+                    >
+                      <TestimonialCard {...data} />
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
           </div>
           <div className="mt-4 flex w-full justify-center gap-2 md:hidden">
-            {/* {scrollSnaps.map((snap, index) => (
-              <button
-                key={snap}
-                aria-label={`Testimonial ${String(index + 1)}`}
-                className={clsx(
-                  "group flex items-center justify-center rounded-full p-1",
-                  index === selectedIndex ? "bg-[--accent-500-50]" : ""
-                )}
-                onClick={() => onDotButtonClick(index)}
-              >
-                <span
-                  className={clsx(
-                    "size-2 rounded-full",
-                    index === selectedIndex ? "bg-[--accent-500]" : "bg-[--surface-tertiary] dark:bg-[--dark-surface-secondary]"
+            {api?.scrollSnapList()?.map((snap, index) => {
+              return (
+                <button
+                  key={snap}
+                  aria-label={`Testimonial ${String(index + 1)}`}
+                  className={cn(
+                    'group flex items-center justify-center rounded-full p-1 bg-muted',
+                    index === selectedIndex ? 'bg-primary/50' : ''
                   )}
-                />
-              </button>
-            ))} */}
+                  onClick={() => api.scrollTo(index)}
+                >
+                  <span
+                    className={cn(
+                      'size-2 rounded-full',
+                      index === selectedIndex ? 'bg-primary/100' : 'bg-accent'
+                    )}
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
