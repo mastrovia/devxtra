@@ -35,7 +35,7 @@ export const ButtonStyled: FC<ButtonProps & { variant?: 'default' | 'glass' }> =
     <ButtonBase
       {...props}
       className={cn(
-        'inline-block bg-primary px-4 py-2 font-bold text-accent disabled:text-muted transition-colors disabled:cursor-not-allowed disabled:bg-primary/50 rounded-md whitespace-nowrap',
+        'inline-block bg-primary px-4 py-2 font-bold text-accent disabled:text-muted transition-colors disabled:cursor-not-allowed disabled:bg-primary/50 rounded-sm whitespace-nowrap',
         variant == 'glass' ? 'bg-primary/10 text-primary border backdrop-blur-2xl' : '',
         props.className
       )}

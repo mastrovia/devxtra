@@ -3,7 +3,7 @@ import { Heading } from '@/components/common/heading';
 import { JoinFormTrigger } from '@/components/join-form';
 import Image from 'next/image';
 
-export default function FeaturesGridSection() {
+export default function FeaturesGridSection({ id }: { id?: string }) {
   const featuresGridData = {
     actions: [
       {
@@ -77,7 +77,7 @@ export default function FeaturesGridSection() {
   };
 
   return (
-    <section className="container mx-auto px-6 flex flex-col gap-10">
+    <section className="container mx-auto px-6 flex flex-col gap-10" id={id}>
       <Heading
         tag="What You’ll Learn"
         title="Level up your coding journey with devxtra"
@@ -104,9 +104,7 @@ export default function FeaturesGridSection() {
       <div className="flex items-center justify-center gap-3 md:order-3">
         {featuresGridData.actions?.map((action) => (
           <JoinFormTrigger key={action._id}>
-            <ButtonStyled className="rounded-xl" key={action._id}>
-              {action.label}
-            </ButtonStyled>
+            <ButtonStyled>{action.label}</ButtonStyled>
           </JoinFormTrigger>
         ))}
       </div>

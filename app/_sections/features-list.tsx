@@ -2,7 +2,7 @@ import { Heading } from '@/components/common/heading';
 import { CheckIcon } from 'lucide-react';
 import Image from 'next/image';
 
-export default function FeaturesListSection() {
+export default function FeaturesListSection({ id }: { id?: string }) {
   const features = [
     {
       title: 'Earn While You Learn with DevXtra',
@@ -57,7 +57,7 @@ export default function FeaturesListSection() {
   ];
 
   return (
-    <section className="container mx-auto px-6 flex flex-col gap-10">
+    <section className="container mx-auto px-6 flex flex-col gap-10" id={id}>
       <Heading
         tag="Our Promise"
         title="Learn, Build, and Grow with DevXtra"

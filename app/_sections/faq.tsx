@@ -1,6 +1,6 @@
 import { Heading } from '@/components/common/heading';
 
-export default function FaqsSection() {
+export default function FaqsSection({ id }: { id?: string }) {
   const data = {
     title: 'Frequently asked questions',
     subtitle: 'Advice and answers from our team.',
@@ -18,7 +18,8 @@ export default function FaqsSection() {
       },
       {
         title: 'Do I need prior coding experience to join the course?',
-        answer: 'No prior experience is required. DevXtra’s  course structure starts with foundations like backend, database, and frontend development. Each phase builds your skills progressively, preparing you for mobile apps, enterprise projects, and real client work.',
+        answer:
+          'No prior experience is required. DevXtra’s  course structure starts with foundations like backend, database, and frontend development. Each phase builds your skills progressively, preparing you for mobile apps, enterprise projects, and real client work.',
       },
       {
         title: 'Will I learn AI and modern tools in this course?',
@@ -39,7 +40,7 @@ export default function FaqsSection() {
   };
 
   return (
-    <section className="container mx-auto px-5 flex flex-col gap-10">
+    <section className="container mx-auto px-5 flex flex-col gap-10" id={id}>
       <Heading tag={data.tag} title={data.title} subtitle={data.subtitle} />
       <ul className="mx-auto flex w-full grid-cols-3 flex-col place-content-start items-start gap-8 self-stretch lg:grid lg:gap-14 lg:px-24">
         {data.questions.map((question) => (

@@ -16,14 +16,14 @@ const hero = {
     ],
   },
   actions: [
-    { _id: '2', label: 'Learn More', href: '/about', type: 'secondary' },
-    { _id: '1', label: 'Transform your career today', href: '/signup', type: 'primary' },
+    { _id: '2', label: 'Learn More', href: '#what-you-will-learn', type: 'secondary' },
+    { _id: '1', label: 'Transform your career today', href: '#', type: 'primary' },
   ],
 };
 
-export default function HeroSection() {
+export default function HeroSection({ id }: { id?: string }) {
   return (
-    <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10">
+    <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10" id={id}>
       <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-border">
         {/* Decorations */}
         <div className="col-span-1 flex h-full items-center justify-center" />
@@ -65,7 +65,7 @@ export default function HeroSection() {
               return (
                 <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
                   <ButtonStyled
-                    // href={action.href}
+                    href={action.href}
                     classnamefora="w-full"
                     className={cn(
                       'rounded-none py-4',

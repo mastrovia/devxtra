@@ -1,7 +1,7 @@
 import { Heading } from '@/components/common/heading';
 import Image from 'next/image';
 
-export default function FeaturesBigImageSection() {
+export default function FeaturesBigImageSection({ id }: { id?: string }) {
   const featuresBigImage = {
     heading: {
       tag: 'Learn. Build. Succeed',
@@ -45,7 +45,7 @@ export default function FeaturesBigImageSection() {
   };
 
   return (
-    <section className="flex flex-col gap-10 relative container mx-auto px-5">
+    <section className="flex flex-col gap-10 relative container mx-auto px-5" id={id}>
       <Heading
         tag={featuresBigImage.heading.tag}
         title={featuresBigImage.heading.title}

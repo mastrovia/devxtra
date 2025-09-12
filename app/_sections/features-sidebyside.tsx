@@ -3,7 +3,7 @@ import { Heading } from '@/components/common/heading';
 import { JoinFormTrigger } from '@/components/join-form';
 import Image from 'next/image';
 
-export default function FeaturesSideBySideSection() {
+export default function FeaturesSideBySideSection({ id }: { id?: string }) {
   const data = {
     heading: {
       tag: 'Course Journey',
@@ -68,7 +68,10 @@ export default function FeaturesSideBySideSection() {
   };
 
   return (
-    <section className="relative lg:container lg:mx-auto lg:!flex-row lg:gap-0 lg:p-28 flex flex-col gap-5">
+    <section
+      className="relative lg:container lg:mx-auto lg:!flex-row lg:gap-0 lg:p-28 flex flex-col gap-5"
+      id={id}
+    >
       <div className="relative top-0 shrink self-stretch px-6 lg:w-1/2 lg:pl-0 lg:pr-12 xl:pr-20">
         <div className="sticky bottom-0 top-[calc(var(--header-height)+40px)] flex flex-col gap-10">
           <Heading

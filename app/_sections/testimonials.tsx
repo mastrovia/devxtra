@@ -74,7 +74,7 @@ export const TestimonialCard = ({ quote, author }: TestimonialData) => {
   );
 };
 
-export default function Testimonials() {
+export default function Testimonials({ id }: { id?: string }) {
   const data = {
     quotes: [
       {
@@ -185,7 +185,7 @@ export default function Testimonials() {
   }, [api]);
 
   return (
-    <section className="relative overflow-clip flex gap-1 container mx-auto px-5">
+    <section className="relative overflow-clip flex gap-1 container mx-auto px-5" id={id}>
       <div className="flex w-full flex-col gap-14">
         <div className="flex justify-between">
           <Heading title="What our clients say" />

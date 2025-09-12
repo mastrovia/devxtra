@@ -190,3 +190,7 @@
     background: var(--color-primary);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

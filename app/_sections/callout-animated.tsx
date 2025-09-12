@@ -1,18 +1,18 @@
 import { ButtonStyled } from '@/components/common/button';
 import { JoinFormTrigger } from '@/components/join-form';
 
-export default function CalloutAnimatedSection() {
+export default function CalloutAnimatedSection({ id }: { id?: string }) {
   const data = {
     title: 'Advance Your Coding Career',
     subtitle: 'Gain real-world experience, work on client projects, and build skills that employers value.',
     actions: [
-      { _id: '1', label: 'Join Now', href: '/signup', type: 'primary' },
-      { _id: '2', label: 'Know More', href: '/about', type: 'secondary' },
+      { _id: '1', label: 'Join Now', href: '', type: 'primary' },
+      { _id: '2', label: 'Know More', href: '#faq', type: 'secondary' },
     ],
   };
 
   return (
-    <section className="container mx-auto px-4">
+    <section className="container mx-auto px-4" id={id}>
       <article className="relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border p-6 dark:border-[--dark-border] dark:bg-[--dark-surface-secondary]">
         {/* Lines and bg  */}
         {/* <div className="bg-linear-to-l absolute left-0 top-10 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />
