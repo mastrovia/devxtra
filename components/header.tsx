@@ -20,25 +20,25 @@ interface NavigationMenuListItem {
 export const DesktopMenu = () => {
   const desktopMenu: { links: NavigationMenuListItem[] } = {
     links: [
-      { _id: '1', title: 'Home', href: '/' },
-      {
-        _id: '3',
-        title: 'Services',
-        href: '/services',
-        subLinks: [
-          {
-            _id: '31',
-            title: 'Consulting',
-            href: '/services/consulting',
-            description: 'Expert advice to elevate your projects.',
-          },
-          { _id: '32', title: 'Development', href: '/services/development' },
-          { _id: '33', title: 'Design', href: '/services/design' },
-        ],
-      },
-      { _id: '2', title: 'About', href: '/about' },
-      { _id: '4', title: 'Blog', href: '/blog' },
-      { _id: '5', title: 'Contact', href: '/contact' },
+      // { _id: '1', title: 'Home', href: '/' },
+      // {
+      //   _id: '3',
+      //   title: 'Services',
+      //   href: '/services',
+      //   subLinks: [
+      //     {
+      //       _id: '31',
+      //       title: 'Consulting',
+      //       href: '/services/consulting',
+      //       description: 'Expert advice to elevate your projects.',
+      //     },
+      //     { _id: '32', title: 'Development', href: '/services/development' },
+      //     { _id: '33', title: 'Design', href: '/services/design' },
+      //   ],
+      // },
+      // { _id: '2', title: 'About', href: '/about' },
+      // { _id: '4', title: 'Blog', href: '/blog' },
+      // { _id: '5', title: 'Contact', href: '/contact' },
     ],
   };
 
