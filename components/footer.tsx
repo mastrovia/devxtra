@@ -1,57 +1,62 @@
-import Image from "next/image";
-import ButtonBase from "./common/button";
-import { ThemeSwitcher } from "./theme-switcher";
+import Image from 'next/image';
+import ButtonBase from './common/button';
+import { ThemeSwitcher } from './theme-switcher';
 
 export default function Footer() {
   const footer = {
-    copyright: "@ 2025 Acme Corp. All rights reserved.",
+    copyright: 'Aryabhangy Grande, 14/305, Muttom, Aluva, Kochi, Kerala',
+    contacts: [
+      'Phone: +91 62829 14958',
+      'Email: office@devxtra.com',
+      'Address: Aryabhangy Grande, 14/305, Muttom, Aluva, Kochi, Kerala',
+    ],
     socialLinks: [
       {
-        title: "GitHub",
+        title: 'GitHub',
         icon: {
-          url: "https://assets.basehub.com/fa068a12/MB9Q8hqyfl6YLmTm_7FLP/github.svg",
+          url: 'https://assets.basehub.com/fa068a12/MB9Q8hqyfl6YLmTm_7FLP/github.svg',
         },
-        url: "https://github.com/basehub-ai/nextjs-marketing-website",
+        url: 'https://github.com/devxtra-community',
       },
-      {
-        title: "X",
-        icon: {
-          url: "https://assets.basehub.com/fa068a12/qNXY_fiHeF2SPgCT4Gd5-/x.svg",
-        },
-        url: "https://twitter.com/basehub_ai",
-      },
-      {
-        title: "Discord",
-        icon: {
-          url: "https://assets.basehub.com/fa068a12/kxc4JPWCFEVaKtvd3k9IS/discord.svg",
-        },
-        url: "https://discord.gg/6Gk4qfuqHK",
-      },
-      {
-        title: "Linkedin",
-        icon: {
-          url: "https://assets.basehub.com/fa068a12/AwnNnviiEi-teGwfITXel/in.svg",
-        },
-        url: "https://www.linkedin.com/company/basehubai/",
-      },
+      //   {
+      //     title: 'X',
+      //     icon: {
+      //       url: 'https://assets.basehub.com/fa068a12/qNXY_fiHeF2SPgCT4Gd5-/x.svg',
+      //     },
+      //     url: 'https://twitter.com/',
+      //   },
+      //   {
+      //     title: 'Discord',
+      //     icon: {
+      //       url: 'https://assets.basehub.com/fa068a12/kxc4JPWCFEVaKtvd3k9IS/discord.svg',
+      //     },
+      //     url: 'https://discord.gg/',
+      //   },
+      //   {
+      //     title: 'Linkedin',
+      //     icon: {
+      //       url: 'https://assets.basehub.com/fa068a12/AwnNnviiEi-teGwfITXel/in.svg',
+      //     },
+      //     url: 'https://www.linkedin.com/',
+      //   },
     ],
     navbar: {
       items: [
         {
-          title: "Docs",
-          url: "https://docs.basehub.com",
+          title: 'Our Promise',
+          url: '#our-promise',
         },
         {
-          title: "Help",
-          url: "https://help.basehub.com",
+          title: "What you'll learn",
+          url: '#what-you-will-learn',
         },
         {
-          title: "Privacy Policy",
-          url: "/privacy-policy",
+          title: 'Course Journey',
+          url: '#course-journey',
         },
         {
-          title: "Terms",
-          url: "/terms",
+          title: 'FAQs',
+          url: '#faq',
         },
       ],
     },
@@ -67,7 +72,7 @@ export default function Footer() {
         </ButtonBase>
         <nav className="col-start-1 row-start-2 flex flex-col gap-x-2 gap-y-3 self-center sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:flex-row sm:items-center sm:place-self-center md:gap-x-4 lg:gap-x-8">
           {footer.navbar.items.map(({ title, url }) => (
-            <ButtonBase key={title} href={url ?? "#"} className="opacity-50 hover:opacity-100">
+            <ButtonBase key={title} href={url ?? '#'} className="opacity-50 hover:opacity-100">
               {title}
             </ButtonBase>
           ))}
@@ -77,7 +82,11 @@ export default function Footer() {
           <ThemeSwitcher />
         </div>
 
-        <p className="col-span-2 text-pretty text-sm text-muted-foreground sm:col-span-1">{footer.copyright}</p>
+        <ul className="col-span-2 text-pretty text-sm text-muted-foreground sm:col-span-1">
+          {footer.contacts.map((e) => {
+            return <li key={e}>{e}</li>;
+          })}
+        </ul>
 
         <ul className="col-span-2 col-start-1 row-start-3 flex w-full items-center gap-x-3.5 gap-y-4 sm:col-span-1 sm:col-start-3 sm:row-start-2 sm:w-auto sm:flex-wrap sm:justify-self-end">
           {footer.socialLinks.map((link) => {
@@ -87,7 +96,7 @@ export default function Footer() {
                   className="block aspect-square p-2 hover:brightness-75 dark:brightness-50 dark:hover:brightness-75"
                   href={link.url}
                 >
-                  <Image alt={link.title} height={24} src={link.icon?.url ?? ""} width={24} />
+                  <Image alt={link.title} height={24} src={link.icon?.url ?? ''} width={24} />
                 </ButtonBase>
               </li>
             );

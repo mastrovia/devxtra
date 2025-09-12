@@ -52,12 +52,10 @@ export default function JoinForm() {
         className="border rounded-2xl bg-accent flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
-        <h1 className="text-xl font-bold">
-          Talk to our career experts to help you find a suitable career path
-        </h1>
+        <h1 className="text-xl font-bold">Transform your career with DevXtra</h1>
         <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
           <div className="flex flex-col gap-3">
-            <Label htmlFor="name-input" className="font-light">
+            <Label htmlFor="name-input" className="font-medium">
               Name
             </Label>
             <Input
@@ -68,7 +66,7 @@ export default function JoinForm() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-light">
+            <Label htmlFor="name-input" className="font-medium">
               Email
             </Label>
             <Input
@@ -79,7 +77,7 @@ export default function JoinForm() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-light">
+            <Label htmlFor="name-input" className="font-medium">
               Phone number
             </Label>
             <Input
@@ -90,7 +88,7 @@ export default function JoinForm() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-light">
+            <Label htmlFor="name-input" className="font-medium">
               What defines you the most ?
             </Label>
             <Select
@@ -109,7 +107,7 @@ export default function JoinForm() {
             </Select>
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-light">
+            <Label htmlFor="name-input" className="font-medium">
               Are you okay for offline course ?
             </Label>
             <Select

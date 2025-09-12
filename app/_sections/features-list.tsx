@@ -16,7 +16,7 @@ export default function FeaturesListSection({ id }: { id?: string }) {
         ],
       },
       image: {
-        dark: 'https://assets.basehub.com/fa068a12/qZeFxPJWNB7UQdwUzjX3e/features-streamlined-team-communication-real-time-messaging-(light-mode)3x.jpg?format=auto&quality=100',
+        dark: '/images/earn-while-you-learn.jpg',
         // "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100"
         alt: 'Real-time Messaging Feature',
       },
