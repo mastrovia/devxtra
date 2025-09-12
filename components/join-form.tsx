@@ -6,10 +6,39 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ButtonStyled } from './common/button';
-import React, { cloneElement, MouseEventHandler, ReactElement } from 'react';
+import React, { cloneElement, MouseEventHandler, ReactElement, useState } from 'react';
 
 export default function JoinForm() {
   const formHook = useJoinForm();
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    currentCareerStatus: '',
+    okForOffline: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const submitFrom = async () => {
+    try {
+      setLoading(true);
+      // const response =
+      await fetch(process.env.NEXT_PUBLIC_APP_SCRYPT_URL as string, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(data),
+      });
+      // console.log(response, await response.json());
+      formHook.setOpen(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
@@ -26,30 +55,48 @@ export default function JoinForm() {
         <h1 className="text-xl font-bold">
           Talk to our career experts to help you find a suitable career path
         </h1>
-        <form className="flex flex-col gap-5" action="">
+        <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
           <div className="flex flex-col gap-3">
             <Label htmlFor="name-input" className="font-light">
               Name
             </Label>
-            <Input id="name-input" placeholder="John doe" />
+            <Input
+              value={data.name}
+              onChange={(e) => setData((pre) => ({ ...pre, name: e.target.value }))}
+              id="name-input"
+              placeholder="John doe"
+            />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="name-input" className="font-light">
               Email
             </Label>
-            <Input id="name-input" placeholder="abc@example.com" />
+            <Input
+              value={data.email}
+              onChange={(e) => setData((pre) => ({ ...pre, email: e.target.value }))}
+              id="name-input"
+              placeholder="abc@example.com"
+            />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="name-input" className="font-light">
               Phone number
             </Label>
-            <Input id="name-input" placeholder="78******22" />
+            <Input
+              value={data.phone}
+              onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
+              id="name-input"
+              placeholder="78******22"
+            />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="name-input" className="font-light">
               What defines you the most ?
             </Label>
-            <Select>
+            <Select
+              value={data.currentCareerStatus}
+              onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}
+            >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Currently studying ?" />
               </SelectTrigger>
@@ -65,7 +112,10 @@ export default function JoinForm() {
             <Label htmlFor="name-input" className="font-light">
               Are you okay for offline course ?
             </Label>
-            <Select>
+            <Select
+              value={data.okForOffline}
+              onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}
+            >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Are you ?" />
               </SelectTrigger>
@@ -75,7 +125,14 @@ export default function JoinForm() {
               </SelectContent>
             </Select>
           </div>
-          <ButtonStyled>Submit</ButtonStyled>
+          <ButtonStyled
+            onClick={() => submitFrom()}
+            type="button"
+            className="flex items-center justify-center h-12"
+            disabled={loading}
+          >
+            {loading ? <div className="loader" /> : 'Submit'}
+          </ButtonStyled>
         </form>
       </div>
     </section>
