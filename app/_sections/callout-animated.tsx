@@ -1,12 +1,13 @@
-import { ButtonStyled } from "@/components/common/button";
+import { ButtonStyled } from '@/components/common/button';
+import { JoinFormTrigger } from '@/components/join-form';
 
 export default function CalloutAnimatedSection() {
   const data = {
-    title: "Advance Your Coding Career",
-    subtitle: "Gain real-world experience, work on client projects, and build skills that employers value.",
+    title: 'Advance Your Coding Career',
+    subtitle: 'Gain real-world experience, work on client projects, and build skills that employers value.',
     actions: [
-      { _id: "1", label: "Join Now", href: "/signup", type: "primary" },
-      { _id: "2", label: "Know More", href: "/about", type: "secondary" },
+      { _id: '1', label: 'Join Now', href: '/signup', type: 'primary' },
+      { _id: '2', label: 'Know More', href: '/about', type: 'secondary' },
     ],
   };
 
@@ -20,14 +21,21 @@ export default function CalloutAnimatedSection() {
         <div className="absolute left-0 top-0 z-10 h-full w-full bg-primary/10 dark:bg-primary/10 blur-3xl filter" />
         {/* -------- */}
         <div className="relative z-20 flex flex-col items-center gap-2 text-center">
-          <h4 className="text-center text-3xl font-medium tracking-tighter sm:max-w-full sm:px-0 md:text-4xl">{data.title}</h4>
+          <h4 className="text-center text-3xl font-medium tracking-tighter sm:max-w-full sm:px-0 md:text-4xl">
+            {data.title}
+          </h4>
           <p className="text-lg text-muted-foreground md:text-xl">{data.subtitle}</p>
         </div>
         <div className="flex md:items-center gap-2 z-20">
           {data.actions?.map((action) => (
-            <ButtonStyled key={action._id} href={action.href} variant={action?.type == "secondary" ? "glass" : "default"}>
-              {action.label}
-            </ButtonStyled>
+            <JoinFormTrigger key={action._id} disabled={action.type == 'secondary'}>
+              <ButtonStyled
+                href={action.type == 'primary' ? '' : action.href}
+                variant={action?.type == 'secondary' ? 'glass' : 'default'}
+              >
+                {action.label}
+              </ButtonStyled>
+            </JoinFormTrigger>
           ))}
         </div>
       </article>

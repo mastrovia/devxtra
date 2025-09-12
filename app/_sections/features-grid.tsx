@@ -1,5 +1,6 @@
 import { ButtonStyled } from '@/components/common/button';
 import { Heading } from '@/components/common/heading';
+import { JoinFormTrigger } from '@/components/join-form';
 import Image from 'next/image';
 
 export default function FeaturesGridSection() {
@@ -102,9 +103,11 @@ export default function FeaturesGridSection() {
       </div>
       <div className="flex items-center justify-center gap-3 md:order-3">
         {featuresGridData.actions?.map((action) => (
-          <ButtonStyled className="rounded-xl" key={action._id} href={action.href}>
-            {action.label}
-          </ButtonStyled>
+          <JoinFormTrigger key={action._id}>
+            <ButtonStyled className="rounded-xl" key={action._id}>
+              {action.label}
+            </ButtonStyled>
+          </JoinFormTrigger>
         ))}
       </div>
     </section>

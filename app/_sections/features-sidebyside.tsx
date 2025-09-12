@@ -1,5 +1,6 @@
 import { ButtonStyled } from '@/components/common/button';
 import { Heading } from '@/components/common/heading';
+import { JoinFormTrigger } from '@/components/join-form';
 import Image from 'next/image';
 
 export default function FeaturesSideBySideSection() {
@@ -85,7 +86,9 @@ export default function FeaturesSideBySideSection() {
             subtitle={data.heading.subtitle}
           />
           <div className="flex justify-center lg:justify-start">
-            <ButtonStyled>Join now</ButtonStyled>
+            <JoinFormTrigger>
+              <ButtonStyled>Join now</ButtonStyled>
+            </JoinFormTrigger>
           </div>
         </div>
       </div>
@@ -109,7 +112,9 @@ export default function FeaturesSideBySideSection() {
                 <h5 className="text-lg font-medium">{title}</h5>
                 <ul className="list-disc pl-5 text-[--text-tertiary] dark:text-[--dark-text-tertiary]">
                   {subtitle.map((point: string, index: number) => (
-                    <li key={index} className='text-muted-foreground'> {point}</li>
+                    <li key={index} className="text-muted-foreground">
+                      {point}
+                    </li>
                   ))}
                 </ul>
               </div>

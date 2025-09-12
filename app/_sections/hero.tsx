@@ -1,22 +1,23 @@
-import { ButtonStyled } from "@/components/common/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { cn } from "@/lib/utils";
+import { ButtonStyled } from '@/components/common/button';
+import { JoinFormTrigger } from '@/components/join-form';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 const hero = {
-  title: "Learn smart, Build fast, Thrive always",
+  title: 'Learn smart, Build fast, Thrive always',
   subtitle:
-    "A New Way to Learn and Grow in Tech. Join DevXtra to Access Expert-Led Courses, Hands-On Projects, and a Thriving Community. Elevate Your Skills and Accelerate Your Career Today!",
+    'A New Way to Learn and Grow in Tech. Join DevXtra to Access Expert-Led Courses, Hands-On Projects, and a Thriving Community. Elevate Your Skills and Accelerate Your Career Today!',
   customerSatisfaction: {
-    text: "200+ students are already achieving their goals with DevXtra",
+    text: '200+ students are already achieving their goals with DevXtra',
     avatars: [
-      { link: "https://github.com/shadcn.png", name: "shadcn", fallback: "CN" },
-      { link: "https://github.com/leerob.png", name: "leerob", fallback: "LR" },
-      { link: "https://github.com/evilrabbit.png", name: "evilrabbit", fallback: "ER" },
+      { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
+      { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
+      { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
     ],
   },
   actions: [
-    { _id: "2", label: "Learn More", href: "/about", type: "secondary" },
-    { _id: "1", label: "Transform your career today", href: "/signup", type: "primary" },
+    { _id: '2', label: 'Learn More', href: '/about', type: 'secondary' },
+    { _id: '1', label: 'Transform your career today', href: '/signup', type: 'primary' },
   ],
 };
 
@@ -53,26 +54,29 @@ export default function HeroSection() {
             <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(32px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
               {hero.title}
             </h1>
-            <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">{hero.subtitle}</h2>
+            <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">
+              {hero.subtitle}
+            </h2>
           </div>
         </div>
         <div className="flex items-start justify-center px-8 sm:px-24">
           <div className="flex w-full max-w-[80vw] flex-col items-center justify-start md:!max-w-[392px]">
             {hero.actions?.map((action) => {
               return (
-                <ButtonStyled
-                  href={action.href}
-                  key={action._id}
-                  classnamefora="w-full"
-                  className={cn(
-                    "rounded-none py-4",
-                    action.type == "primary"
-                      ? "flex w-full justify-center"
-                      : "justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-border !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary"
-                  )}
-                >
-                  {action.label}
-                </ButtonStyled>
+                <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
+                  <ButtonStyled
+                    // href={action.href}
+                    classnamefora="w-full"
+                    className={cn(
+                      'rounded-none py-4',
+                      action.type == 'primary'
+                        ? 'flex w-full justify-center'
+                        : 'justify-center max-w-sm:!border-x-0 flex w-full !border-x !border-y-0 border-border !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
+                    )}
+                  >
+                    {action.label}
+                  </ButtonStyled>
+                </JoinFormTrigger>
               );
             })}
           </div>
