@@ -7,7 +7,7 @@ import FeaturesGridSection from './_sections/features-grid';
 import FeaturesListSection from './_sections/features-list';
 import FeaturesSideBySideSection from './_sections/features-sidebyside';
 import HeroSection from './_sections/hero';
-import Testimonials from './_sections/testimonials';
+// import Testimonials from './_sections/testimonials';
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <FeaturesBigImageSection />
       <FeaturesSideBySideSection id="course-journey" />
       <CalloutAnimatedSection id="join-devxtra-now-2" />
-      <Testimonials id="testimonials" />
+      {/* <Testimonials id="testimonials" /> */}
       <FaqsSection id="faq" />
     </main>
   );
