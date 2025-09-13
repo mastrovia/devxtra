@@ -17,7 +17,6 @@ export default function FeaturesListSection({ id }: { id?: string }) {
       },
       image: {
         dark: '/images/earn-while-you-learn.jpg',
-        // "https://assets.basehub.com/fa068a12/pd73iO2GEL7WtrCu6Rn8R/features-streamlined-team-communication-real-time-messaging-(dark-mode)3x.jpg?format=auto&quality=100"
         alt: 'Real-time Messaging Feature',
       },
     },
@@ -33,7 +32,7 @@ export default function FeaturesListSection({ id }: { id?: string }) {
         ],
       },
       image: {
-        dark: 'https://assets.basehub.com/fa068a12/LjqmKEgcHqPTWDXCrY33M/features-streamlined-team-communication-integrated-task-management-(dark-mode)3x.jpg?format=auto&quality=100',
+        dark: '/images/teamwork.jpg',
         alt: 'Real-time Messaging Feature',
       },
     },
@@ -50,7 +49,7 @@ export default function FeaturesListSection({ id }: { id?: string }) {
         ],
       },
       image: {
-        dark: 'https://assets.basehub.com/fa068a12/rAkAivkkRD3eW9FOF9wmN/features-streamlined-team-communication-secure-communication-channels-(dark-mode)3x.jpg?format=auto&quality=100',
+        dark: '/images/startup.jpg',
         alt: 'Real-time Messaging Feature',
       },
     },
@@ -75,7 +74,7 @@ export default function FeaturesListSection({ id }: { id?: string }) {
                 alt={image.alt}
                 width={560}
                 height={374}
-                className="rounded-lg object-cover border"
+                className="rounded-lg object-cover border dark:invert"
               />
             </figure>
             <div className="flex flex-col gap-8 p-5 pt-6 md:flex-1 md:p-10">
