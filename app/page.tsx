@@ -13,10 +13,12 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-14">
       <HeroSection id="main" />
-      <TechStacksSection id="tech-stacks" />
-      <FeaturesListSection id="out-promise" />
-      <FeaturesGridSection id="what-you-will-learn" />
-      <CalloutSection id="join-devxtra-now" />
+      <div className="flex flex-col gap-14 pt-10 bg-background/70 backdrop-blur-xl border-t">
+        <TechStacksSection id="tech-stacks" />
+        <FeaturesListSection id="out-promise" />
+        <FeaturesGridSection id="what-you-will-learn" />
+        <CalloutSection id="join-devxtra-now" />
+      </div>
       <FeaturesBigImageSection />
       <FeaturesSideBySideSection id="course-journey" />
       <CalloutAnimatedSection id="join-devxtra-now-2" />
