@@ -40,7 +40,7 @@ export default function FaqsSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="container mx-auto px-5 flex flex-col gap-10" id={id}>
+    <section className="section-cont flex flex-col gap-10" id={id}>
       <Heading tag={data.tag} title={data.title} subtitle={data.subtitle} />
       <ul className="mx-auto flex w-full grid-cols-3 flex-col place-content-start items-start gap-8 self-stretch lg:grid lg:gap-14 lg:px-24">
         {data.questions.map((question) => (

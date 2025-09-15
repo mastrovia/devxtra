@@ -69,7 +69,7 @@ export default function FeaturesSideBySideSection({ id }: { id?: string }) {
 
   return (
     <section
-      className="relative lg:container lg:mx-auto lg:!flex-row lg:gap-0 lg:p-28 flex flex-col gap-5"
+      className="relative section-cont lg:!flex-row lg:gap-0 flex flex-col gap-5"
       id={id}
     >
       <div className="relative top-0 shrink self-stretch px-6 lg:w-1/2 lg:pl-0 lg:pr-12 xl:pr-20">

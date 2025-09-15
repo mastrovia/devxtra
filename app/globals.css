@@ -194,3 +194,12 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer components {
+  .max-w-section {
+    @apply max-w-[90rem] px-5 md:px-10;
+  }
+  .section-cont {
+    @apply max-w-[90rem] px-5 md:px-10 mx-auto w-full;
+  }
+}

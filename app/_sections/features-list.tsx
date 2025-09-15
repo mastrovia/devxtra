@@ -56,7 +56,7 @@ export default function FeaturesListSection({ id }: { id?: string }) {
   ];
 
   return (
-    <section className="container mx-auto px-6 flex flex-col gap-10" id={id}>
+    <section className="max-w-section mx-auto px-6 flex flex-col gap-10" id={id}>
       <Heading
         tag="Our Promise"
         title="Learn, Build, and Grow with DevXtra"

@@ -185,7 +185,7 @@ export default function Testimonials({ id }: { id?: string }) {
   }, [api]);
 
   return (
-    <section className="relative overflow-clip flex gap-1 container mx-auto px-5" id={id}>
+    <section className="relative overflow-clip flex gap-1 section-cont" id={id}>
       <div className="flex w-full flex-col gap-14">
         <div className="flex justify-between">
           <Heading title="What our clients say" />

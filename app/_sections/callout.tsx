@@ -12,7 +12,7 @@ export default function CalloutSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="flex flex-col gap-10 relative container mx-auto px-5" id={id}>
+    <section className="flex flex-col gap-10 relative section-cont" id={id}>
       <article className="flex flex-col justify-center gap-5 self-stretch rounded-xl bg-primary/10 border dark:bg-primary/10 p-6 lg:justify-between lg:p-10">
         <div className="flex flex-col gap-2">
           <h4 className="text-3xl font-medium text-[--text-primary] dark:text-[--dark-text-primary] lg:text-4xl">

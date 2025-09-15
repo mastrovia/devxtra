@@ -45,7 +45,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="flex-col gap-10 relative container mx-auto px-5 hidden md:flex" id={id}>
+    <section className="flex-col gap-10 relative section-cont hidden md:flex" id={id}>
       <Heading
         tag={featuresBigImage.heading.tag}
         title={featuresBigImage.heading.title}

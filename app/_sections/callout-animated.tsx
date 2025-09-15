@@ -12,7 +12,7 @@ export default function CalloutAnimatedSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="container mx-auto px-4" id={id}>
+    <section className="section-cont" id={id}>
       <article className="relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border p-6 dark:border-[--dark-border] dark:bg-[--dark-surface-secondary]">
         {/* Lines and bg  */}
         {/* <div className="bg-linear-to-l absolute left-0 top-10 h-px w-full from-black/40 to-transparent dark:from-white/40 dark:to-transparent" />

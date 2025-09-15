@@ -77,7 +77,7 @@ export default function FeaturesGridSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="container mx-auto px-6 flex flex-col gap-10" id={id}>
+    <section className="section-cont flex flex-col gap-10" id={id}>
       <Heading
         tag="What You’ll Learn"
         title="Level up your coding journey with devxtra"
