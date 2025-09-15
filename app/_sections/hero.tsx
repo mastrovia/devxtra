@@ -8,7 +8,7 @@ const hero = {
   subtitle:
     'A New Way to Learn and Grow in Tech. Join DevXtra to Access Expert-Led Courses, Hands-On Projects, and a Thriving Community. Elevate Your Skills and Accelerate Your Career Today!',
   customerSatisfaction: {
-    text: '200+ students are already achieving their goals with DevXtra',
+    text: '200+ learners grow with DevXtra.',
     avatars: [
       { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
       { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
@@ -16,7 +16,7 @@ const hero = {
     ],
   },
   actions: [
-    { _id: '2', label: 'Learn More', href: '#what-you-will-learn', type: 'secondary' },
+    // { _id: '2', label: 'Learn More', href: '#what-you-will-learn', type: 'secondary' },
     { _id: '1', label: 'Transform your career today', href: '#', type: 'primary' },
   ],
 };
@@ -24,18 +24,18 @@ const hero = {
 export default function HeroSection({ id }: { id?: string }) {
   return (
     <section className="relative min-h-[calc(630px-var(--header-height))] overflow-hidden pb-10" id={id}>
-      <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)]">
-        {/* Decorations */}
-        {/* <div className="col-span-1 flex h-full items-center justify-center" />
+      {/* <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)]"> */}
+      {/* Decorations */}
+      {/* <div className="col-span-1 flex h-full items-center justify-center" />
         <div className="col-span-1 flex h-full items-center justify-center border-x border-border" />
         <div className="col-span-1 flex h-full items-center justify-center" /> */}
-      </div>
+      {/* </div> */}
       {/* --- */}
       <figure className="pointer-events-none absolute -bottom-[70%] left-1/2 z-0 block aspect-square w-[520px] -translate-x-1/2 rounded-full bg-primary/50 blur-[200px]" />
       <figure className="pointer-events-none absolute left-[4vw] top-[64px] z-20 hidden aspect-square w-[32vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
       <figure className="pointer-events-none absolute bottom-[-50px] right-[7vw] z-20 hidden aspect-square w-[30vw] rounded-full bg-surface-primary opacity-50 blur-[100px] md:block" />
 
-      <div className="relative z-10 flex flex-col divide-y pt-[35px]">
+      <div className="relative z-10 flex flex-col pt-[35px] gap-2 md:gap-0">
         <div className="flex flex-col items-center justify-end">
           <div className="flex items-center gap-2 px-4 py-2">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
@@ -51,7 +51,7 @@ export default function HeroSection({ id }: { id?: string }) {
         </div>
         <div>
           <div className="mx-auto flex min-h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-2 px-2 py-4 sm:px-16 lg:px-24">
-            <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(32px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
+            <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(50px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
               {hero.title}
             </h1>
             <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">
@@ -59,19 +59,19 @@ export default function HeroSection({ id }: { id?: string }) {
             </h2>
           </div>
         </div>
-        <div className="flex items-start justify-center px-8 sm:px-24">
-          <div className="flex w-full max-w-[80vw] flex-col items-center justify-start md:!max-w-[392px]">
+        <div className="flex items-center justify-center px-8 sm:px-24">
+          <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[392px] justify-center">
             {hero.actions?.map((action) => {
               return (
                 <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
                   <ButtonStyled
                     href={action.href}
-                    classnamefora="w-full"
+                    classnamefora="w-full flex items-center justify-center"
                     className={cn(
-                      'py-4',
-                      action.type == 'primary'
-                        ? 'flex w-full justify-center'
-                        : 'justify-center max-w-sm:!border-x-0 flex w-full !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
+                      'py-4 px-6 rounded-full md:w-full'
+                      // action.type == 'primary'
+                      //   ? 'flex w-full justify-center'
+                      //   : 'justify-center max-w-sm:!border-x-0 flex w-full !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
                     )}
                   >
                     {action.label}
