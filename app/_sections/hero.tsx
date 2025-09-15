@@ -23,7 +23,7 @@ const hero = {
 
 export default function HeroSection({ id }: { id?: string }) {
   return (
-    <section className="relative min-h-[calc(590px-var(--header-height))] pb-10" id={id}>
+    <section className="relative min-h-[calc(550px-var(--header-height))] pb-10" id={id}>
       {/* <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)]"> */}
       {/* Decorations */}
       {/* <div className="col-span-1 flex h-full items-center justify-center" />
@@ -49,15 +49,13 @@ export default function HeroSection({ id }: { id?: string }) {
             <p className="text-sm tracking-tight text-tertiary">{hero.customerSatisfaction.text}</p>
           </div>
         </div>
-        <div>
-          <div className="mx-auto flex min-h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-2 px-2 py-4 sm:px-16 lg:px-24">
-            <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(50px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
-              {hero.title}
-            </h1>
-            <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">
-              {hero.subtitle}
-            </h2>
-          </div>
+        <div className="mx-auto flex min-h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
+          <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(50px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
+            {hero.title}
+          </h1>
+          <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">
+            {hero.subtitle}
+          </h2>
         </div>
         <div className="flex items-center justify-center px-8 sm:px-24">
           <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[392px] justify-center">
