@@ -3,6 +3,7 @@ import CalloutAnimatedSection from './_sections/callout-animated';
 import TechStacksSection from './_sections/companies';
 import FaqsSection from './_sections/faq';
 import FeaturesBigImageSection from './_sections/features-big-image';
+import FeaturesBigVideoSection from './_sections/features-big-video';
 import FeaturesGridSection from './_sections/features-grid';
 import FeaturesListSection from './_sections/features-list';
 import FeaturesSideBySideSection from './_sections/features-sidebyside';
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection id="main" />
       <div className="flex flex-col gap-14 pt-10 bg-background/70 backdrop-blur-xl border-t">
         <TechStacksSection id="tech-stacks" />
+        <FeaturesBigVideoSection />
         <FeaturesListSection id="out-promise" />
         <FeaturesGridSection id="what-you-will-learn" />
         <CalloutSection id="join-devxtra-now" />

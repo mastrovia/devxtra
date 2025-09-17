@@ -10,7 +10,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
         'DevXtra helps you gain hands-on experience, build a professional portfolio, and grow as a developer or entrepreneur. Our structured course combines mentorship, real-world projects, and practical skills to ensure you’re fully prepared for freelancing, top tech jobs, or launching your own startup.',
     },
     image: {
-      url: 'https://assets.basehub.com/fa068a12/0wXkzA13r5ef3JtyGvTgy/features-seamless-collaboration-enhanced-productivity2x.png?format=auto&quality=100',
+      url: '/images/poster.jpg',
       alt: '',
     },
     items: [
@@ -65,7 +65,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
         ))}
       </div>
       <Image
-        src={'/images/poster.jpg'}
+        src={featuresBigImage.image.url}
         height={600}
         width={1216}
         className="block rounded-xl border md:order-3 md:w-full"
