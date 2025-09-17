@@ -23,7 +23,7 @@ const hero = {
 
 export default function HeroSection({ id }: { id?: string }) {
   return (
-    <section className="relative min-h-[calc(550px-var(--header-height))] pb-10" id={id}>
+    <section className="relative min-h-[calc(550px-var(--header-height))] pb-10 overflow-x-clip" id={id}>
       {/* <div className="absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)]"> */}
       {/* Decorations */}
       {/* <div className="col-span-1 flex h-full items-center justify-center" />

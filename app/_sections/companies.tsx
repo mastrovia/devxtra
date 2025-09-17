@@ -42,8 +42,8 @@ export default function TechStacksSection({ id }: { id?: string }) {
     <section className="flex flex-col gap-10 relative" id={id}>
       <h2 className="text-center tracking-tight opacity-50 px-22">{companiesSection.subtitle}</h2>
       <div className="no-scrollbar flex max-w-full justify-center overflow-hidden">
-        <div className="bg-linear-to-r from-background pointer-events-none absolute left-0 top-0 h-full w-[30vw] bg-transparent xl:hidden" />
-        <div className="bg-linear-to-l from-background pointer-events-none absolute right-0 top-0 h-full w-[30vw] bg-transparent xl:hidden" />
+        {/* <div className="bg-linear-to-r from-background pointer-events-none absolute left-0 top-0 h-full w-[30vw] bg-transparent xl:hidden" />
+        <div className="bg-linear-to-l from-background pointer-events-none absolute right-0 top-0 h-full w-[30vw] bg-transparent xl:hidden" /> */}
         <div className={cn('flex shrink-0 items-center gap-4 px-6 lg:gap-6 lg:px-12')}>
           {companiesSection.companies.map((company) => (
             <figure key={company.image ?? company.title} className="flex h-16 items-center px-2 py-3 lg:p-4">
