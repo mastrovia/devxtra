@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
 import { cn } from '@/lib/utils';
+import ShinyText from '../animations/shiny-text';
 
 type HeadingProps = {
   tag?: React.ReactNode;
@@ -12,12 +13,7 @@ type HeadingProps = {
   classnamea?: string;
 };
 
-export function Tag({
-  className,
-  children,
-  asChild,
-  ...props
-}: React.AllHTMLAttributes<HTMLDivElement> & { asChild?: boolean }) {
+export function Tag({ className, children, asChild, ...props }: React.AllHTMLAttributes<HTMLDivElement> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : 'h3';
 
   return (
@@ -46,8 +42,10 @@ export function Heading({ tag, subtitle, align = 'center', ...props }: HeadingPr
         <h1 {...props}>{props?.title}</h1>
       </div>
       {subtitle ? (
-        <p className="max-w-screen-md text-pretty font-light text-muted-foreground text-lg">{subtitle}</p>
-      ) : null}
+        <ShinyText text={subtitle as string} className="max-w-screen-md" />
+      ) : // <p className="max-w-screen-md text-pretty font-light text-muted-foreground text-lg">
+      // </p>
+      null}
     </div>
   );
 }

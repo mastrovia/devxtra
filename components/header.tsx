@@ -44,30 +44,20 @@ export const DesktopMenu = () => {
 
   return (
     <div className="flex w-full justify-center">
-      <NavigationMenu
-        className={'z-1 relative flex-col justify-center lg:flex hidden'}
-        viewport={false}
-        delayDuration={50}
-      >
+      <NavigationMenu className={'z-1 relative flex-col justify-center lg:flex hidden'} viewport={false} delayDuration={50}>
         <NavigationMenuList className="flex flex-1 gap-0.5 px-4">
           {desktopMenu.links.map((link) => {
             if (link.subLinks && link.subLinks.length > 0) {
               return (
                 <NavigationMenuItem key={link._id}>
-                  <NavigationMenuTrigger className="text-md bg-transparent">
-                    {link.title}
-                  </NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-md bg-transparent">{link.title}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <NavigationMenuList className="flex-col">
                       {link.subLinks.map((subLink) => (
                         <NavigationMenuItem key={subLink._id} className="w-full">
                           <NavigationMenuLink href={subLink.href ?? '#'}>
                             <h3>{subLink.title}</h3>
-                            {subLink?.description && (
-                              <p className="text-xs text-muted-foreground w-max max-w-72">
-                                {subLink.description}
-                              </p>
-                            )}
+                            {subLink?.description && <p className="text-xs text-muted-foreground w-max max-w-72">{subLink.description}</p>}
                           </NavigationMenuLink>
                         </NavigationMenuItem>
                       ))}

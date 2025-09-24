@@ -45,7 +45,7 @@ export default function JoinForm() {
   return (
     <section
       className={cn(
-        'fixed top-0 left-0 w-full h-full z-[111] bg-black/50 backdrop-blur-xs items-center justify-center',
+        'fixed top-0 left-0 w-full h-full z-[111] bg-black/50 backdrop-blur-sm items-center justify-center',
         formHook.open ? 'flex' : 'hidden'
       )}
       onClick={() => formHook.setOpen(false)}
@@ -142,7 +142,11 @@ export default function JoinForm() {
                 className="flex items-center justify-center h-12 gap-3"
                 disabled={loading || !data.phone}
               >
-                {loading ? <div className="loader w-7! h-7! border-3!" /> : 'Submit'}
+              {loading ? (
+                <span className="inline-block w-7 h-7 border-2 border-white border-b-transparent rounded-full animate-spin" />
+              ) : (
+                'Submit'
+              )}
               </ButtonStyled>
             </form>
           </>
