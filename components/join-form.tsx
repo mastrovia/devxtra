@@ -7,6 +7,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ButtonStyled } from './common/button';
 import React, { cloneElement, MouseEventHandler, ReactElement, useState } from 'react';
+import { LottiePlayer } from './lottie-player';
 
 export default function JoinForm() {
   const formHook = useJoinForm();
@@ -19,6 +20,7 @@ export default function JoinForm() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const submitFrom = async () => {
     try {
@@ -32,7 +34,7 @@ export default function JoinForm() {
         body: new URLSearchParams(data),
       });
       // console.log(response, await response.json());
-      formHook.setOpen(false);
+      setSubmitted(true);
     } catch (error) {
       console.log(error);
     } finally {
@@ -52,75 +54,99 @@ export default function JoinForm() {
         className="border rounded-2xl bg-accent flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
-        <h1 className="text-xl font-bold">Transform your career with DevXtra</h1>
-        <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
-          <div className="flex flex-col gap-3">
-            <Label htmlFor="name-input" className="font-medium">
-              Name
-            </Label>
-            <Input
-              value={data.name}
-              onChange={(e) => setData((pre) => ({ ...pre, name: e.target.value }))}
-              id="name-input"
-              placeholder="John doe"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-medium">
-              Phone number
-            </Label>
-            <Input
-              value={data.phone}
-              onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
-              id="name-input"
-              placeholder="78******22"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-medium">
-              What defines you the most ?
-            </Label>
-            <Select
-              value={data.currentCareerStatus}
-              onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}
+        {submitted ? (
+          <div className="flex flex-col items-center gap-2">
+            <div className="min-h-[150px] min-w-[300px]">
+              <LottiePlayer src="/lotties/success-check.json" loop={false} />
+            </div>
+            <div className="flex flex-col gap-2 items-center">
+              <h1 className="text-xl font-bold">We&apos;ve Noted</h1>
+              <p className="text-muted-foreground">Our team will contact you soon.</p>
+            </div>
+            <ButtonStyled
+              className="mt-3"
+              onClick={() => {
+                setSubmitted(false);
+                setData({ name: '', email: '', phone: '', currentCareerStatus: '', okForOffline: '' });
+                formHook.setOpen(false);
+              }}
             >
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Currently studying ?" />
-              </SelectTrigger>
-              <SelectContent className="z-[122]">
-                <SelectItem value="currently-studying">Currently Studying</SelectItem>
-                <SelectItem value="job-seeker">Job Seeker</SelectItem>
-                <SelectItem value="fresher">Fresher</SelectItem>
-                <SelectItem value="career-switch">Career Switch</SelectItem>
-              </SelectContent>
-            </Select>
+              Continue
+            </ButtonStyled>
           </div>
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="name-input" className="font-medium">
-              Are you okay for offline course ?
-            </Label>
-            <Select
-              value={data.okForOffline}
-              onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Are you ?" />
-              </SelectTrigger>
-              <SelectContent className="z-[122]">
-                <SelectItem value="yes">Yes</SelectItem>
-                <SelectItem value="no">No</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <ButtonStyled
-            onClick={() => submitFrom()}
-            type="button"
-            className="flex items-center justify-center h-12"
-            disabled={loading || !data.phone}
-          >
-            {loading ? <div className="loader" /> : 'Submit'}
-          </ButtonStyled>
-        </form>
+        ) : (
+          <>
+            <h1 className="text-xl font-bold">Transform your career with DevXtra</h1>
+            <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex flex-col gap-3">
+                <Label htmlFor="name-input" className="font-medium">
+                  Name
+                </Label>
+                <Input
+                  value={data.name}
+                  onChange={(e) => setData((pre) => ({ ...pre, name: e.target.value }))}
+                  id="name-input"
+                  placeholder="John doe"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name-input" className="font-medium">
+                  Phone number
+                </Label>
+                <Input
+                  value={data.phone}
+                  onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
+                  id="name-input"
+                  placeholder="78******22"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name-input" className="font-medium">
+                  What defines you the most ?
+                </Label>
+                <Select
+                  value={data.currentCareerStatus}
+                  onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Currently studying ?" />
+                  </SelectTrigger>
+                  <SelectContent className="z-[122]">
+                    <SelectItem value="currently-studying">Currently Studying</SelectItem>
+                    <SelectItem value="job-seeker">Job Seeker</SelectItem>
+                    <SelectItem value="fresher">Fresher</SelectItem>
+                    <SelectItem value="career-switch">Career Switch</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name-input" className="font-medium">
+                  Are you okay for offline course ?
+                </Label>
+                <Select
+                  value={data.okForOffline}
+                  onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Are you ?" />
+                  </SelectTrigger>
+                  <SelectContent className="z-[122]">
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <ButtonStyled
+                onClick={() => submitFrom()}
+                type="button"
+                className="flex items-center justify-center h-12 gap-3"
+                disabled={loading || !data.phone}
+              >
+                {loading ? <div className="loader w-7! h-7! border-3!" /> : 'Submit'}
+              </ButtonStyled>
+            </form>
+          </>
+        )}
       </div>
     </section>
   );
