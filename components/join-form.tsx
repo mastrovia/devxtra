@@ -6,7 +6,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ButtonStyled } from './common/button';
-import React, { cloneElement, MouseEventHandler, ReactElement, useState } from 'react';
+import React, { cloneElement, MouseEventHandler, ReactElement, useEffect, useState } from 'react';
 import { LottiePlayer } from './lottie-player';
 
 export default function JoinForm() {
@@ -41,6 +41,19 @@ export default function JoinForm() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (!formHook.open) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        formHook.setOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [formHook, formHook.open]);
 
   return (
     <section
@@ -95,6 +108,7 @@ export default function JoinForm() {
                 </Label>
                 <Input
                   value={data.phone}
+                  type="number"
                   onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
                   id="name-input"
                   placeholder="78******22"
