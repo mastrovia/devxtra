@@ -8,7 +8,7 @@ export default function FeaturesGridSection({ id }: { id?: string }) {
     actions: [
       {
         _id: '1',
-        label: 'Transform your career today',
+        label: 'Get More Details',
         href: '/signup',
       },
     ],

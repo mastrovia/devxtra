@@ -104,7 +104,7 @@ export const Header = () => {
           <DesktopMenu />
           {/* <MobileMenu {...header} /> */}
           <JoinFormTrigger>
-            <ButtonStyled>Get started</ButtonStyled>
+            <ButtonStyled>Get More Details</ButtonStyled>
           </JoinFormTrigger>
         </div>
       </div>
