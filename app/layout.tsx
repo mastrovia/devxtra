@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/header';
 import Footer from '@/components/footer';
 import JoinForm from '@/components/join-form';
+import AutoJoinFormTrigger from '@/components/auto-join-form-trigger';
 import Providers from './providers';
 
 const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
+          <AutoJoinFormTrigger />
           <Header />
           {children}
           <Footer />
