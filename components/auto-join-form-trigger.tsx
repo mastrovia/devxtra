@@ -1,16 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import useJoinForm from '@/hooks/join-form';
 
 export default function AutoJoinFormTrigger() {
   const formHook = useJoinForm();
+  const hasShownRef = useRef(false);
 
   useEffect(() => {
+    // Only show the modal once per session
+    if (hasShownRef.current) return;
+
     // Show the join form modal after 2 seconds
     const timer = setTimeout(() => {
-      formHook.setOpen(true);
-    }, 2000);
+      if (!hasShownRef.current) {
+        formHook.setOpen(true);
+        hasShownRef.current = true;
+      }
+    }, 5000);
 
     // Cleanup timer on component unmount
     return () => clearTimeout(timer);
