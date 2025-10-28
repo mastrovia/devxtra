@@ -5,7 +5,7 @@ import { Header } from '@/components/header';
 import Footer from '@/components/footer';
 import JoinForm from '@/components/join-form';
 import AutoJoinFormTrigger from '@/components/auto-join-form-trigger';
-import Providers from './providers';
+import Providers, { PostHogProvider } from './providers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,11 +34,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <AutoJoinFormTrigger />
-          <Header />
-          {children}
-          <Footer />
-          <JoinForm />
+          <PostHogProvider>
+            <AutoJoinFormTrigger />
+            <Header />
+            {children}
+            <Footer />
+            <JoinForm />
+          </PostHogProvider>
         </Providers>
       </body>
     </html>
