@@ -17,7 +17,7 @@ const hero = {
   },
   actions: [
     // { _id: '2', label: 'Learn More', href: '#what-you-will-learn', type: 'secondary' },
-    { _id: '1', label: 'Transform your career today', href: '#', type: 'primary' },
+    { _id: '1', label: 'Get More Details', href: '#', type: 'primary' },
   ],
 };
 
