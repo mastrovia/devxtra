@@ -43,7 +43,7 @@ export default function TechStacksSection({ id }: { id?: string }) {
     <section className="flex flex-col gap-10 relative py-10" id={id}>
       <LogoLoop
         logos={companiesSection.companies.map(d => ({ src: d.image, alt: d.title }))}
-        className='grayscale opacity-75'
+        className='grayscale opacity-75 invert dark:invert-0'
         logoHeight={30}
         speed={75}
       />
