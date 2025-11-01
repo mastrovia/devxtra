@@ -70,7 +70,7 @@ export default function FeaturesBigVideoSection({ id }: { id?: string }) {
         muted
         loop
         autoPlay
-        playsinline 
+        playsInline 
       />
     </section>
   );
