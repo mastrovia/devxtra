@@ -26,11 +26,7 @@ const ButtonBase: FC<ButtonProps> = ({ children, href, ...props }) => {
 
 export default ButtonBase;
 
-export const ButtonStyled: FC<ButtonProps & { variant?: 'default' | 'glass' }> = ({
-  children,
-  variant = 'default',
-  ...props
-}) => {
+export const ButtonStyled: FC<ButtonProps & { variant?: 'default' | 'glass' }> = ({ children, variant = 'default', ...props }) => {
   return (
     <ButtonBase
       {...props}

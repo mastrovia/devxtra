@@ -44,19 +44,19 @@ export default function Footer() {
       items: [
         {
           title: 'Our Promise',
-          url: '#our-promise',
+          url: '/#our-promise',
         },
         {
           title: "What you'll learn",
-          url: '#what-you-will-learn',
+          url: '/#what-you-will-learn',
         },
         {
           title: 'Course Journey',
-          url: '#course-journey',
+          url: '/#course-journey',
         },
         {
           title: 'FAQs',
-          url: '#faq',
+          url: '/#faq',
         },
       ],
     },

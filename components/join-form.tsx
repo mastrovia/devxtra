@@ -64,7 +64,7 @@ export default function JoinForm() {
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl bg-accent/50 backdrop-blur-lg flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
+        className="border rounded-2xl bg-accent/80 dark:bg-accent/50 backdrop-blur-lg flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         {submitted ? (

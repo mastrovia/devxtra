@@ -167,7 +167,7 @@ export default function TestimonialsMasonry() {
 
   return (
     <>
-      <div className="relative h-[110vh] overflow-hidden">
+      <div className="relative overflow-hidden">
         <div className="section-cont h-full">
           {/* Masonry Grid */}
           <div
