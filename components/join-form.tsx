@@ -64,7 +64,7 @@ export default function JoinForm() {
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl bg-accent flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
+        className="border rounded-2xl bg-accent/50 backdrop-blur-lg flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         {submitted ? (
@@ -118,10 +118,7 @@ export default function JoinForm() {
                 <Label htmlFor="name-input" className="font-medium">
                   What defines you the most ?
                 </Label>
-                <Select
-                  value={data.currentCareerStatus}
-                  onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}
-                >
+                <Select value={data.currentCareerStatus} onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Currently studying ?" />
                   </SelectTrigger>
@@ -137,10 +134,7 @@ export default function JoinForm() {
                 <Label htmlFor="name-input" className="font-medium">
                   Are you okay for offline course ?
                 </Label>
-                <Select
-                  value={data.okForOffline}
-                  onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}
-                >
+                <Select value={data.okForOffline} onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Are you ?" />
                   </SelectTrigger>
@@ -156,11 +150,11 @@ export default function JoinForm() {
                 className="flex items-center justify-center h-12 gap-3"
                 disabled={loading || !data.phone}
               >
-              {loading ? (
-                <span className="inline-block w-7 h-7 border-2 border-white border-b-transparent rounded-full animate-spin" />
-              ) : (
-                'Submit'
-              )}
+                {loading ? (
+                  <span className="inline-block w-7 h-7 border-2 border-white border-b-transparent rounded-full animate-spin" />
+                ) : (
+                  'Submit'
+                )}
               </ButtonStyled>
             </form>
           </>

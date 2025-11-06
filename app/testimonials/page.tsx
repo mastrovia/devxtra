@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
         <div className="flex flex-col gap-6 text-center">
           <Heading
             tag="Success Stories"
-            title="What our clients say"
+            title="Our stories"
             subtitle="Discover how DevXtra has helped students and professionals build their careers in tech. Real testimonials from our community members who have transformed their skills and achieved their goals."
           />
         </div>
