@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Volume2, VolumeX, Maximize2, X } from 'lucide-react';
+import { Volume2, VolumeX, Expand, X } from 'lucide-react';
 
 interface TestimonialItem {
   id: string;
@@ -202,10 +202,10 @@ export default function TestimonialsMasonry() {
                           e.stopPropagation();
                           handleFullscreen(item);
                         }}
-                        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm transition-all duration-200 opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm transition-all duration-200 opacity-50 md:opacity-0 md:group-hover:opacity-50"
                         aria-label="View fullscreen"
                       >
-                        <Maximize2 className="size-5 text-white" />
+                        <Expand className="size-6 text-white" />
                       </button>
                     </>
                   ) : (
@@ -228,10 +228,10 @@ export default function TestimonialsMasonry() {
                           e.stopPropagation();
                           handleFullscreen(item);
                         }}
-                        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm transition-all duration-200 opacity-100 md:opacity-0 md:group-hover:opacity-100"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-sm transition-all duration-200 opacity-50 md:opacity-0 md:group-hover:opacity-50"
                         aria-label="View fullscreen"
                       >
-                        <Maximize2 className="size-5 text-white" />
+                        <Expand className="size-6 text-white" />
                       </button>
 
                       {/* Mute/Unmute Button */}
@@ -262,7 +262,10 @@ export default function TestimonialsMasonry() {
 
       {/* Fullscreen Modal */}
       {fullscreenItem && (
-        <div onClick={handleCloseFullscreen} className="fixed inset-0 z-500 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <div
+          onClick={handleCloseFullscreen}
+          className="fixed inset-0 z-500 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+        >
           {/* Close Button */}
           <button
             onClick={handleCloseFullscreen}
