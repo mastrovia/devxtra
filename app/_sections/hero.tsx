@@ -8,13 +8,13 @@ const hero = {
   subtitle:
     'Join DevXtra to master fullstack development, build real-world projects, and land your first freelance client. Expert mentorship, hands-on learning, and a proven path to earning while you learn.',
   customerSatisfaction: {
-    text: '200+ learners transformed their careers',
-    highlight: '200+',
-    avatars: [
-      { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
-      { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
-      { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
-    ],
+    text: 'Limited Offer: Only 8 Seats Left This Month',
+    highlight: 'Only 8 Seats',
+    // avatars: [
+    //   { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
+    //   { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
+    //   { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
+    // ],
   },
   trustBadges: ['✓ Expert-Led Mentorship', '✓ Real Client Projects', '✓ Earn While Learning'],
   actions: [
@@ -47,12 +47,12 @@ export default function HeroSection({ id }: { id?: string }) {
         <div className="flex flex-col items-center justify-end">
           <div className="flex items-center gap-2 px-4 py-2">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
-              {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
+              {/* {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
                 <Avatar key={name}>
                   <AvatarImage src={link} alt={`@${name}`} />
                   <AvatarFallback>{fallback}</AvatarFallback>
                 </Avatar>
-              ))}
+              ))} */}
             </div>
             <p className="text-sm tracking-tight text-tertiary">
               <span className="font-bold text-[--text-trust]">{hero.customerSatisfaction.highlight}</span>{' '}

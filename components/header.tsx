@@ -87,15 +87,15 @@ export const Header = () => {
       <div className="flex h-[var(--header-height)]">
         <div className="container mx-auto grid w-full grid-cols-[min-content_1fr_min-content] place-items-center content-center items-center px-6 *:first:justify-self-start">
           <ButtonBase href="/">
-            <h1 className="text-2xl font-semibold">
+            <h1 className="text-3xl font-semibold">
               Dev<span className="text-green-600 dark:text-green-500">X</span>tra
             </h1>
           </ButtonBase>
           <DesktopMenu />
           {/* <MobileMenu {...header} /> */}
           <JoinFormTrigger>
-            <ButtonStyled className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
-              Get More Details
+            <ButtonStyled className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white hidden md:flex">
+              Book Free Consultation
             </ButtonStyled>
           </JoinFormTrigger>
         </div>

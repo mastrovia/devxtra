@@ -6,7 +6,7 @@ export default function CalloutAnimatedSection({ id }: { id?: string }) {
     title: 'Advance Your Coding Career',
     subtitle: 'Gain real-world experience, work on client projects, and build skills that employers value.',
     actions: [
-      { _id: '1', label: 'Join Now', href: '', type: 'primary' },
+      { _id: '1', label: 'Book Free Consultation', href: '', type: 'primary' },
       { _id: '2', label: 'Know More', href: '#faq', type: 'secondary' },
     ],
   };

@@ -24,7 +24,7 @@ export default function AutoJoinFormTrigger() {
             }
           } else {
             // Exiting viewport - reset the flag so it can show again next time
-            hasShownInCurrentViewRef.current = false;
+            // hasShownInCurrentViewRef.current = false;
           }
         });
       },

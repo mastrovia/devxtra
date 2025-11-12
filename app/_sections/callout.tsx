@@ -6,7 +6,7 @@ export default function CalloutSection({ id }: { id?: string }) {
     title: 'Join DevXtra Today!',
     subtitle: 'Unlock your potential with expert-led courses and a thriving community.',
     actions: [
-      { _id: '1', label: 'Get Started', href: '', type: 'primary' },
+      { _id: '1', label: 'Book Free Consultation', href: '', type: 'primary' },
       { _id: '2', label: 'Learn More', href: '#course-journey', type: 'secondary' },
     ],
   };
@@ -22,7 +22,7 @@ export default function CalloutSection({ id }: { id?: string }) {
             {calloutData.subtitle}
           </p>
         </div>
-        <div className="flex md:items-center gap-2 ">
+        <div className="flex md:items-center gap-2 flex-wrap">
           {calloutData.actions?.map((action) => (
             <JoinFormTrigger key={action._id} disabled={action?.type == 'secondary'}>
               <ButtonStyled

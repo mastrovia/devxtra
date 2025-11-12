@@ -16,7 +16,6 @@ export default function JoinForm() {
     phone: '',
     age: '',
     currentStatus: '',
-    biggestGoal: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -102,19 +101,19 @@ export default function JoinForm() {
   return (
     <section
       className={cn(
-        'fixed top-0 left-0 w-full h-full z-[111] bg-black/50 backdrop-blur-sm items-center justify-center',
+        'fixed top-0 left-0 w-full h-full z-[111] bg-black/40 backdrop-blur-sm flex items-center justify-center',
         formHook.open ? 'flex' : 'hidden'
       )}
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl bg-accent flex flex-col gap-5 w-full max-w-[500px] mx-4 p-5 md:p-7 max-h-[90vh] overflow-y-auto relative"
+        className="border-0 md:border border-white/20 rounded-none md:rounded-2xl bg-background/80 backdrop-blur-xl flex flex-col justify-center gap-3 md:gap-5 w-full h-full md:h-auto max-w-full md:max-w-[650px] mx-0 md:mx-4 p-6 md:p-7 max-h-full md:max-h-[90vh] overflow-y-auto relative shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={() => formHook.setOpen(false)}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+          className="absolute top-5 right-5 md:top-4 md:right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-muted transition-colors z-10"
           aria-label="Close form"
         >
           <svg
@@ -136,7 +135,7 @@ export default function JoinForm() {
               <LottiePlayer src="/lotties/success-check.json" loop={false} />
             </div>
             <div className="flex flex-col gap-2 items-center text-center">
-              <h1 className="text-2xl font-bold">Got it! We&apos;ll call you in 5 minutes</h1>
+              <h1 className="text-2xl font-bold">Got it! We&apos;ll call you soon</h1>
               {/* <p className="text-muted-foreground">
                 Keep your phone nearby at <span className="font-semibold text-primary">{data.phone}</span>.
               </p> */}
@@ -162,7 +161,7 @@ export default function JoinForm() {
               className="mt-3 w-full"
               onClick={() => {
                 setSubmitted(false);
-                setData({ name: '', phone: '', age: '', currentStatus: '', biggestGoal: '' });
+                setData({ name: '', phone: '', age: '', currentStatus: '' });
                 formHook.setOpen(false);
               }}
             >
@@ -171,15 +170,14 @@ export default function JoinForm() {
           </div>
         ) : (
           <>
-            <div className="flex flex-col gap-2">
-              <h1 className="text-2xl font-bold">Get a Personal Call in 5 Minutes</h1>
-              <p className="text-sm text-muted-foreground">
-                Share your details. Our team will call you immediately to discuss your personalized learning path. No automated emails, just
-                real conversation.
+            <div className="flex flex-col gap-1 md:gap-2">
+              <h1 className="text-xl md:text-2xl font-bold">Get a Personal Call from Our Team</h1>
+              <p className="text-xs md:text-sm text-muted-foreground">
+                Share your details and our team will call you to discuss your personalized learning path.
               </p>
             </div>
-            <form className="flex flex-col gap-3 md:gap-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2 md:gap-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex flex-col gap-1.5 md:gap-2">
                 <Label htmlFor="name-input" className="font-medium text-sm">
                   What should we call you? <span className="text-[--text-urgent]">*</span>
                 </Label>
@@ -189,11 +187,11 @@ export default function JoinForm() {
                   id="name-input"
                   placeholder="Your name"
                   required
-                  className="h-11"
+                  className="h-10 md:h-11"
                 />
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 md:gap-2">
                 <Label htmlFor="phone-input" className="font-medium text-sm">
                   Phone Number <span className="text-[--text-urgent]">*</span>
                 </Label>
@@ -204,17 +202,13 @@ export default function JoinForm() {
                   id="phone-input"
                   placeholder="Enter 10 digit mobile number"
                   required
-                  className={`h-11 ${phoneError ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                  className={`h-10 md:h-11 ${phoneError ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                   maxLength={10}
                 />
-                {phoneError ? (
-                  <p className="text-xs text-red-500">{phoneError}</p>
-                ) : (
-                  <p className="text-xs text-muted-foreground">We&apos;ll call this number in 5 minutes</p>
-                )}
+                {phoneError && <p className="text-xs text-red-500">{phoneError}</p>}
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 md:gap-2">
                 <Label htmlFor="age-input" className="font-medium text-sm">
                   Age <span className="text-[--text-urgent]">*</span>
                 </Label>
@@ -227,16 +221,16 @@ export default function JoinForm() {
                   min="15"
                   max="100"
                   required
-                  className="h-11"
+                  className="h-10 md:h-11"
                 />
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 md:gap-2">
                 <Label htmlFor="status-select" className="font-medium text-sm">
                   Current Status <span className="text-[--text-urgent]">*</span>
                 </Label>
                 <Select value={data.currentStatus} onValueChange={(e) => setData((pre) => ({ ...pre, currentStatus: e }))}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full h-10 md:h-11">
                     <SelectValue placeholder="Select your current status" />
                   </SelectTrigger>
                   <SelectContent className="z-[122]">
@@ -250,25 +244,7 @@ export default function JoinForm() {
                 </Select>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <Label htmlFor="goal-select" className="font-medium text-sm">
-                  What&apos;s your biggest goal?
-                </Label>
-                <Select value={data.biggestGoal} onValueChange={(e) => setData((pre) => ({ ...pre, biggestGoal: e }))}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select your goal" />
-                  </SelectTrigger>
-                  <SelectContent className="z-[122]">
-                    <SelectItem value="first-client">Get my first freelance client</SelectItem>
-                    <SelectItem value="career-switch">Switch to a tech career</SelectItem>
-                    <SelectItem value="startup">Build my own startup</SelectItem>
-                    <SelectItem value="level-up">Level up my coding skills</SelectItem>
-                    <SelectItem value="not-sure">Not sure yet, need guidance</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="flex flex-col gap-2 p-3 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30">
+              {/* <div className="flex flex-col gap-2 p-3 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30">
                 <div className="flex items-start gap-2 text-xs text-muted-foreground">
                   <span className="text-[--text-trust] mt-0.5">✓</span>
                   <span>Immediate personal call (no bots)</span>
@@ -285,12 +261,12 @@ export default function JoinForm() {
                   <span className="text-[--text-trust] mt-0.5">✓</span>
                   <span>Your number stays private</span>
                 </div>
-              </div>
+              </div> */}
 
               <ButtonStyled
                 onClick={() => submitFrom()}
                 type="button"
-                className="transition-all flex items-center justify-center h-12 md:h-14 gap-3 bg-gradient-to-r from-orange-500 disabled:opacity-20 to-red-500 hover:from-orange-600 hover:to-red-600 text-white disabled:text-white font-semibold text-base md:text-lg mt-2"
+                className="transition-all flex items-center justify-center h-11 md:h-14 gap-3 bg-gradient-to-r from-orange-500 disabled:opacity-20 to-red-500 hover:from-orange-600 hover:to-red-600 text-white disabled:text-white font-semibold text-base md:text-lg mt-1 md:mt-2"
                 disabled={loading || !data.phone || !data.name || !data.age || !data.currentStatus || !!phoneError}
               >
                 {loading ? (
