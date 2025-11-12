@@ -8,7 +8,7 @@ const hero = {
   subtitle:
     'Join DevXtra to master fullstack development, build real-world projects, and land your first freelance client. Expert mentorship, hands-on learning, and a proven path to earning while you learn.',
   customerSatisfaction: {
-    text: 'Limited Offer: Only Few Seats Left This Month',
+    text: 'Only Few Seats Left This Month',
     highlight: 'Only Few Seats',
     // avatars: [
     //   { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
