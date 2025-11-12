@@ -110,7 +110,8 @@ export default function JoinForm() {
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold">Get a Personal Call in 5 Minutes</h1>
               <p className="text-sm text-muted-foreground">
-                Share your details. Our team will call you immediately to discuss your personalized learning path. No automated emails, just real conversation.
+                Share your details. Our team will call you immediately to discuss your personalized learning path. No automated emails, just
+                real conversation.
               </p>
             </div>
             <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
@@ -132,7 +133,7 @@ export default function JoinForm() {
                 </Label>
                 <Input
                   value={data.phone}
-                  type="tel"
+                  type="number"
                   onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
                   id="phone-input"
                   placeholder="+91 XXXXX XXXXX"
@@ -196,7 +197,7 @@ export default function JoinForm() {
               <ButtonStyled
                 onClick={() => submitFrom()}
                 type="button"
-                className="flex items-center justify-center h-12 gap-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold"
+                className="transition-all flex items-center justify-center h-12 gap-3 bg-gradient-to-r from-orange-500 disabled:opacity-20 to-red-500 hover:from-orange-600 hover:to-red-600 text-white disabled:text-white font-semibold"
                 disabled={loading || !data.phone || !data.name}
               >
                 {loading ? (

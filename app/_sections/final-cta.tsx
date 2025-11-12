@@ -31,7 +31,7 @@ export default function FinalCTASection({ id }: { id?: string }) {
           </ButtonStyled>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mt-4">
+        {/* <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mt-4">
           <div className="flex items-center gap-2">
             <span className="text-[--text-trust]">✓</span>
             <span>Free 21-day trial</span>
@@ -44,7 +44,7 @@ export default function FinalCTASection({ id }: { id?: string }) {
             <span className="text-[--text-trust]">✓</span>
             <span>Cancel anytime</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

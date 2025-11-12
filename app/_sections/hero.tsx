@@ -16,14 +16,10 @@ const hero = {
       { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
     ],
   },
-  trustBadges: [
-    '✓ Expert-Led Mentorship',
-    '✓ Real Client Projects',
-    '✓ Earn While Learning',
-  ],
+  trustBadges: ['✓ Expert-Led Mentorship', '✓ Real Client Projects', '✓ Earn While Learning'],
   actions: [
     { _id: '1', label: 'Start Your Free 21-Day Journey', subtext: '200+ developers • No credit card required', href: '#', type: 'primary' },
-    { _id: '2', label: 'Talk to a Mentor (Free)', href: '#', type: 'secondary' },
+    // { _id: '2', label: 'Talk to a Mentor (Free)', href: '#', type: 'secondary' },
   ],
 };
 
@@ -53,7 +49,8 @@ export default function HeroSection({ id }: { id?: string }) {
               ))}
             </div>
             <p className="text-sm tracking-tight text-tertiary">
-              <span className="font-bold text-[--text-trust]">{hero.customerSatisfaction.highlight}</span> {hero.customerSatisfaction.text.replace(hero.customerSatisfaction.highlight, '')}
+              <span className="font-bold text-[--text-trust]">{hero.customerSatisfaction.highlight}</span>{' '}
+              {hero.customerSatisfaction.text.replace(hero.customerSatisfaction.highlight, '')}
             </p>
           </div>
         </div>
@@ -64,7 +61,9 @@ export default function HeroSection({ id }: { id?: string }) {
           <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">{hero.subtitle}</h2>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
             {hero.trustBadges.map((badge, idx) => (
-              <span key={idx} className="text-sm text-secondary">{badge}</span>
+              <span key={idx} className="text-sm text-primary/90">
+                {badge}
+              </span>
             ))}
           </div>
         </div>
@@ -73,7 +72,7 @@ export default function HeroSection({ id }: { id?: string }) {
             {hero.actions?.map((action) => {
               return (
                 <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
-                  <div className="flex flex-col items-center gap-1 w-full">
+                  <div className="flex flex-col items-center gap-3 w-full">
                     <ButtonStyled
                       href={action.href}
                       classnamefora="w-full flex items-center justify-center"
@@ -86,9 +85,7 @@ export default function HeroSection({ id }: { id?: string }) {
                     >
                       {action.label}
                     </ButtonStyled>
-                    {action.subtext && action.type === 'primary' && (
-                      <p className="text-xs text-tertiary">{action.subtext}</p>
-                    )}
+                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary">{action.subtext}</p>}
                   </div>
                 </JoinFormTrigger>
               );
