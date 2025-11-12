@@ -22,13 +22,13 @@ export default function FinalCTASection({ id }: { id?: string }) {
               Book Free Call
             </ButtonStyled>
           </JoinFormTrigger>
-          <ButtonStyled
+          {/* <ButtonStyled
             href="#faq"
             variant="glass"
             className="flex-1 py-6 text-lg border-2 border-[--accent-blue] hover:bg-[--accent-blue]/10"
           >
             Learn More
-          </ButtonStyled>
+          </ButtonStyled> */}
         </div>
 
         {/* <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground mt-4">

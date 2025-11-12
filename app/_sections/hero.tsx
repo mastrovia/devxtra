@@ -1,12 +1,11 @@
 import { ButtonStyled } from '@/components/common/button';
 import { JoinFormTrigger } from '@/components/join-form';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 
 const hero = {
   title: 'Transform Your Career in 21 Days',
   subtitle:
-    'Join DevXtra to master fullstack development, build real-world projects, and land your first freelance client. Expert mentorship, hands-on learning, and a proven path to earning while you learn.',
+    'Join DevXtra to master fullstack development, build real-world projects, and land a high paying career with the guidance of Expert mentors.',
   customerSatisfaction: {
     text: 'Only Few Seats Left This Month',
     highlight: 'Register now : ',
@@ -60,11 +59,11 @@ export default function HeroSection({ id }: { id?: string }) {
             </p>
           </div>
         </div>
-        <div className="mx-auto flex min-h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
+        <div className="mx-auto flex min-h-[258px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
           <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(42px,7vw,64px)] font-bold leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
             {hero.title}
           </h1>
-          <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">{hero.subtitle}</h2>
+          <h2 className="text-md max-w-2xl text-pretty text-center text-primary/50 md:text-lg">{hero.subtitle}</h2>
           <div className="hidden md:flex flex-wrap items-center justify-center gap-4 mt-2">
             {hero.trustBadges.map((badge, idx) => (
               <span key={idx} className="text-sm text-primary/90">
@@ -91,7 +90,7 @@ export default function HeroSection({ id }: { id?: string }) {
                     >
                       {action.label}
                     </ButtonStyled>
-                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary">{action.subtext}</p>}
+                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary text-center">{action.subtext}</p>}
                   </div>
                 </JoinFormTrigger>
               );

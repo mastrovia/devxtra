@@ -1,5 +1,6 @@
 import { ButtonStyled } from '@/components/common/button';
 import { JoinFormTrigger } from '@/components/join-form';
+import { cn } from '@/lib/utils';
 
 export default function CalloutSection({ id }: { id?: string }) {
   const calloutData = {
@@ -7,7 +8,7 @@ export default function CalloutSection({ id }: { id?: string }) {
     subtitle: 'Unlock your potential with expert-led courses and a thriving community.',
     actions: [
       { _id: '1', label: 'Book Free Consultation', href: '', type: 'primary' },
-      { _id: '2', label: 'Learn More', href: '#course-journey', type: 'secondary' },
+      // { _id: '2', label: 'Learn More', href: '#course-journey', type: 'secondary' },
     ],
   };
 
@@ -29,9 +30,9 @@ export default function CalloutSection({ id }: { id?: string }) {
                 href={action.href}
                 variant={action?.type == 'secondary' ? 'glass' : 'default'}
                 className={
-                  action?.type === 'primary'
+                  cn(action?.type === 'primary'
                     ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white'
-                    : ''
+                    : '',"w-full md:w-auto")
                 }
               >
                 {action.label}
