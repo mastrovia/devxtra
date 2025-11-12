@@ -137,10 +137,10 @@ export default function JoinForm() {
             </div>
             <div className="flex flex-col gap-2 items-center text-center">
               <h1 className="text-2xl font-bold">Got it! We&apos;ll call you in 5 minutes</h1>
-              <p className="text-muted-foreground">
+              {/* <p className="text-muted-foreground">
                 Keep your phone nearby at <span className="font-semibold text-primary">{data.phone}</span>.
-              </p>
-              <div className="mt-3 p-4 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30 w-full">
+              </p> */}
+              {/* <div className="mt-3 p-4 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30 w-full">
                 <p className="text-sm font-medium mb-2">Meanwhile, check your WhatsApp for:</p>
                 <div className="flex flex-col gap-1 text-sm text-muted-foreground">
                   <div className="flex items-start gap-2">
@@ -156,7 +156,7 @@ export default function JoinForm() {
                     <span>Course preview</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <ButtonStyled
               className="mt-3 w-full"
