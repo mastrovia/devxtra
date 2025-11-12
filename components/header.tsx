@@ -94,7 +94,9 @@ export const Header = () => {
           <DesktopMenu />
           {/* <MobileMenu {...header} /> */}
           <JoinFormTrigger>
-            <ButtonStyled>Get More Details</ButtonStyled>
+            <ButtonStyled className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+              Get More Details
+            </ButtonStyled>
           </JoinFormTrigger>
         </div>
       </div>

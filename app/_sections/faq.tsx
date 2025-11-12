@@ -1,4 +1,7 @@
+'use client';
+
 import { Heading } from '@/components/common/heading';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
 export default function FaqsSection({ id }: { id?: string }) {
   const data = {
@@ -52,19 +55,20 @@ export default function FaqsSection({ id }: { id?: string }) {
   return (
     <section className="section-cont flex flex-col gap-10" id={id}>
       <Heading tag={data.tag} title={data.title} subtitle={data.subtitle} />
-      <ul className="mx-auto flex w-full grid-cols-1 md:grid-cols-2 flex-col place-content-start items-start gap-6 self-stretch md:grid lg:gap-8 lg:px-12">
-        {data.questions.map((question) => (
-          <li
-            key={question.title}
-            className="flex flex-col gap-2 p-5 rounded-xl bg-accent/50 border border-border hover:border-[--accent-blue]/50 transition-all duration-300 hover:shadow-md"
-          >
-            <p className="font-semibold leading-relaxed text-base sm:text-lg text-primary">{question.title}</p>
-            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-              {question.answer}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className="mx-auto w-full max-w-3xl">
+        <Accordion type="single" className="w-full">
+          {data.questions.map((question, idx) => (
+            <AccordionItem key={question.title} value={`item-${idx}`} className="px-4 md:px-6">
+              <AccordionTrigger value={`item-${idx}`} className="text-base sm:text-lg font-semibold text-primary">
+                {question.title}
+              </AccordionTrigger>
+              <AccordionContent value={`item-${idx}`} className="text-sm sm:text-base text-muted-foreground">
+                {question.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </section>
   );
 }

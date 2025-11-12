@@ -14,14 +14,59 @@ export default function JoinForm() {
   const [data, setData] = useState({
     name: '',
     phone: '',
-    bestTimeToCall: '',
+    age: '',
+    currentStatus: '',
     biggestGoal: '',
   });
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
+  const validatePhone = (phone: string) => {
+    // Remove all non-digit characters
+    const digitsOnly = phone.replace(/\D/g, '');
+
+    // Check if it's empty
+    if (!digitsOnly) {
+      setPhoneError('Phone number is required');
+      return false;
+    }
+
+    // Check if it's exactly 10 digits (Indian mobile number)
+    if (digitsOnly.length !== 10) {
+      setPhoneError('Phone number must be 10 digits');
+      return false;
+    }
+
+    // Check if it starts with valid digits (6-9 for Indian mobile)
+    if (!/^[6-9]/.test(digitsOnly)) {
+      setPhoneError('Phone number must start with 6, 7, 8, or 9');
+      return false;
+    }
+
+    setPhoneError('');
+    return true;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setData((pre) => ({ ...pre, phone: value }));
+
+    // Validate on change if user has started typing
+    if (value.length > 0) {
+      validatePhone(value);
+    } else {
+      setPhoneError('');
+    }
+  };
 
   const submitFrom = async () => {
+    // Validate phone before submitting
+    if (!validatePhone(data.phone)) {
+      return;
+    }
+
     try {
       setLoading(true);
       // const response =
@@ -63,9 +108,28 @@ export default function JoinForm() {
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl bg-accent flex flex-col gap-5 w-full max-w-[500px] mx-4 p-5 md:p-7 max-h-[90vh] overflow-y-auto"
+        className="border rounded-2xl bg-accent flex flex-col gap-5 w-full max-w-[500px] mx-4 p-5 md:p-7 max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close button */}
+        <button
+          onClick={() => formHook.setOpen(false)}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+          aria-label="Close form"
+        >
+          <svg
+            className="w-5 h-5 text-muted-foreground"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
         {submitted ? (
           <div className="flex flex-col items-center gap-2">
             <div className="min-h-[150px] min-w-[300px]">
@@ -98,7 +162,7 @@ export default function JoinForm() {
               className="mt-3 w-full"
               onClick={() => {
                 setSubmitted(false);
-                setData({ name: '', phone: '', bestTimeToCall: '', biggestGoal: '' });
+                setData({ name: '', phone: '', age: '', currentStatus: '', biggestGoal: '' });
                 formHook.setOpen(false);
               }}
             >
@@ -114,10 +178,10 @@ export default function JoinForm() {
                 real conversation.
               </p>
             </div>
-            <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-3 md:gap-4" onSubmit={(e) => e.preventDefault()}>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="name-input" className="font-medium text-sm">
-                  What should we call you?
+                  What should we call you? <span className="text-[--text-urgent]">*</span>
                 </Label>
                 <Input
                   value={data.name}
@@ -125,38 +189,67 @@ export default function JoinForm() {
                   id="name-input"
                   placeholder="Your name"
                   required
+                  className="h-11"
                 />
               </div>
+
               <div className="flex flex-col gap-2">
                 <Label htmlFor="phone-input" className="font-medium text-sm">
                   Phone Number <span className="text-[--text-urgent]">*</span>
                 </Label>
                 <Input
                   value={data.phone}
-                  type="number"
-                  onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
+                  type="tel"
+                  onChange={handlePhoneChange}
                   id="phone-input"
-                  placeholder="+91 XXXXX XXXXX"
+                  placeholder="Enter 10 digit mobile number"
                   required
+                  className={`h-11 ${phoneError ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                  maxLength={10}
                 />
-                <p className="text-xs text-muted-foreground">We&apos;ll call this number in 5 minutes</p>
+                {phoneError ? (
+                  <p className="text-xs text-red-500">{phoneError}</p>
+                ) : (
+                  <p className="text-xs text-muted-foreground">We&apos;ll call this number in 5 minutes</p>
+                )}
               </div>
+
               <div className="flex flex-col gap-2">
-                <Label htmlFor="time-select" className="font-medium text-sm">
-                  Best time to call
+                <Label htmlFor="age-input" className="font-medium text-sm">
+                  Age <span className="text-[--text-urgent]">*</span>
                 </Label>
-                <Select value={data.bestTimeToCall} onValueChange={(e) => setData((pre) => ({ ...pre, bestTimeToCall: e }))}>
+                <Input
+                  value={data.age}
+                  type="number"
+                  onChange={(e) => setData((pre) => ({ ...pre, age: e.target.value }))}
+                  id="age-input"
+                  placeholder="Your age"
+                  min="15"
+                  max="100"
+                  required
+                  className="h-11"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="status-select" className="font-medium text-sm">
+                  Current Status <span className="text-[--text-urgent]">*</span>
+                </Label>
+                <Select value={data.currentStatus} onValueChange={(e) => setData((pre) => ({ ...pre, currentStatus: e }))}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select your preferred time" />
+                    <SelectValue placeholder="Select your current status" />
                   </SelectTrigger>
                   <SelectContent className="z-[122]">
-                    <SelectItem value="now">Now (next 10 min)</SelectItem>
-                    <SelectItem value="within-1-hour">Within 1 hour</SelectItem>
-                    <SelectItem value="evening">Evening (6-9 PM)</SelectItem>
-                    <SelectItem value="tomorrow">Tomorrow morning</SelectItem>
+                    <SelectItem value="student">Student</SelectItem>
+                    <SelectItem value="working-professional">Working Professional</SelectItem>
+                    <SelectItem value="job-seeker">Job Seeker</SelectItem>
+                    <SelectItem value="freelancer">Freelancer</SelectItem>
+                    <SelectItem value="entrepreneur">Entrepreneur</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
+
               <div className="flex flex-col gap-2">
                 <Label htmlFor="goal-select" className="font-medium text-sm">
                   What&apos;s your biggest goal?
@@ -197,13 +290,13 @@ export default function JoinForm() {
               <ButtonStyled
                 onClick={() => submitFrom()}
                 type="button"
-                className="transition-all flex items-center justify-center h-12 gap-3 bg-gradient-to-r from-orange-500 disabled:opacity-20 to-red-500 hover:from-orange-600 hover:to-red-600 text-white disabled:text-white font-semibold"
-                disabled={loading || !data.phone || !data.name}
+                className="transition-all flex items-center justify-center h-12 md:h-14 gap-3 bg-gradient-to-r from-orange-500 disabled:opacity-20 to-red-500 hover:from-orange-600 hover:to-red-600 text-white disabled:text-white font-semibold text-base md:text-lg mt-2"
+                disabled={loading || !data.phone || !data.name || !data.age || !data.currentStatus || !!phoneError}
               >
                 {loading ? (
                   <span className="inline-block w-7 h-7 border-2 border-white border-b-transparent rounded-full animate-spin" />
                 ) : (
-                  'Yes, Call Me Now'
+                  'Submit'
                 )}
               </ButtonStyled>
             </form>

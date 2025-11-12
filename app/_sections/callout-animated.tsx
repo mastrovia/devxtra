@@ -32,6 +32,11 @@ export default function CalloutAnimatedSection({ id }: { id?: string }) {
               <ButtonStyled
                 href={action.type == 'primary' ? '' : action.href}
                 variant={action?.type == 'secondary' ? 'glass' : 'default'}
+                className={
+                  action?.type === 'primary'
+                    ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white'
+                    : ''
+                }
               >
                 {action.label}
               </ButtonStyled>

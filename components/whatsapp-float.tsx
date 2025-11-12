@@ -1,20 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const whatsappNumber = '916282914958'; // Replace with actual WhatsApp number
   const message = 'Hi! I have a quick question about DevXtra';
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isVisible) return null;
 
   return (
     <a
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-[100] flex items-center gap-3 bg-[--whatsapp-green] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+      className="fixed bottom-6 right-6 z-[100] flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 py-3 rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_40px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-105 group animate-fade-in"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label="Chat on WhatsApp"
@@ -29,7 +40,7 @@ export default function WhatsAppFloat() {
       </svg>
       <span
         className={`text-sm md:text-base font-medium whitespace-nowrap overflow-hidden transition-all duration-300 ${
-          isHovered ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0'
+          isHovered ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0 hidden'
         }`}
       >
         Quick Question? Chat Now

@@ -25,7 +25,15 @@ export default function CalloutSection({ id }: { id?: string }) {
         <div className="flex md:items-center gap-2 ">
           {calloutData.actions?.map((action) => (
             <JoinFormTrigger key={action._id} disabled={action?.type == 'secondary'}>
-              <ButtonStyled href={action.href} variant={action?.type == 'secondary' ? 'glass' : 'default'}>
+              <ButtonStyled
+                href={action.href}
+                variant={action?.type == 'secondary' ? 'glass' : 'default'}
+                className={
+                  action?.type === 'primary'
+                    ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white'
+                    : ''
+                }
+              >
                 {action.label}
               </ButtonStyled>
             </JoinFormTrigger>

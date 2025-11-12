@@ -18,7 +18,13 @@ const hero = {
   },
   trustBadges: ['✓ Expert-Led Mentorship', '✓ Real Client Projects', '✓ Earn While Learning'],
   actions: [
-    { _id: '1', label: 'Start Your Free 21-Day Journey', subtext: '200+ developers • No credit card required', href: '#', type: 'primary' },
+    {
+      _id: '1',
+      label: 'Book Your Free Expert Consultation',
+      subtext: '200+ developers • No credit card required',
+      href: '#',
+      type: 'primary',
+    },
     // { _id: '2', label: 'Talk to a Mentor (Free)', href: '#', type: 'secondary' },
   ],
 };
@@ -59,7 +65,7 @@ export default function HeroSection({ id }: { id?: string }) {
             {hero.title}
           </h1>
           <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">{hero.subtitle}</h2>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-4 mt-2">
             {hero.trustBadges.map((badge, idx) => (
               <span key={idx} className="text-sm text-primary/90">
                 {badge}
