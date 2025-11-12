@@ -21,7 +21,7 @@ const hero = {
     {
       _id: '1',
       label: 'Book Your Free Expert Consultation',
-      subtext: '200+ developers • No credit card required',
+      subtext: '200+ developers already transformed their careers with DevXtra',
       href: '#',
       type: 'primary',
     },
