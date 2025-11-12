@@ -35,9 +35,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <PostHogProvider>
-            <AutoJoinFormTrigger />
             <Header />
             {children}
+            <AutoJoinFormTrigger />
             <Footer />
             <JoinForm />
           </PostHogProvider>
