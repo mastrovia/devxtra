@@ -5,6 +5,7 @@ import { Header } from '@/components/header';
 import Footer from '@/components/footer';
 import JoinForm from '@/components/join-form';
 import AutoJoinFormTrigger from '@/components/auto-join-form-trigger';
+import WhatsAppFloat from '@/components/whatsapp-float';
 import Providers, { PostHogProvider } from './providers';
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default function RootLayout({
             <AutoJoinFormTrigger />
             <Footer />
             <JoinForm />
+            <WhatsAppFloat />
           </PostHogProvider>
         </Providers>
       </body>

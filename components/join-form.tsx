@@ -72,7 +72,7 @@ export default function JoinForm() {
               <LottiePlayer src="/lotties/success-check.json" loop={false} />
             </div>
             <div className="flex flex-col gap-2 items-center text-center">
-              <h1 className="text-2xl font-bold">Got it! We'll call you in 5 minutes</h1>
+              <h1 className="text-2xl font-bold">Got it! We&apos;ll call you in 5 minutes</h1>
               <p className="text-muted-foreground">
                 Keep your phone nearby at <span className="font-semibold text-primary">{data.phone}</span>.
               </p>
@@ -138,7 +138,7 @@ export default function JoinForm() {
                   placeholder="+91 XXXXX XXXXX"
                   required
                 />
-                <p className="text-xs text-muted-foreground">We'll call this number in 5 minutes</p>
+                <p className="text-xs text-muted-foreground">We&apos;ll call this number in 5 minutes</p>
               </div>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="time-select" className="font-medium text-sm">
@@ -158,7 +158,7 @@ export default function JoinForm() {
               </div>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="goal-select" className="font-medium text-sm">
-                  What's your biggest goal?
+                  What&apos;s your biggest goal?
                 </Label>
                 <Select value={data.biggestGoal} onValueChange={(e) => setData((pre) => ({ ...pre, biggestGoal: e }))}>
                   <SelectTrigger className="w-full">

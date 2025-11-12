@@ -2,39 +2,49 @@ import { Heading } from '@/components/common/heading';
 
 export default function FaqsSection({ id }: { id?: string }) {
   const data = {
-    title: 'Frequently asked questions',
-    subtitle: 'Advice and answers from our team.',
+    title: 'Still Have Questions?',
+    subtitle: 'Everything you need to know about DevXtra',
     tag: 'FAQs',
     questions: [
       {
-        title: 'What will I learn in the DevXtra program?',
+        title: 'Do I need prior coding experience?',
         answer:
-          'At DevXtra, you’ll gain fullstack development skills from backend and database fundamentals to frontend and mobile app development. You’ll also work on real-world startup-level projects, explore AI-powered coding tools, and learn teamwork, freelancing, and networking skills to prepare for professional and entrepreneurial success.',
+          "No prior experience required! DevXtra starts with fundamentals and builds your skills progressively. Whether you're a complete beginner or switching careers, our structured curriculum takes you from basics to advanced concepts step by step.",
+      },
+      {
+        title: 'How much time commitment is required per week?',
+        answer:
+          'We recommend 10-15 hours per week for optimal progress. The program is flexible - you can learn at your own pace. Weekend batches and evening sessions are available for working professionals.',
+      },
+      {
+        title: "What if I don't get freelance work or results?",
+        answer:
+          'We provide continuous support until you land your first project. Our mentors help with portfolio building, client outreach, and interview preparation. Plus, we share real project opportunities from our network.',
       },
       {
         title: 'Can I earn while learning at DevXtra?',
         answer:
-          'Yes! Our program lets you work on client projects and startup-inspired assignments, helping you earn while gaining practical coding experience. You’ll build a portfolio, improve your personal branding, and develop freelancing skills along the way.',
+          "Absolutely! Many students start earning within 2-3 months. You'll work on real client projects, build a strong portfolio, and learn proven freelancing strategies. We'll guide you on pricing, proposals, and client communication.",
       },
       {
-        title: 'Do I need prior coding experience to join the course?',
+        title: 'Is there any placement or job assistance?',
         answer:
-          'No prior experience is required. DevXtra’s  course structure starts with foundations like backend, database, and frontend development. Each phase builds your skills progressively, preparing you for mobile apps, enterprise projects, and real client work.',
+          'Yes! We provide job referrals, resume reviews, mock interviews, and direct connections to hiring companies. Our alumni network includes developers at top startups and product companies.',
       },
       {
-        title: 'Will I learn AI and modern tools in this course?',
+        title: 'What makes DevXtra different from YouTube or other courses?',
         answer:
-          'Absolutely! DevXtra teaches you how to leverage AI tools for coding, automation, and rapid prototyping. You’ll also explore no-code/low-code platforms, helping you build projects faster and stay ahead in the modern tech landscape.',
+          'Unlike passive learning, DevXtra offers personalized mentorship, real project experience, peer collaboration, and accountability. You get immediate doubt resolution, career guidance, and a supportive community - not just videos.',
       },
       {
-        title: 'Will I get real-world exposure and teamwork experience?',
+        title: 'Can I pay in installments?',
         answer:
-          'Definitely! You’ll collaborate with peers on projects, experience real client workflows, and develop teamwork skills that mirror professional environments. This prepares you for both corporate jobs and startup ventures.',
+          'Yes, flexible payment options are available. We also offer an "Earn While You Learn" model where you can defer payment until you land your first project. Talk to us about what works for you.',
       },
       {
-        title: 'Is this course suitable for aspiring entrepreneurs?',
+        title: 'Is this suitable for working professionals?',
         answer:
-          'Yes! DevXtra helps you turn your ideas into real projects, test them with real users, and learn how to grow them step by step. You’ll gain an entrepreneurial mindset, practical skills, and mentorship to build startup-ready products.',
+          'Definitely! Many of our students are working professionals looking to upskill or switch careers. We offer evening and weekend batches, flexible schedules, and self-paced learning options.',
       },
     ],
   };
@@ -42,11 +52,14 @@ export default function FaqsSection({ id }: { id?: string }) {
   return (
     <section className="section-cont flex flex-col gap-10" id={id}>
       <Heading tag={data.tag} title={data.title} subtitle={data.subtitle} />
-      <ul className="mx-auto flex w-full grid-cols-3 flex-col place-content-start items-start gap-8 self-stretch lg:grid lg:gap-14 lg:px-24">
+      <ul className="mx-auto flex w-full grid-cols-1 md:grid-cols-2 flex-col place-content-start items-start gap-6 self-stretch md:grid lg:gap-8 lg:px-12">
         {data.questions.map((question) => (
-          <li key={question.title} className="flex flex-col gap-1.5">
-            <p className="font-medium leading-relaxed tracking-tighter sm:text-lg">{question.title}</p>
-            <p className="text-sm leading-relaxed tracking-tight text-muted-foreground sm:text-base">
+          <li
+            key={question.title}
+            className="flex flex-col gap-2 p-5 rounded-xl bg-accent/50 border border-border hover:border-[--accent-blue]/50 transition-all duration-300 hover:shadow-md"
+          >
+            <p className="font-semibold leading-relaxed text-base sm:text-lg text-primary">{question.title}</p>
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
               {question.answer}
             </p>
           </li>
