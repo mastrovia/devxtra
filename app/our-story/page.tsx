@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Heading } from '@/components/common/heading';
-import TestimonialsMasonry from '@/components/testimonials-masonry';
+import OurStoriesMasonry from '@/components/our-storys-masonry';
 import LightRays from '@/components/LightRays';
 import { JoinFormTrigger } from '@/components/join-form';
 import { ButtonStyled } from '@/components/common/button';
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
       </div>
 
       {/* Masonry Grid Section */}
-      <TestimonialsMasonry />
+      <OurStoriesMasonry />
     </main>
   );
 }

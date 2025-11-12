@@ -5,68 +5,232 @@ import Image from 'next/image';
 import { Volume2, VolumeX, Expand, X } from 'lucide-react';
 
 interface TestimonialItem {
-  id: string;
+  id: number;
   type: 'image' | 'video';
   src: string;
   alt: string;
   height: number; // relative height for masonry layout
 }
 
-export default function TestimonialsMasonry() {
+const images: TestimonialItem[] = [
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361792.jpg',
+    alt: 'Image description',
+    id: 0,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361803.jpg',
+    alt: 'Image description',
+    id: 1,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361811.jpg',
+    alt: 'Image description',
+    id: 2,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361829.jpg',
+    alt: 'Image description',
+    id: 3,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361848.jpg',
+    alt: 'Image description',
+    id: 4,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361870.jpg',
+    alt: 'Image description',
+    id: 5,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361889.jpg',
+    alt: 'Image description',
+    id: 6,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361907.jpg',
+    alt: 'Image description',
+    id: 7,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361924.jpg',
+    alt: 'Image description',
+    id: 8,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361959.jpg',
+    alt: 'Image description',
+    id: 9,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361967.jpg',
+    alt: 'Image description',
+    id: 10,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361982.jpg',
+    alt: 'Image description',
+    id: 11,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878361999.jpg',
+    alt: 'Image description',
+    id: 12,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1762878362265.jpg',
+    alt: 'Image description',
+    id: 28,
+    height: 512,
+  },
+];
+
+const videos: TestimonialItem[] = [
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362016.mp4',
+    alt: 'Image description',
+    id: 13,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362032.mp4',
+    alt: 'Image description',
+    id: 14,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362045.mp4',
+    alt: 'Image description',
+    id: 15,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362059.mp4',
+    alt: 'Image description',
+    id: 16,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362073.mp4',
+    alt: 'Image description',
+    id: 17,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362087.mp4',
+    alt: 'Image description',
+    id: 18,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362100.mp4',
+    alt: 'Image description',
+    id: 19,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362131.mp4',
+    alt: 'Image description',
+    id: 20,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362155.mp4',
+    alt: 'Image description',
+    id: 21,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362161.mp4',
+    alt: 'Image description',
+    id: 22,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362174.mp4',
+    alt: 'Image description',
+    id: 23,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362186.mp4',
+    alt: 'Image description',
+    id: 24,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362217.mp4',
+    alt: 'Image description',
+    id: 25,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362241.mp4',
+    alt: 'Image description',
+    id: 26,
+    height: 512,
+  },
+  {
+    type: 'video',
+    src: 'https://r2.devxtra.com/ig_1762878362251.mp4',
+    alt: 'Image description',
+    id: 27,
+    height: 512,
+  },
+];
+
+// Generate random testimonial items with images and videos
+
+export default function OurStoriesMasonry() {
+  const [testimonialItems, setTestimonialItems] = useState<TestimonialItem[]>([]);
+
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const fullscreenVideoRef = useRef<HTMLVideoElement | null>(null);
   const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
   const [fullscreenItem, setFullscreenItem] = useState<TestimonialItem | null>(null);
   const [isFullscreenVideoMuted, setIsFullscreenVideoMuted] = useState(false);
-
-  // Generate random testimonial items with images and videos
-  const testimonialItems: TestimonialItem[] = [
-    { id: '1', type: 'image', src: 'https://picsum.photos/seed/testimonial1/400/300', alt: 'Testimonial 1', height: 300 },
-    {
-      id: '2',
-      type: 'video',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-      alt: 'Testimonial Video 2',
-      height: 200,
-    },
-    { id: '3', type: 'image', src: 'https://picsum.photos/seed/testimonial3/400/400', alt: 'Testimonial 3', height: 300 },
-    { id: '4', type: 'image', src: 'https://picsum.photos/seed/testimonial4/400/550', alt: 'Testimonial 4', height: 250 },
-    {
-      id: '5',
-      type: 'video',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-      alt: 'Testimonial Video 5',
-      height: 200,
-    },
-    { id: '6', type: 'image', src: 'https://picsum.photos/seed/testimonial6/400/450', alt: 'Testimonial 6', height: 250 },
-    { id: '7', type: 'image', src: 'https://picsum.photos/seed/testimonial7/400/450', alt: 'Testimonial 7', height: 300 },
-    {
-      id: '8',
-      type: 'video',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
-      alt: 'Testimonial Video 8',
-      height: 150,
-    },
-    { id: '9', type: 'image', src: 'https://picsum.photos/seed/testimonial9/400/500', alt: 'Testimonial 9', height: 350 },
-    { id: '10', type: 'image', src: 'https://picsum.photos/seed/testimonial10/400/400', alt: 'Testimonial 10', height: 300 },
-    {
-      id: '11',
-      type: 'video',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
-      alt: 'Testimonial Video 11',
-      height: 250,
-    },
-    { id: '12', type: 'image', src: 'https://picsum.photos/seed/testimonial12/400/550', alt: 'Testimonial 12', height: 250 },
-    { id: '13', type: 'image', src: 'https://picsum.photos/seed/testimonial13/400/450', alt: 'Testimonial 13', height: 350 },
-    { id: '14', type: 'image', src: 'https://picsum.photos/seed/testimonial14/400/300', alt: 'Testimonial 14', height: 300 },
-    {
-      id: '15',
-      type: 'video',
-      src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
-      alt: 'Testimonial Video 15',
-      height: 150,
-    },
-  ];
 
   const handleVideoClick = (index: number) => {
     const video = videoRefs.current[index];
@@ -104,13 +268,7 @@ export default function TestimonialsMasonry() {
     setFullscreenItem(null);
     setIsFullscreenVideoMuted(false);
   };
-
-  const toggleFullscreenVideoAudio = () => {
-    if (fullscreenVideoRef.current) {
-      fullscreenVideoRef.current.muted = !fullscreenVideoRef.current.muted;
-      setIsFullscreenVideoMuted(fullscreenVideoRef.current.muted);
-    }
-  };
+ 
 
   // Handle ESC key to close fullscreen
   useEffect(() => {
@@ -165,6 +323,16 @@ export default function TestimonialsMasonry() {
     };
   }, [activeAudioIndex]);
 
+  useEffect(() => {
+    const items = [];
+
+    for (let i = 0; i < images.length + videos.length; i++) {
+      items.push(i % 2 == 0 ? { ...videos.splice(0, 1)[0], height: 300 } : { ...images.splice(0, 1)[0], height: 200 });
+    }
+
+    setTestimonialItems(items);
+  }, []);
+
   return (
     <>
       <div className="relative overflow-hidden">
@@ -177,7 +345,7 @@ export default function TestimonialsMasonry() {
             }}
           >
             {testimonialItems.map((item, index) => {
-              const spanRows = Math.ceil(item.height / 10);
+              const spanRows = Math.ceil(item?.height / 10);
 
               return (
                 <div
@@ -187,7 +355,7 @@ export default function TestimonialsMasonry() {
                     gridRowEnd: `span ${spanRows}`,
                   }}
                 >
-                  {item.type === 'image' ? (
+                  {item?.type === 'image' ? (
                     <>
                       <Image
                         src={item.src}

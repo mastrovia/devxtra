@@ -1,6 +1,4 @@
 import LogoLoop from '@/components/animations/logo-loop';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
 export default function TechStacksSection({ id }: { id?: string }) {
   const companiesSection = {
@@ -43,8 +41,8 @@ export default function TechStacksSection({ id }: { id?: string }) {
     <section className="flex flex-col gap-10 relative" id={id}>
       <h2 className="text-center tracking-tight opacity-50 px-22">{companiesSection.subtitle}</h2>
       <LogoLoop
-        logos={companiesSection.companies.map(d => ({ src: d.image, alt: d.title }))}
-        className='grayscale opacity-75 invert dark:invert-0'
+        logos={companiesSection.companies.map((d) => ({ src: d.image, alt: d.title }))}
+        className="grayscale opacity-75 invert dark:invert-0"
         logoHeight={30}
         speed={75}
       />
