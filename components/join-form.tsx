@@ -13,10 +13,9 @@ export default function JoinForm() {
   const formHook = useJoinForm();
   const [data, setData] = useState({
     name: '',
-    email: '',
     phone: '',
-    currentCareerStatus: '',
-    okForOffline: '',
+    bestTimeToCall: '',
+    biggestGoal: '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -64,7 +63,7 @@ export default function JoinForm() {
       onClick={() => formHook.setOpen(false)}
     >
       <div
-        className="border rounded-2xl bg-accent flex flex-col gap-5 md:max-w-[400px] mx-4 p-5 md:p-7"
+        className="border rounded-2xl bg-accent flex flex-col gap-5 w-full max-w-[500px] mx-4 p-5 md:p-7 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {submitted ? (
@@ -72,15 +71,34 @@ export default function JoinForm() {
             <div className="min-h-[150px] min-w-[300px]">
               <LottiePlayer src="/lotties/success-check.json" loop={false} />
             </div>
-            <div className="flex flex-col gap-2 items-center">
-              <h1 className="text-xl font-bold">We&apos;ve Noted</h1>
-              <p className="text-muted-foreground">Our team will contact you soon.</p>
+            <div className="flex flex-col gap-2 items-center text-center">
+              <h1 className="text-2xl font-bold">Got it! We'll call you in 5 minutes</h1>
+              <p className="text-muted-foreground">
+                Keep your phone nearby at <span className="font-semibold text-primary">{data.phone}</span>.
+              </p>
+              <div className="mt-3 p-4 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30 w-full">
+                <p className="text-sm font-medium mb-2">Meanwhile, check your WhatsApp for:</p>
+                <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[--text-trust]">✓</span>
+                    <span>Your personalized roadmap</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[--text-trust]">✓</span>
+                    <span>Success stories</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[--text-trust]">✓</span>
+                    <span>Course preview</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <ButtonStyled
-              className="mt-3"
+              className="mt-3 w-full"
               onClick={() => {
                 setSubmitted(false);
-                setData({ name: '', email: '', phone: '', currentCareerStatus: '', okForOffline: '' });
+                setData({ name: '', phone: '', bestTimeToCall: '', biggestGoal: '' });
                 formHook.setOpen(false);
               }}
             >
@@ -89,71 +107,102 @@ export default function JoinForm() {
           </div>
         ) : (
           <>
-            <h1 className="text-xl font-bold">Transform your career with DevXtra</h1>
-            <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="name-input" className="font-medium">
-                  Name
+            <div className="flex flex-col gap-2">
+              <h1 className="text-2xl font-bold">Get a Personal Call in 5 Minutes</h1>
+              <p className="text-sm text-muted-foreground">
+                Share your details. Our team will call you immediately to discuss your personalized learning path. No automated emails, just real conversation.
+              </p>
+            </div>
+            <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="name-input" className="font-medium text-sm">
+                  What should we call you?
                 </Label>
                 <Input
                   value={data.name}
                   onChange={(e) => setData((pre) => ({ ...pre, name: e.target.value }))}
                   id="name-input"
-                  placeholder="John doe"
+                  placeholder="Your name"
+                  required
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name-input" className="font-medium">
-                  Phone number
+                <Label htmlFor="phone-input" className="font-medium text-sm">
+                  Phone Number <span className="text-[--text-urgent]">*</span>
                 </Label>
                 <Input
                   value={data.phone}
-                  type="number"
+                  type="tel"
                   onChange={(e) => setData((pre) => ({ ...pre, phone: e.target.value }))}
-                  id="name-input"
-                  placeholder="78******22"
+                  id="phone-input"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
                 />
+                <p className="text-xs text-muted-foreground">We'll call this number in 5 minutes</p>
               </div>
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name-input" className="font-medium">
-                  What defines you the most ?
+                <Label htmlFor="time-select" className="font-medium text-sm">
+                  Best time to call
                 </Label>
-                <Select value={data.currentCareerStatus} onValueChange={(e) => setData((pre) => ({ ...pre, currentCareerStatus: e }))}>
+                <Select value={data.bestTimeToCall} onValueChange={(e) => setData((pre) => ({ ...pre, bestTimeToCall: e }))}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Currently studying ?" />
+                    <SelectValue placeholder="Select your preferred time" />
                   </SelectTrigger>
                   <SelectContent className="z-[122]">
-                    <SelectItem value="currently-studying">Currently Studying</SelectItem>
-                    <SelectItem value="job-seeker">Job Seeker</SelectItem>
-                    <SelectItem value="fresher">Fresher</SelectItem>
-                    <SelectItem value="career-switch">Career Switch</SelectItem>
+                    <SelectItem value="now">Now (next 10 min)</SelectItem>
+                    <SelectItem value="within-1-hour">Within 1 hour</SelectItem>
+                    <SelectItem value="evening">Evening (6-9 PM)</SelectItem>
+                    <SelectItem value="tomorrow">Tomorrow morning</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
-              <div className="hidden flex-col gap-2">
-                <Label htmlFor="name-input" className="font-medium">
-                  Are you okay for offline course ?
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="goal-select" className="font-medium text-sm">
+                  What's your biggest goal?
                 </Label>
-                <Select value={data.okForOffline} onValueChange={(e) => setData((pre) => ({ ...pre, okForOffline: e }))}>
+                <Select value={data.biggestGoal} onValueChange={(e) => setData((pre) => ({ ...pre, biggestGoal: e }))}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Are you ?" />
+                    <SelectValue placeholder="Select your goal" />
                   </SelectTrigger>
                   <SelectContent className="z-[122]">
-                    <SelectItem value="yes">Yes</SelectItem>
-                    <SelectItem value="no">No</SelectItem>
+                    <SelectItem value="first-client">Get my first freelance client</SelectItem>
+                    <SelectItem value="career-switch">Switch to a tech career</SelectItem>
+                    <SelectItem value="startup">Build my own startup</SelectItem>
+                    <SelectItem value="level-up">Level up my coding skills</SelectItem>
+                    <SelectItem value="not-sure">Not sure yet, need guidance</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
+
+              <div className="flex flex-col gap-2 p-3 bg-[--accent-blue]/10 rounded-lg border border-[--accent-blue]/30">
+                <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="text-[--text-trust] mt-0.5">✓</span>
+                  <span>Immediate personal call (no bots)</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="text-[--text-trust] mt-0.5">✓</span>
+                  <span>Free consultation, zero obligation</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="text-[--text-trust] mt-0.5">✓</span>
+                  <span>200+ successful graduates</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <span className="text-[--text-trust] mt-0.5">✓</span>
+                  <span>Your number stays private</span>
+                </div>
+              </div>
+
               <ButtonStyled
                 onClick={() => submitFrom()}
                 type="button"
-                className="flex items-center justify-center h-12 gap-3"
-                disabled={loading || !data.phone}
+                className="flex items-center justify-center h-12 gap-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold"
+                disabled={loading || !data.phone || !data.name}
               >
                 {loading ? (
                   <span className="inline-block w-7 h-7 border-2 border-white border-b-transparent rounded-full animate-spin" />
                 ) : (
-                  'Submit'
+                  'Yes, Call Me Now'
                 )}
               </ButtonStyled>
             </form>

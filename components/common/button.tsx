@@ -26,16 +26,12 @@ const ButtonBase: FC<ButtonProps> = ({ children, href, ...props }) => {
 
 export default ButtonBase;
 
-export const ButtonStyled: FC<ButtonProps & { variant?: 'default' | 'glass' }> = ({
-  children,
-  variant = 'default',
-  ...props
-}) => {
+export const ButtonStyled: FC<ButtonProps & { variant?: 'default' | 'glass' }> = ({ children, variant = 'default', ...props }) => {
   return (
     <ButtonBase
       {...props}
       className={cn(
-        'inline-block bg-primary px-5 py-2 font-bold text-accent disabled:text-muted transition-colors disabled:cursor-not-allowed disabled:bg-primary/50 rounded-full whitespace-nowrap',
+        'inline-block bg-primary px-6 py-2.5 font-bold text-accent disabled:text-muted transition-colors disabled:cursor-not-allowed disabled:bg-primary/50 rounded-md whitespace-nowrap',
         variant == 'glass' ? 'bg-primary/10 text-primary border backdrop-blur-2xl' : '',
         props.className
       )}

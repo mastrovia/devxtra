@@ -130,6 +130,13 @@
   --surface-primary: theme(colors.gray.950);
   --surface-secondary: theme(colors.gray.900);
   --surface-tertiary: theme(colors.gray.800);
+
+  /* Trust-Building Colors */
+  --text-trust: #10B981;
+  --text-urgent: #FF6B35;
+  --accent-blue: #3B82F6;
+  --accent-gold: #F59E0B;
+  --whatsapp-green: #25D366;
 }
 
 @layer base {
