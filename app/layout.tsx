@@ -8,6 +8,7 @@ import AutoJoinFormTrigger from '@/components/auto-join-form-trigger';
 import WhatsAppFloat from '@/components/whatsapp-float';
 import PhoneFloat from '@/components/phone-float';
 import Providers, { PostHogProvider } from './providers';
+import MetaPixelClient from '@/components/MetaPixelClient';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -46,6 +47,7 @@ export default function RootLayout({
             <PhoneFloat />
           </PostHogProvider>
         </Providers>
+        <MetaPixelClient />
       </body>
     </html>
   );
