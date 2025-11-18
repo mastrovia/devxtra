@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 export default function PhoneFloat() {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const phoneNumber = '+916282914958'; // Replace with actual phone number
+  const phoneNumber = process.env.NEXT_PUBLIC_CONTACT_NUMBER || '8921190179'; // Replace with actual phone number
 
-  const phoneLink = `tel:${phoneNumber}`;
+  const phoneLink = `tel:+91${phoneNumber}`;
 
   useEffect(() => {
     const timer = setTimeout(() => {
