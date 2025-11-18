@@ -15,100 +15,149 @@ interface TestimonialItem {
 const images: TestimonialItem[] = [
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361792.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618907.jpg',
     alt: 'Image description',
     id: 0,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361803.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618910.jpg',
     alt: 'Image description',
     id: 1,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361811.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618924.jpg',
     alt: 'Image description',
     id: 2,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361829.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618932.jpg',
     alt: 'Image description',
     id: 3,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361848.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618938.jpg',
     alt: 'Image description',
     id: 4,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361870.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618943.jpg',
     alt: 'Image description',
     id: 5,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361889.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618946.jpg',
     alt: 'Image description',
     id: 6,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361907.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618954.jpg',
     alt: 'Image description',
     id: 7,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361924.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618961.jpg',
     alt: 'Image description',
     id: 8,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361959.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618967.jpg',
     alt: 'Image description',
     id: 9,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361967.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618972.jpg',
     alt: 'Image description',
     id: 10,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361982.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618977.jpg',
     alt: 'Image description',
     id: 11,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878361999.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618982.jpg',
     alt: 'Image description',
     id: 12,
     height: 512,
   },
   {
     type: 'image',
-    src: 'https://r2.devxtra.com/ig_1762878362265.jpg',
+    src: 'https://r2.devxtra.com/ig_1763479618988.jpg',
     alt: 'Image description',
-    id: 28,
+    id: 13,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479618994.jpg',
+    alt: 'Image description',
+    id: 14,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619000.jpg',
+    alt: 'Image description',
+    id: 15,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619005.jpg',
+    alt: 'Image description',
+    id: 16,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619013.jpg',
+    alt: 'Image description',
+    id: 17,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619015.jpg',
+    alt: 'Image description',
+    id: 18,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619022.jpg',
+    alt: 'Image description',
+    id: 19,
+    height: 512,
+  },
+  {
+    type: 'image',
+    src: 'https://r2.devxtra.com/ig_1763479619028.jpg',
+    alt: 'Image description',
+    id: 20,
     height: 512,
   },
 ];
@@ -222,7 +271,6 @@ const videos: TestimonialItem[] = [
 ];
 
 // Generate random testimonial items with images and videos
-
 export default function OurStoriesMasonry() {
   const [testimonialItems, setTestimonialItems] = useState<TestimonialItem[]>([]);
 
@@ -268,7 +316,6 @@ export default function OurStoriesMasonry() {
     setFullscreenItem(null);
     setIsFullscreenVideoMuted(false);
   };
- 
 
   // Handle ESC key to close fullscreen
   useEffect(() => {
