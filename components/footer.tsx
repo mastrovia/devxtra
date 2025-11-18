@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ButtonBase from './common/button';
-import { ThemeSwitcher } from './theme-switcher';
+// import { ThemeSwitcher } from './theme-switcher';
 
 export default function Footer() {
   const footer = {
@@ -77,10 +77,10 @@ export default function Footer() {
             </ButtonBase>
           ))}
         </nav>
-        <div className="col-start-2 row-start-1 flex items-center gap-3 self-center justify-self-end sm:col-span-1 sm:col-start-3 sm:row-start-1">
+        {/* <div className="col-start-2 row-start-1 flex items-center gap-3 self-center justify-self-end sm:col-span-1 sm:col-start-3 sm:row-start-1">
           <p className="hidden text-muted-foreground sm:block">Appearance</p>
           <ThemeSwitcher />
-        </div>
+        </div> */}
 
         <ul className="col-span-2 text-pretty text-sm text-muted-foreground sm:col-span-1">
           {footer.contacts.map((e) => {
