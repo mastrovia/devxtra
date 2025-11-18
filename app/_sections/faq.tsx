@@ -1,40 +1,43 @@
+'use client';
+
 import { Heading } from '@/components/common/heading';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
 export default function FaqsSection({ id }: { id?: string }) {
   const data = {
-    title: 'Frequently asked questions',
-    subtitle: 'Advice and answers from our team.',
+    title: 'Still Have Questions?',
+    subtitle: 'Everything you need to know about DevXtra',
     tag: 'FAQs',
     questions: [
       {
-        title: 'What will I learn in the DevXtra program?',
+        title: 'Do I need prior coding experience?',
         answer:
-          'At DevXtra, you’ll gain fullstack development skills from backend and database fundamentals to frontend and mobile app development. You’ll also work on real-world startup-level projects, explore AI-powered coding tools, and learn teamwork, freelancing, and networking skills to prepare for professional and entrepreneurial success.',
+          "No prior experience required! DevXtra starts with fundamentals and builds your skills progressively. Whether you're a complete beginner or switching careers, our structured curriculum takes you from basics to advanced concepts step by step.",
+      },
+      {
+        title: "What if I don't get freelance work or results?",
+        answer:
+          'We provide continuous support until you land your first project. Our mentors help with portfolio building, client outreach, and interview preparation. Plus, we share real project opportunities from our network.',
       },
       {
         title: 'Can I earn while learning at DevXtra?',
         answer:
-          'Yes! Our program lets you work on client projects and startup-inspired assignments, helping you earn while gaining practical coding experience. You’ll build a portfolio, improve your personal branding, and develop freelancing skills along the way.',
+          "Absolutely! Many students start earning within 2-3 months. You'll work on real client projects, build a strong portfolio, and learn proven freelancing strategies. We'll guide you on pricing, proposals, and client communication.",
       },
       {
-        title: 'Do I need prior coding experience to join the course?',
+        title: 'Is there any placement or job assistance?',
         answer:
-          'No prior experience is required. DevXtra’s  course structure starts with foundations like backend, database, and frontend development. Each phase builds your skills progressively, preparing you for mobile apps, enterprise projects, and real client work.',
+          'Yes! We provide job referrals, resume reviews, mock interviews, and direct connections to hiring companies. Our alumni network includes developers at top startups and product companies.',
       },
       {
-        title: 'Will I learn AI and modern tools in this course?',
+        title: 'What makes DevXtra different from YouTube or other courses?',
         answer:
-          'Absolutely! DevXtra teaches you how to leverage AI tools for coding, automation, and rapid prototyping. You’ll also explore no-code/low-code platforms, helping you build projects faster and stay ahead in the modern tech landscape.',
+          'Unlike passive learning, DevXtra offers personalized mentorship, real project experience, peer collaboration, and accountability. You get immediate doubt resolution, career guidance, and a supportive community - not just videos.',
       },
       {
-        title: 'Will I get real-world exposure and teamwork experience?',
+        title: 'Is this suitable for working professionals?',
         answer:
-          'Definitely! You’ll collaborate with peers on projects, experience real client workflows, and develop teamwork skills that mirror professional environments. This prepares you for both corporate jobs and startup ventures.',
-      },
-      {
-        title: 'Is this course suitable for aspiring entrepreneurs?',
-        answer:
-          'Yes! DevXtra helps you turn your ideas into real projects, test them with real users, and learn how to grow them step by step. You’ll gain an entrepreneurial mindset, practical skills, and mentorship to build startup-ready products.',
+          'Definitely! Many of our students are working professionals looking to upskill or switch careers. We offer evening and weekend batches, flexible schedules, and self-paced learning options.',
       },
     ],
   };
@@ -42,16 +45,20 @@ export default function FaqsSection({ id }: { id?: string }) {
   return (
     <section className="section-cont flex flex-col gap-10" id={id}>
       <Heading tag={data.tag} title={data.title} subtitle={data.subtitle} />
-      <ul className="mx-auto flex w-full grid-cols-3 flex-col place-content-start items-start gap-8 self-stretch lg:grid lg:gap-14 lg:px-24">
-        {data.questions.map((question) => (
-          <li key={question.title} className="flex flex-col gap-1.5">
-            <p className="font-medium leading-relaxed tracking-tighter sm:text-lg">{question.title}</p>
-            <p className="text-sm leading-relaxed tracking-tight text-muted-foreground sm:text-base">
-              {question.answer}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <div className="mx-auto w-full max-w-3xl">
+        <Accordion type="single" className="w-full">
+          {data.questions.map((question, idx) => (
+            <AccordionItem key={question.title} value={`item-${idx}`} className="px-4 md:px-6">
+              <AccordionTrigger value={`item-${idx}`} className="text-base sm:text-lg font-semibold text-primary">
+                {question.title}
+              </AccordionTrigger>
+              <AccordionContent value={`item-${idx}`} className="text-sm sm:text-base text-muted-foreground">
+                {question.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </section>
   );
 }

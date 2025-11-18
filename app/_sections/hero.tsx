@@ -1,23 +1,30 @@
 import { ButtonStyled } from '@/components/common/button';
 import { JoinFormTrigger } from '@/components/join-form';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 
 const hero = {
-  title: 'Learn smart, Build fast, Thrive always',
+  title: 'Transform Your Career in 21 Days',
   subtitle:
-    'A New Way to Learn and Grow in Tech. Join DevXtra to Access Expert-Led Courses, Hands-On Projects, and a Thriving Community. Elevate Your Skills and Accelerate Your Career Today!',
+    'Join DevXtra to master fullstack development, build real-world projects, and land a high paying career with the guidance of Expert mentors.',
   customerSatisfaction: {
-    text: '200+ learners grow with DevXtra.',
-    avatars: [
-      { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
-      { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
-      { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
-    ],
+    text: 'Only Few Seats Left This Month',
+    highlight: 'Register now : ',
+    // avatars: [
+    //   { link: 'https://github.com/shadcn.png', name: 'shadcn', fallback: 'CN' },
+    //   { link: 'https://github.com/leerob.png', name: 'leerob', fallback: 'LR' },
+    //   { link: 'https://github.com/evilrabbit.png', name: 'evilrabbit', fallback: 'ER' },
+    // ],
   },
+  trustBadges: ['✓ Expert-Led Mentorship', '✓ Real Client Projects', '✓ Earn While Learning'],
   actions: [
-    // { _id: '2', label: 'Learn More', href: '#what-you-will-learn', type: 'secondary' },
-    { _id: '1', label: 'Get More Details', href: '#', type: 'primary' },
+    {
+      _id: '1',
+      label: 'Book Your Free Expert Consultation',
+      subtext: '200+ developers already transformed their careers with DevXtra',
+      href: '#',
+      type: 'primary',
+    },
+    // { _id: '2', label: 'Talk to a Mentor (Free)', href: '#', type: 'secondary' },
   ],
 };
 
@@ -39,41 +46,52 @@ export default function HeroSection({ id }: { id?: string }) {
         <div className="flex flex-col items-center justify-end">
           <div className="flex items-center gap-2 px-4 py-2">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
-              {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
+              {/* {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
                 <Avatar key={name}>
                   <AvatarImage src={link} alt={`@${name}`} />
                   <AvatarFallback>{fallback}</AvatarFallback>
                 </Avatar>
-              ))}
+              ))} */}
             </div>
-            <p className="text-sm tracking-tight text-tertiary">{hero.customerSatisfaction.text}</p>
+            <p className="text-sm tracking-tight text-tertiary">
+              <span className="font-bold text-[--text-trust]">{hero.customerSatisfaction.highlight}</span>{' '}
+              {hero.customerSatisfaction.text.replace(hero.customerSatisfaction.highlight, '')}
+            </p>
           </div>
         </div>
-        <div className="mx-auto flex min-h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
-          <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(50px,7vw,64px)] font-medium leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
+        <div className="mx-auto flex min-h-[258px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
+          <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(42px,7vw,64px)] font-bold leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
             {hero.title}
           </h1>
-          <h2 className="text-md max-w-2xl text-pretty text-center text-tertiary md:text-lg">
-            {hero.subtitle}
-          </h2>
+          <h2 className="text-md max-w-2xl text-pretty text-center text-primary/50 md:text-lg">{hero.subtitle}</h2>
+          <div className="hidden md:flex flex-wrap items-center justify-center gap-4 mt-2">
+            {hero.trustBadges.map((badge, idx) => (
+              <span key={idx} className="text-sm text-primary/90">
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center justify-center px-8 sm:px-24">
-          <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[392px] justify-center">
+        <div className="flex flex-col items-center justify-center gap-3 px-8 sm:px-24">
+          <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[500px] justify-center gap-3">
             {hero.actions?.map((action) => {
               return (
                 <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
-                  <ButtonStyled
-                    href={action.href}
-                    classnamefora="w-full flex items-center justify-center"
-                    className={cn(
-                      'py-4 px-6 rounded-full md:w-full'
-                      // action.type == 'primary'
-                      //   ? 'flex w-full justify-center'
-                      //   : 'justify-center max-w-sm:!border-x-0 flex w-full !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5 text-primary'
-                    )}
-                  >
-                    {action.label}
-                  </ButtonStyled>
+                  <div className="flex flex-col items-center gap-3 w-full">
+                    <ButtonStyled
+                      href={action.href}
+                      classnamefora="w-full flex items-center justify-center"
+                      className={cn(
+                        'py-4 px-6 rounded-full w-full flex items-center justify-center text-base md:text-lg font-semibold transition-all duration-300 min-h-[56px]',
+                        action.type === 'primary'
+                          ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl hover:scale-[1.02]'
+                          : 'bg-transparent border-2 border-[--accent-blue] text-primary hover:bg-[--accent-blue]/10'
+                      )}
+                    >
+                      {action.label}
+                    </ButtonStyled>
+                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary text-center">{action.subtext}</p>}
+                  </div>
                 </JoinFormTrigger>
               );
             })}

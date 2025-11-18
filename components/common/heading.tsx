@@ -19,7 +19,7 @@ export function Tag({ className, children, asChild, ...props }: React.AllHTMLAtt
   return (
     <Comp
       className={clsx(
-        'flex min-h-7 items-center justify-center gap-2 rounded-full bg-secondary px-3.5 pb-px text-sm font-medium text-tertiary md:text-base',
+        'flex min-h-7 items-center justify-center gap-2 rounded-full bg-primary/70 px-3.5 pb-px text-sm font-medium text-background md:text-base',
         className
       )}
       {...props}

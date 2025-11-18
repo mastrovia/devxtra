@@ -90,7 +90,9 @@ export default function FeaturesSideBySideSection({ id }: { id?: string }) {
           />
           <div className="flex justify-center lg:justify-start">
             <JoinFormTrigger>
-              <ButtonStyled>Join now</ButtonStyled>
+              <ButtonStyled className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                Join now
+              </ButtonStyled>
             </JoinFormTrigger>
           </div>
         </div>

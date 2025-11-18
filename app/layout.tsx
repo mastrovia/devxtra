@@ -5,7 +5,10 @@ import { Header } from '@/components/header';
 import Footer from '@/components/footer';
 import JoinForm from '@/components/join-form';
 import AutoJoinFormTrigger from '@/components/auto-join-form-trigger';
+import WhatsAppFloat from '@/components/whatsapp-float';
+import PhoneFloat from '@/components/phone-float';
 import Providers, { PostHogProvider } from './providers';
+import MetaPixelClient from '@/components/MetaPixelClient';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,13 +38,16 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <PostHogProvider>
-            <AutoJoinFormTrigger />
             <Header />
             {children}
+            <AutoJoinFormTrigger />
             <Footer />
             <JoinForm />
+            <WhatsAppFloat />
+            <PhoneFloat />
           </PostHogProvider>
         </Providers>
+        <MetaPixelClient />
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ export default function FeaturesGridSection({ id }: { id?: string }) {
     actions: [
       {
         _id: '1',
-        label: 'Get More Details',
+        label: 'Book Free Consultation',
         href: '/signup',
       },
     ],
@@ -101,13 +101,15 @@ export default function FeaturesGridSection({ id }: { id?: string }) {
           </article>
         ))}
       </div>
-      <div className="flex items-center justify-center gap-3 md:order-3">
+      {/* <div className="flex items-center justify-center gap-3 md:order-3">
         {featuresGridData.actions?.map((action) => (
           <JoinFormTrigger key={action._id}>
-            <ButtonStyled>{action.label}</ButtonStyled>
+            <ButtonStyled className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+              {action.label}
+            </ButtonStyled>
           </JoinFormTrigger>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

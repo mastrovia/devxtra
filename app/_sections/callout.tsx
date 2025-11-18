@@ -1,13 +1,14 @@
 import { ButtonStyled } from '@/components/common/button';
 import { JoinFormTrigger } from '@/components/join-form';
+import { cn } from '@/lib/utils';
 
 export default function CalloutSection({ id }: { id?: string }) {
   const calloutData = {
     title: 'Join DevXtra Today!',
     subtitle: 'Unlock your potential with expert-led courses and a thriving community.',
     actions: [
-      { _id: '1', label: 'Get Started', href: '', type: 'primary' },
-      { _id: '2', label: 'Learn More', href: '#course-journey', type: 'secondary' },
+      { _id: '1', label: 'Book Free Consultation', href: '', type: 'primary' },
+      // { _id: '2', label: 'Learn More', href: '#course-journey', type: 'secondary' },
     ],
   };
 
@@ -22,10 +23,18 @@ export default function CalloutSection({ id }: { id?: string }) {
             {calloutData.subtitle}
           </p>
         </div>
-        <div className="flex md:items-center gap-2 ">
+        <div className="flex md:items-center gap-2 flex-wrap">
           {calloutData.actions?.map((action) => (
             <JoinFormTrigger key={action._id} disabled={action?.type == 'secondary'}>
-              <ButtonStyled href={action.href} variant={action?.type == 'secondary' ? 'glass' : 'default'}>
+              <ButtonStyled
+                href={action.href}
+                variant={action?.type == 'secondary' ? 'glass' : 'default'}
+                className={
+                  cn(action?.type === 'primary'
+                    ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white'
+                    : '',"w-full md:w-auto")
+                }
+              >
                 {action.label}
               </ButtonStyled>
             </JoinFormTrigger>

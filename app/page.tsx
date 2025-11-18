@@ -8,6 +8,8 @@ import FeaturesGridSection from './_sections/features-grid';
 import FeaturesListSection from './_sections/features-list';
 import FeaturesSideBySideSection from './_sections/features-sidebyside';
 import HeroSection from './_sections/hero';
+// import LiveSuccessDashboard from './_sections/live-success-dashboard';
+import FinalCTASection from './_sections/final-cta';
 // import Testimonials from './_sections/testimonials';
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
       <div className="flex flex-col gap-14 pt-10 bg-background/70 backdrop-blur-xl border-t">
         <TechStacksSection id="tech-stacks" />
         <FeaturesBigVideoSection />
+        {/* <LiveSuccessDashboard id="live-success" /> */}
         <FeaturesListSection id="out-promise" />
         <FeaturesGridSection id="what-you-will-learn" />
         <CalloutSection id="join-devxtra-now" />
@@ -26,6 +29,7 @@ export default function Home() {
       <CalloutAnimatedSection id="join-devxtra-now-2" />
       {/* <Testimonials id="testimonials" /> */}
       <FaqsSection id="faq" />
+      <FinalCTASection id="final-cta" />
     </main>
   );
 }
