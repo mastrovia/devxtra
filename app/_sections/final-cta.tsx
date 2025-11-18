@@ -10,7 +10,7 @@ export default function FinalCTASection({ id }: { id?: string }) {
             Your Future Self Will Thank You
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Join 200+ developers who transformed their careers with DevXtra.
+            Already 200+ developers transformed their careers with DevXtra.
             <br />
             Don&apos;t let another week go by wondering &quot;what if?&quot;
           </p>
