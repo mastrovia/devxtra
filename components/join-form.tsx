@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { ButtonStyled } from './common/button';
 import React, { cloneElement, MouseEventHandler, ReactElement, useEffect, useState } from 'react';
 import { LottiePlayer } from './lottie-player';
+import posthog from 'posthog-js';
 
 export default function JoinForm() {
   const formHook = useJoinForm();
@@ -78,6 +79,8 @@ export default function JoinForm() {
       });
       // console.log(response, await response.json());
       setSubmitted(true);
+      posthog.capture('form_submitted', data);
+      posthog.identify(data?.phone || data?.name + '_' + data?.currentStatus);
     } catch (error) {
       console.log(error);
     } finally {

@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function WhatsAppFloat() {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const whatsappNumber = '916282914958'; // Replace with actual WhatsApp number
+  const whatsappNumber = '918921190179'; // Replace with actual WhatsApp number
   const message = 'Hi! I have a quick question about DevXtra';
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
