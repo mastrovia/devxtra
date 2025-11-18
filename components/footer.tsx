@@ -6,7 +6,7 @@ export default function Footer() {
   const footer = {
     copyright: 'Aryabhangy Grande, 14/305, Muttom, Aluva, Kochi, Kerala',
     contacts: [
-      'Phone: +91 62829 14958',
+      `Phone: +91 ${process.env.NEXT_PUBLIC_CONTACT_NUMBER || '8921190179'}`,
       'Email: office@devxtra.com',
       'Address: Aryabhangy Grande, 14/305, Muttom, Aluva, Kochi, Kerala',
     ],

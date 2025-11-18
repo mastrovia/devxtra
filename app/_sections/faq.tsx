@@ -15,11 +15,6 @@ export default function FaqsSection({ id }: { id?: string }) {
           "No prior experience required! DevXtra starts with fundamentals and builds your skills progressively. Whether you're a complete beginner or switching careers, our structured curriculum takes you from basics to advanced concepts step by step.",
       },
       {
-        title: 'How much time commitment is required per week?',
-        answer:
-          'We recommend 10-15 hours per week for optimal progress. The program is flexible - you can learn at your own pace. Weekend batches and evening sessions are available for working professionals.',
-      },
-      {
         title: "What if I don't get freelance work or results?",
         answer:
           'We provide continuous support until you land your first project. Our mentors help with portfolio building, client outreach, and interview preparation. Plus, we share real project opportunities from our network.',
@@ -38,11 +33,6 @@ export default function FaqsSection({ id }: { id?: string }) {
         title: 'What makes DevXtra different from YouTube or other courses?',
         answer:
           'Unlike passive learning, DevXtra offers personalized mentorship, real project experience, peer collaboration, and accountability. You get immediate doubt resolution, career guidance, and a supportive community - not just videos.',
-      },
-      {
-        title: 'Can I pay in installments?',
-        answer:
-          'Yes, flexible payment options are available. We also offer an "Earn While You Learn" model where you can defer payment until you land your first project. Talk to us about what works for you.',
       },
       {
         title: 'Is this suitable for working professionals?',
