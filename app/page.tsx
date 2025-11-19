@@ -10,6 +10,7 @@ import FeaturesSideBySideSection from './_sections/features-sidebyside';
 import HeroSection from './_sections/hero';
 // import LiveSuccessDashboard from './_sections/live-success-dashboard';
 import FinalCTASection from './_sections/final-cta';
+import OurStoriesMasonry from '@/components/our-storys-masonry';
 // import Testimonials from './_sections/testimonials';
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <FeaturesGridSection id="what-you-will-learn" />
         <CalloutSection id="join-devxtra-now" />
       </div>
+      <OurStoriesMasonry />
       <FeaturesBigImageSection />
       <FeaturesSideBySideSection id="course-journey" />
       <CalloutAnimatedSection id="join-devxtra-now-2" />

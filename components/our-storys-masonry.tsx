@@ -383,7 +383,7 @@ export default function OurStoriesMasonry() {
   return (
     <>
       <div className="relative overflow-hidden">
-        <div className="section-cont h-full">
+        <div className="section-cont h-full max-h-[100vh]">
           {/* Masonry Grid */}
           <div
             className="grid gap-1 auto-rows-[10px] h-full overflow-hidden"

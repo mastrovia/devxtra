@@ -46,11 +46,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
 
   return (
     <section className="flex-col gap-10 relative section-cont hidden md:flex" id={id}>
-      <Heading
-        tag={featuresBigImage.heading.tag}
-        title={featuresBigImage.heading.title}
-        subtitle={featuresBigImage.heading.subtitle}
-      />
+      <Heading tag={featuresBigImage.heading.tag} title={featuresBigImage.heading.title} subtitle={featuresBigImage.heading.subtitle} />
       <div className="flex w-full flex-col items-start gap-4 md:order-2 md:grid md:grid-cols-3 md:gap-16">
         {featuresBigImage.items.map(({ title, description, icon }) => (
           <article key={title} className="flex flex-col gap-4">
@@ -68,7 +64,7 @@ export default function FeaturesBigImageSection({ id }: { id?: string }) {
         src={featuresBigImage.image.url}
         height={600}
         width={1216}
-        className="block rounded-xl border md:order-3 md:w-full"
+        className="block rounded-xl border md:order-3 md:w-full grayscale"
         alt={featuresBigImage.image.alt}
       />
       {/* <iframe
