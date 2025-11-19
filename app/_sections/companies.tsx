@@ -38,13 +38,15 @@ export default function TechStacksSection({ id }: { id?: string }) {
   };
 
   return (
-    <section className="flex flex-col gap-10 relative" id={id}>
-      <h2 className="text-center tracking-tight opacity-50 px-22">{companiesSection.subtitle}</h2>
+    <section className="flex flex-col gap-10 relative animate-fade-in delay-300" id={id}>
+      <h2 className="text-center tracking-tight opacity-70 px-22 font-medium text-lg">Powering Next-Gen Applications with Modern Tech</h2>
       <LogoLoop
-        logos={companiesSection.companies.map((d) => ({ src: d.image, alt: d.title }))}
-        className="grayscale opacity-75 invert dark:invert-0"
-        logoHeight={30}
+        logos={companiesSection.companies.map(d => ({ src: d.image, alt: d.title }))}
+        className='grayscale opacity-75 invert dark:invert-0'
+        logoHeight={35}
         speed={75}
+        scaleOnHover={true}
+        fadeOut={true}
       />
     </section>
     //   <div className="no-scrollbar flex max-w-full justify-center overflow-hidden">

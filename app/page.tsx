@@ -15,9 +15,9 @@ import OurStoriesMasonry from '@/components/our-storys-masonry';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-14">
+    <main className="flex flex-col gap-24">
       <HeroSection id="main" />
-      <div className="flex flex-col gap-14 pt-10 bg-background/70 backdrop-blur-xl border-t">
+      <div className="flex flex-col gap-24 pt-20 bg-background/70 backdrop-blur-xl border-t">
         <TechStacksSection id="tech-stacks" />
         <FeaturesBigVideoSection />
         {/* <LiveSuccessDashboard id="live-success" /> */}

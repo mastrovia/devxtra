@@ -44,7 +44,7 @@ export default function HeroSection({ id }: { id?: string }) {
 
       <div className="relative z-10 flex flex-col pt-[35px] gap-2 md:gap-0">
         <div className="flex flex-col items-center justify-end">
-          <div className="flex items-center gap-2 px-4 py-2">
+          <div className="flex items-center gap-2 px-4 py-2 animate-fade-in-up">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2">
               {/* {hero.customerSatisfaction.avatars.map(({ link, name, fallback }) => (
                 <Avatar key={name}>
@@ -54,16 +54,16 @@ export default function HeroSection({ id }: { id?: string }) {
               ))} */}
             </div>
             <p className="text-sm tracking-tight text-tertiary">
-              <span className="font-bold text-[--text-trust]">{hero.customerSatisfaction.highlight}</span>{' '}
+              <span className="font-bold text-[--text-trust] animate-pulse-subtle inline-block">{hero.customerSatisfaction.highlight}</span>{' '}
               {hero.customerSatisfaction.text.replace(hero.customerSatisfaction.highlight, '')}
             </p>
           </div>
         </div>
         <div className="mx-auto flex min-h-[258px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-3 px-2 py-4 sm:px-16 lg:px-24">
-          <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(42px,7vw,64px)] font-bold leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px]">
+          <h1 className="!max-w-screen-lg text-pretty text-center text-[clamp(48px,8vw,72px)] font-bold leading-none tracking-[-1.44px] text-primary md:tracking-[-2.16px] animate-fade-in-up delay-100 drop-shadow-sm">
             {hero.title}
           </h1>
-          <h2 className="text-md max-w-2xl text-pretty text-center text-primary/50 md:text-lg">{hero.subtitle}</h2>
+          <h2 className="text-md max-w-2xl text-pretty text-center text-primary/80 md:text-xl animate-fade-in-up delay-200">{hero.subtitle}</h2>
           <div className="hidden md:flex flex-wrap items-center justify-center gap-4 mt-2">
             {hero.trustBadges.map((badge, idx) => (
               <span key={idx} className="text-sm text-primary/90">
@@ -73,7 +73,7 @@ export default function HeroSection({ id }: { id?: string }) {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-3 px-8 sm:px-24">
-          <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[500px] justify-center gap-3">
+          <div className="flex w-full max-w-[80vw] flex-col items-center md:!max-w-[500px] justify-center gap-3 animate-fade-in-up delay-300">
             {hero.actions?.map((action) => {
               return (
                 <JoinFormTrigger key={action._id} disabled={action.type !== 'primary'}>
@@ -82,15 +82,16 @@ export default function HeroSection({ id }: { id?: string }) {
                       href={action.href}
                       classnamefora="w-full flex items-center justify-center"
                       className={cn(
-                        'py-4 px-6 rounded-full w-full flex items-center justify-center text-base md:text-lg font-semibold transition-all duration-300 min-h-[56px]',
+                        'py-4 px-6 rounded-full w-full flex items-center justify-center text-base md:text-lg font-semibold transition-all duration-300 min-h-[56px] relative overflow-hidden',
                         action.type === 'primary'
                           ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl hover:scale-[1.02]'
                           : 'bg-transparent border-2 border-[--accent-blue] text-primary hover:bg-[--accent-blue]/10'
                       )}
                     >
-                      {action.label}
+                      {action.type === 'primary' && <div className="absolute inset-0 animate-shimmer pointer-events-none" />}
+                      <span className="relative z-10">{action.label}</span>
                     </ButtonStyled>
-                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary text-center">{action.subtext}</p>}
+                    {action.subtext && action.type === 'primary' && <p className="text-xs text-tertiary text-center font-medium">{action.subtext}</p>}
                   </div>
                 </JoinFormTrigger>
               );
