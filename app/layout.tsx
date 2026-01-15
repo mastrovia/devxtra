@@ -9,6 +9,7 @@ import WhatsAppFloat from '@/components/whatsapp-float';
 import PhoneFloat from '@/components/phone-float';
 import Providers, { PostHogProvider } from './providers';
 import MetaPixelClient from '@/components/MetaPixelClient';
+import PlausibleAnalytics from '@/components/PlausibleAnalytics';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -48,6 +49,7 @@ export default function RootLayout({
           </PostHogProvider>
         </Providers>
         <MetaPixelClient />
+        <PlausibleAnalytics />
       </body>
     </html>
   );
