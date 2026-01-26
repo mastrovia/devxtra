@@ -2323,6 +2323,7 @@ packages:
   tar@7.4.3:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   three@0.181.0:
     resolution: {integrity: sha512-KGf6EOCOQGshXeleKxpxhbowQwAXR2dLlD93egHtZ9Qmk07Saf8sXDR+7wJb53Z1ORZiatZ4WGST9UsVxhHEbg==}
